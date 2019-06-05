@@ -5,7 +5,7 @@
 *.ear
 
 # carpeta enunciado
-#enunciado/*
+enunciado/*
 
 # Eclipse
 .project
