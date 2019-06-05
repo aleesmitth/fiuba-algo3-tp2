@@ -1,3 +1,5 @@
+package fiuba.algo3.tp2;
+
 public class Pico extends Herramienta{
     public Pico(int str, int dur){
         this.durabilidad = dur;

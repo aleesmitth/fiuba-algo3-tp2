@@ -1,3 +1,5 @@
+package fiuba.algo3.tp2;
+
 public class PicoFino extends Herramienta{
     public PicoFino(int str, int dur){
         this.durabilidad= dur;
