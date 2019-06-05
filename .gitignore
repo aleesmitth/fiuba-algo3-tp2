@@ -7,6 +7,7 @@
 # carpeta enunciado
 enunciado/*
 out/*
+README.md
 
 # Eclipse
 .project
