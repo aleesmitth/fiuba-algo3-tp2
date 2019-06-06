@@ -1,16 +1,33 @@
 package fiuba.algo3.tp2;
 
 public class PicoFino extends Herramienta{
+
+    public PicoFino(){}
+
     protected void desgastar(){
+
         atributos.durabilidad-=atributos.desgaste;
     }
-    public PicoFino(int str,int dur, Piedra piedra){
-        this.atributos = new AtributosHerramienta(str,dur,piedra,this);
+
+    public PicoFino(int fuerzaRecibida, int durabilidadInicial, Piedra piedra){
+        this.atributos = new AtributosHerramienta(fuerzaRecibida, durabilidadInicial,piedra,this);
     }
-    public PicoFino(int str,int dur, Metal metal){
-        this.atributos = new AtributosHerramienta(str,dur,metal,this);
+
+
+    public PicoFino(int fuerzaRecibida, int durabilidadInicial, Metal metal){
+        this.atributos = new AtributosHerramienta(fuerzaRecibida, durabilidadInicial,metal,this);
     }
-    public PicoFino(){}
+
+    public PicoFino armar(Piedra piedra){
+
+        return new PicoFino(20,1000,piedra);
+    }
+
+    public PicoFino armar(Metal metal){
+
+        return new PicoFino(20,1000,metal);
+    }
+
 
     public PicoFino armar(Madera madera){
         try {
@@ -20,12 +37,8 @@ public class PicoFino extends Herramienta{
         }
         return null;
     }
-    public PicoFino armar(Piedra piedra){
-        return new PicoFino(20,1000,piedra);
-    }
-    public PicoFino armar(Metal metal){
-        return new PicoFino(20,1000,metal);
-    }
+
+
     public void usarContra(Material material){
         try {
             if(this.atributos.durabilidad()<= 0){
@@ -41,4 +54,6 @@ public class PicoFino extends Herramienta{
         }
         material.golpeadoPor(this);
     }
+
+
 }

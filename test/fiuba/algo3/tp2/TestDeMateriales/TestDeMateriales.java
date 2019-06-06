@@ -1,14 +1,14 @@
 package fiuba.algo3.tp2.TestDeMateriales;
 
 import fiuba.algo3.tp2.*;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 public class TestDeMateriales {
     @Test
-    public void test16MaderaSeGolpeaConHachaDeMaderaPierdeDurabilidadCorrectamente(){
+    public void test01MaderaSeGolpeaConHachaDeMaderaPierdeDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Madera madera= new Madera();
         Hacha modeloDeHacha= new Hacha();
@@ -22,7 +22,7 @@ public class TestDeMateriales {
         assertEquals(4,madera.durabilidad());
     }
     @Test
-    public void test17PiedraSeGolpeaConHachaYNoPierdeDurabilidad(){
+    public void test02PiedraSeGolpeaConHachaYNoPierdeDurabilidad(){
         Constructor constructor = new Constructor();
         Madera madera= new Madera();
         Piedra piedra= new Piedra();
@@ -41,7 +41,7 @@ public class TestDeMateriales {
 
     }
     @Test
-    public void test18MetalSeGolpeaConPicoDeMaderaYNoPierdeDurabilidad(){
+    public void test02MetalSeGolpeaConPicoDeMaderaYNoPierdeDurabilidad(){
         Constructor constructor = new Constructor();
         Madera madera= new Madera();
         Metal metal= new Metal();
