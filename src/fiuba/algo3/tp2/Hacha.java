@@ -25,6 +25,13 @@ public class Hacha extends Herramienta{
     }
 
     public void usarContra(Material material){
+        try {
+            if(this.atributos.durabilidad()<= 0){
+                throw new HerramientaRotaException("Se intento usar una herramienta rota-it's not allowed");
+            }
+        }catch(HerramientaRotaException excepcion){
+            System.out.println(excepcion.getMessage());
+        }
         this.desgastar();
         material.golpeadoPor(this);
     }
