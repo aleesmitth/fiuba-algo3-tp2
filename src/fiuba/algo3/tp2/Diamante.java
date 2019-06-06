@@ -2,7 +2,8 @@ package fiuba.algo3.tp2;
 
 public class Diamante extends Material{
 
-    public Diamante(){
+    public Diamante()
+    {
         this.durabilidadMaterial = 100;
     }
     @Override

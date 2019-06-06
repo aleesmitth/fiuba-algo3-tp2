@@ -1,7 +1,8 @@
 package fiuba.algo3.tp2;
 
 public class Madera extends Material{
-    public Madera() {
+    public Madera()
+    {
         this.durabilidadMaterial = 10;
     }
 
