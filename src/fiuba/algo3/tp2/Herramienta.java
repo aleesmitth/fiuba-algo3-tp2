@@ -7,14 +7,17 @@ public abstract class Herramienta {
 
 
     public int fuerza(){
+
         return this.atributos.fuerza();
     }
 
     public int durabilidad() {
+
         return this.atributos.durabilidad();
     }
 
     public Material hechoDe() {
+
         return this.atributos.hechoDe();
     }
 
