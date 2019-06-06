@@ -2,15 +2,11 @@ package fiuba.algo3.tp2;
 
 public class Jugador {
     private Constructor mesaDeCrafteo;
-    private Herramienta primerHachaDeMadera;
     private Herramienta itemEquipado;
 
-    // Metodos
-
-    public Jugador(){
+    public Jugador(Herramienta primerItemDelJugador){
         this.mesaDeCrafteo = new Constructor();
-        this.primerHachaDeMadera = this.mesaDeCrafteo.construir(new Madera(), new Hacha());
-        this.itemEquipado = this.primerHachaDeMadera;
+        this.equiparItem(primerItemDelJugador);
     }
 
     public Herramienta obtenerHerramientaEquipada(){

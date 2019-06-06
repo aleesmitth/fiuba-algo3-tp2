@@ -9,9 +9,11 @@ public class TestsJugadorTP2{
 
     @Test
     public void test01JugadorSeInicializaCorrectamenteConHachaDeMadera(){
-        Jugador jugador = new Jugador();
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMadera = (Hacha) constructor.construir(new Madera(),new Hacha());
+        Jugador jugador = new Jugador(hachaDeMadera);
+        
         jugador.usarHerramientaContra(new Madera());
-
         assertEquals(98,jugador.obtenerHerramientaEquipada().durabilidad());
 
     }
