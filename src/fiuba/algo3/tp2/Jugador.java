@@ -10,18 +10,18 @@ public class Jugador {
     public Jugador(){
         this.mesaDeCrafteo = new Constructor();
         this.primerHachaDeMadera = this.mesaDeCrafteo.construir(new Madera(), new Hacha());
+        this.itemEquipado = this.primerHachaDeMadera;
     }
 
-    public Herramienta getPrimerHachaDeMadera(){
-        return this.primerHachaDeMadera;
+    public Herramienta obtenerHerramientaEquipada(){
+        return this.itemEquipado;
     }
 
     public void equiparItem(Herramienta herramienta){
         this.itemEquipado = herramienta;
     }
 
-    public Material usarHerramientaContra(Material material){
+    public void usarHerramientaContra(Material material){
         this.itemEquipado.usarContra(material);
-        return material;
     }
 }
