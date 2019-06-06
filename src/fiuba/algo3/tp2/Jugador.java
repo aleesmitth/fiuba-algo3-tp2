@@ -14,4 +14,5 @@ public class Jugador {
     public Herramienta getPrimerHachaDeMadera(){
         return this.primerHachaDeMadera;
     }
+
 }
