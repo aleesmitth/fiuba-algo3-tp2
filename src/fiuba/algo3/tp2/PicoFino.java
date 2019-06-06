@@ -27,6 +27,14 @@ public class PicoFino extends Herramienta{
         return new PicoFino(20,1000,metal);
     }
     public void usarContra(Material material){
+        try {
+            if(this.atributos.durabilidad()<= 0){
+                throw new HerramientaRotaException("Se intento usar una herramienta rota-it's not allowed");
+            }
+        }catch(HerramientaRotaException excepcion){
+            System.out.println(excepcion.getMessage());
+        }
+
         if(material instanceof Diamante){
             this.desgastar();
             this.atributos.actualizarDesgaste();
