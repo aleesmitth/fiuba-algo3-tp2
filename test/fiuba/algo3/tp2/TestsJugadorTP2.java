@@ -9,7 +9,7 @@ public class TestsJugadorTP2{
     public void test01JugadorSeInicializaCorrectamenteConHachaDeMadera(){
         Jugador jugador = new Jugador();
 
-        assertEquals(new Hacha(2,100,new Madera()),jugador.getPrimerHachaDeMadera);
+        assertEquals(new Hacha(2,100,new Madera()),jugador.getPrimerHachaDeMadera());
 
     }
 }
