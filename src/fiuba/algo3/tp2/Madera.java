@@ -2,7 +2,7 @@ package fiuba.algo3.tp2;
 
 public class Madera extends Material{
     public Madera(){
-        this.durabilidad = 10;
+        this.atributos = new AtributosMaterial(10);
     }
 
     @Override
@@ -12,17 +12,7 @@ public class Madera extends Material{
 
     @Override
     public void golpeadoPor(Hacha hacha) {
-        this.durabilidad-=hacha.fuerza();
-    }
-
-    @Override                          //en estos dos metodos hay que ver si pico y picofino rompen madera o no.
-    public void golpeadoPor(Pico pico) {
-
-    }
-
-    @Override
-    public void golpeadoPor(PicoFino picoFino) {
-
+        this.atributos.durabilidad -= hacha.fuerza();
     }
 
 }

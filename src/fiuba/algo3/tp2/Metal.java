@@ -3,7 +3,7 @@ package fiuba.algo3.tp2;
 public class Metal extends Material{
 
     public Metal(){
-        this.durabilidad = 50;
+        this.atributos = new AtributosMaterial(50);
     }
 
     @Override
@@ -12,19 +12,14 @@ public class Metal extends Material{
     }
 
     @Override
-    public void golpeadoPor(Hacha hacha) {
-
-    }
-
-    @Override
     public void golpeadoPor(Pico pico) {
         if(pico.hechoDe() instanceof Piedra || pico.hechoDe() instanceof Metal){
-            this.durabilidad-=pico.fuerza();
+            this.atributos.durabilidad -= pico.fuerza();
         }
     }
 
     @Override
     public void golpeadoPor(PicoFino picoFino) {
-        this.durabilidad-=picoFino.fuerza();
+        this.atributos.durabilidad -=picoFino.fuerza();
     }
 }
