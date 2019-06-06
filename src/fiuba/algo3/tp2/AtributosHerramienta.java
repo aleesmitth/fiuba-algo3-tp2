@@ -35,7 +35,7 @@ public class AtributosHerramienta {
         this.fuerza=str;
         this.durabilidad=dur;
         this.materialPrimario=piedra;
-        this.desgaste = (int)(this.fuerza/1.5);
+        this.desgaste = (int) (this.fuerza/1.5);
     }
     public AtributosHerramienta(int str, int dur, Metal metal, Pico pico){
         this.fuerza=str;

@@ -1,8 +1,5 @@
-package fiuba.algo3.tp2.TestDeJugador;
+package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.Hacha;
-import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.tp2.Madera;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +10,13 @@ public class TestsJugadorTP2{
     @Test
     public void test01JugadorSeInicializaCorrectamenteConHachaDeMadera(){
         Jugador jugador = new Jugador();
+        int durabilidadHachaDeMadera = jugador.getPrimerHachaDeMadera().durabilidad();
+        jugador.equiparItem(jugador.getPrimerHachaDeMadera());
+        jugador.usarHerramientaContra(new Madera());
 
-        TestCase.assertEquals(new Hacha(2,100,new Madera()),jugador.getPrimerHachaDeMadera());
 
+        assertEquals(new Hacha(2,100,new Madera()),jugador.getPrimerHachaDeMadera());
+
+        assertEquals(durabilidadHachaDeMadera-2,jugador.getPrimerHachaDeMadera().durabilidad());
     }
 }
