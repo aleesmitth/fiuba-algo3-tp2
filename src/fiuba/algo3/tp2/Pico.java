@@ -27,11 +27,17 @@ public class Pico extends Herramienta{
     }
 
     public void usarContra(Material material){
+        try {
+            if(this.atributos.durabilidad()<= 0 && this.usos<=0){
+                throw new HerramientaRotaException("Se intento usar una herramienta rota-it's not allowed");
+            }
+        }catch(HerramientaRotaException excepcion){
+            System.out.println(excepcion.getMessage());
+        }
         this.usos++;
         this.desgastar();
         material.golpeadoPor(this);
         if(this.hechoDe() instanceof Metal && this.usos==usosMaximosPicoDeMetal){
-            //aca deberia destruir el pico
             this.atributos.durabilidad=0;
         }
     }
