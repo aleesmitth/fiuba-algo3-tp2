@@ -8,10 +8,11 @@ public class TestsJugadorTP2{
     @Test
     public void test01JugadorSeInicializaCorrectamenteConHachaDeMadera(){
         Jugador jugador = new Jugador();
-        Hacha hachaDeMadera = (Hacha) jugador.getPrimerHachaDeMadera();
-        hachaDeMadera.usarContra(new Madera());
+        int durabilidadHachaDeMadera = jugador.getPrimerHachaDeMadera().durabilidad();
+        jugador.equiparItem(jugador.getPrimerHachaDeMadera());
+        jugador.usarHerramientaContra(new Madera());
 
-        assertEquals(98, hachaDeMadera.durabilidad());
+        assertEquals(durabilidadHachaDeMadera-2,jugador.getPrimerHachaDeMadera().durabilidad());
 
     }
 }
