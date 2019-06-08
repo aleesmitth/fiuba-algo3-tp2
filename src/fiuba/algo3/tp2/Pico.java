@@ -1,38 +1,22 @@
 package fiuba.algo3.tp2;
 
 public class Pico extends Herramienta{
-    private int usos=0;
-    private static int usosMaximosPicoDeMetal=10;
-    protected void desgastar(){
-        atributos.durabilidad-=atributos.desgaste;
-    }
-    public Pico(int str,int dur, Madera madera){
-        this.atributos = new AtributosHerramienta(str,dur,madera,this);
-    }
-    public Pico(int str,int dur, Piedra piedra){
-        this.atributos = new AtributosHerramienta(str,dur,piedra,this);
-    }
-    public Pico(int str,int dur, Metal metal){
-        this.atributos = new AtributosHerramienta(str,dur,metal,this);
-    }
-    public Pico(){}
-    public Pico armar(Madera madera){
-        return new Pico(2,100,madera);
-    }
-    public Pico armar(Piedra piedra){
-        return new Pico(4,200,piedra);
-    }
-    public Pico armar(Metal metal){
-        return new Pico(12,400,metal);
+
+    public Pico(Material material) { this.atributos = material.creable(this); }
+
+    public Pico(Material materialPrimario,Material materialSecundario) {
+        this.atributos = materialPrimario.creable(this,materialSecundario);
     }
 
-    public void usarContra(Material material){
-        this.usos++;
-        this.desgastar();
-        material.golpeadoPor(this);
-        if(this.hechoDe() instanceof Metal && this.usos==usosMaximosPicoDeMetal){
-            //aca deberia destruir el pico
-            this.atributos.durabilidad=0;
-        }
+    public void usarLaHerramienta(){this.atributos.usar();}
+
+    @Override
+    public void usarContra(Material material) {
+        material.golpeadoPor(this,this.atributos.hechoDe());
     }
+
+    public void usarContra(Material material,boolean esPicoFino) {
+        material.golpeadoPor(this,this.atributos.hechoDe(),this.atributos.materialSecundario);
+    }
+
 }

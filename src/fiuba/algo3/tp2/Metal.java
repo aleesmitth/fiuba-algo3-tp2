@@ -1,30 +1,56 @@
 package fiuba.algo3.tp2;
 
-public class Metal extends Material{
+public class Metal implements Material {
+
+    int durabilidad;
+
 
     public Metal(){
         this.durabilidad = 50;
     }
 
+
     @Override
-    public Herramienta armar(Herramienta herramienta){
-        return herramienta.armar(this);
+    public AtributosHerramienta creable(Pico pico) {
+        AtributosHerramienta atributosHerramienta=new UsoRestringido(12,400,this);
+        return atributosHerramienta;
     }
 
     @Override
-    public void golpeadoPor(Hacha hacha) {
-
+    public AtributosHerramienta creable(Pico pico, Material material) {
+        AtributosHerramienta atributosHerramienta=new UsoMinimo(20,1000,this,10,material);
+        return atributosHerramienta;
     }
 
     @Override
-    public void golpeadoPor(Pico pico) {
-        if(pico.hechoDe() instanceof Piedra || pico.hechoDe() instanceof Metal){
-            this.durabilidad-=pico.fuerza();
+    public AtributosHerramienta creable(Hacha hacha) {
+        AtributosHerramienta atributosHerramienta=new UsoLineal(10,400,this,2);
+        return atributosHerramienta;
+    }
+
+    @Override
+    public void golpeadoPor(Hacha hacha, Material material) {}
+
+    @Override
+    public void golpeadoPor(Pico pico, Material material) {
+        if(material.hechoDePiedra()){
+            this.durabilidad -= pico.fuerza();
+            pico.usarLaHerramienta();
         }
     }
 
     @Override
-    public void golpeadoPor(PicoFino picoFino) {
-        this.durabilidad-=picoFino.fuerza();
-    }
+    public void golpeadoPor(Pico pico, Material material, Material materialSecundario) { }
+
+    @Override
+    public boolean hechoDePiedra(){return false;}
+
+    @Override
+    public boolean hechoDeMetal(){return true;}
+
+    @Override
+    public boolean hechoDeMadera(){return false;}
+
 }
+
+

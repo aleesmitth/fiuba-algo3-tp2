@@ -1,29 +1,52 @@
 package fiuba.algo3.tp2;
 
-public class Madera extends Material{
+public class Madera implements Material {
 
-    public Madera(){
+    int durabilidad;
+
+    public Madera() {
         this.durabilidad = 10;
     }
 
-    @Override
-    public Herramienta armar(Herramienta herramienta){
-            return herramienta.armar(this);
-    }
+
 
     @Override
-    public void golpeadoPor(Hacha hacha) {
-        this.durabilidad-=hacha.fuerza();
-    }
-
-    @Override                          //en estos dos metodos hay que ver si pico y picofino rompen madera o no.
-    public void golpeadoPor(Pico pico) {
-
+    public AtributosHerramienta creable(Hacha hacha) {
+        AtributosHerramienta atributosHerramienta = new UsoLineal(2, 100, this, 1);
+        return atributosHerramienta;
     }
 
     @Override
-    public void golpeadoPor(PicoFino picoFino) {
-
+    public AtributosHerramienta creable(Pico pico) {
+        AtributosHerramienta atributosHerramienta = new UsoLineal(2, 100, this, 1);
+        return atributosHerramienta;
     }
+
+    @Override
+    public boolean hechoDePiedra(){return false;}
+
+    @Override
+    public boolean hechoDeMetal(){return false;}
+
+    @Override
+    public boolean hechoDeMadera(){return true;}
+
+    @Override
+    public AtributosHerramienta creable(Pico pico, Material material) {
+        return null;
+    }
+
+    @Override
+    public void golpeadoPor(Hacha hacha, Material material) {
+        hacha.usarLaHerramienta();
+        this.durabilidad -= hacha.fuerza();
+    }
+
+    @Override
+    public void golpeadoPor(Pico pico, Material material) { }
+
+    @Override
+    public void golpeadoPor(Pico pico, Material material, Material materialSecundario) { }
 
 }
+

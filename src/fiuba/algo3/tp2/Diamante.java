@@ -1,32 +1,45 @@
 package fiuba.algo3.tp2;
 
-public class Diamante extends Material{
+public class Diamante implements Material{
+
+    int durabilidad;
+
 
     public Diamante(){
         this.durabilidad=100;
     }
+
     @Override
-    public Herramienta armar(Herramienta herramienta) {
-        try {
-            throw new CrearHerramientaDeDiamanteException("Se intento crear una herramienta de diamante-it's not allowed"); // aca tiene que tirar excepcion, no estoy seguro de q este tirada correctamente
-        }catch(CrearHerramientaDeDiamanteException excepcion){
-            System.out.println(excepcion.getMessage());
-        }
+    public AtributosHerramienta creable(Pico pico) {
         return null;
     }
 
     @Override
-    public void golpeadoPor(Hacha hacha) {
-
+    public AtributosHerramienta creable(Pico pico, Material material) {
+        return null;
     }
 
     @Override
-    public void golpeadoPor(Pico pico) {
-
+    public AtributosHerramienta creable(Hacha hacha) {
+        return null;
     }
 
     @Override
-    public void golpeadoPor(PicoFino picoFino) {
-        this.durabilidad-= picoFino.fuerza();
-    }
+    public void golpeadoPor(Hacha hacha, Material material) {}
+
+    @Override
+    public void golpeadoPor(Pico pico, Material material) { }
+
+    @Override
+    public void golpeadoPor(Pico pico, Material material, Material materialSecundario) { pico.usarLaHerramienta(); }
+
+    @Override
+    public boolean hechoDeMadera() { return false; }
+
+    @Override
+    public boolean hechoDeMetal() { return false; }
+
+    @Override
+    public boolean hechoDePiedra() { return false; }
+
 }

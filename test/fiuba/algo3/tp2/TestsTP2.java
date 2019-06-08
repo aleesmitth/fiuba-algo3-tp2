@@ -1,7 +1,8 @@
 package fiuba.algo3.tp2;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * faltaria hacer la implementacion de las destrucciones de las herramientas, solo esta considerada la del pico de metal
@@ -13,19 +14,18 @@ public class TestsTP2 {
     @Test
     public void test01ArmarHachaDeMaderaConFuerzaYDurabilidadCorrespondientes(){
         Constructor constructor = new Constructor();
-        Madera madera= new Madera();
-        Hacha modeloDeHacha= new Hacha();
-        Hacha hachaConstruida = (Hacha) constructor.construir(madera,modeloDeHacha);
+        Material madera= new Madera();
+        Hacha hachaConstruida = constructor.construirHacha(madera);
 
         assertEquals(2,hachaConstruida.fuerza());
         assertEquals(100, hachaConstruida.durabilidad());
     }
+
     @Test
     public void test02ArmarPicoDeMaderaConFuerzaYDurabilidadCorrespondientes(){
         Constructor constructor = new Constructor();
-        Madera madera= new Madera();
-        Pico modeloDePico= new Pico();
-        Pico picoConstruido = (Pico) constructor.construir(madera,modeloDePico);
+        Material madera= new Madera();
+        Pico picoConstruido = constructor.construirPico(madera);
 
         assertEquals(2,picoConstruido.fuerza());
         assertEquals(100, picoConstruido.durabilidad());
@@ -33,9 +33,8 @@ public class TestsTP2 {
     @Test
     public void test03ArmarHachaDeMetalConSuDurabilidadYFuerzaCorrespondiente(){
         Constructor constructor = new Constructor();
-        Metal metal= new Metal();
-        Hacha modeloDeHacha= new Hacha();
-        Hacha hachaConstruida = (Hacha) constructor.construir(metal,modeloDeHacha);
+        Material metal= new Metal();
+        Hacha hachaConstruida = constructor.construirHacha(metal);
 
         assertEquals(10,hachaConstruida.fuerza());
         assertEquals(400, hachaConstruida.durabilidad());
@@ -43,9 +42,8 @@ public class TestsTP2 {
     @Test
     public void test04ArmarPicoDeMetalConFuerzaYDurabilidadCorrespondientes(){
         Constructor constructor = new Constructor();
-        Metal metal= new Metal();
-        Pico modeloDePico= new Pico();
-        Pico picoConstruido = (Pico) constructor.construir(metal,modeloDePico);
+        Material metal= new Metal();
+        Pico picoConstruido = constructor.construirPico(metal);
 
         assertEquals(12,picoConstruido.fuerza());
         assertEquals(400, picoConstruido.durabilidad());
@@ -53,9 +51,9 @@ public class TestsTP2 {
     @Test
     public void test05ArmarPicoFinoConFuerzaYDurabilidadCorrespondientes(){
         Constructor constructor = new Constructor();
-        Metal metal= new Metal();
-        PicoFino modeloDePicoFino= new PicoFino();
-        PicoFino picoConstruido = (PicoFino) constructor.construir(metal,modeloDePicoFino);
+        Material metal= new Metal();
+        Material piedra = new Piedra();
+        Pico picoConstruido = constructor.construirPico(metal,piedra);
 
         assertEquals(20,picoConstruido.fuerza());
         assertEquals(1000, picoConstruido.durabilidad());
@@ -63,19 +61,18 @@ public class TestsTP2 {
     @Test
     public void test06HachaDeMaderaSeUsaContraCadaMaterialYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
-        Madera madera= new Madera();
-        Piedra piedra= new Piedra();
-        Metal metal= new Metal();
+        Material madera= new Madera();
+        Material piedra= new Piedra();
+        Material metal= new Metal();
 
-        Hacha modeloDeHacha= new Hacha();
-        Hacha hachaConstruida = (Hacha) constructor.construir(madera,modeloDeHacha);
+        Hacha hachaConstruida = constructor.construirHacha(madera);
 
         hachaConstruida.usarContra(madera);
         assertEquals(98,hachaConstruida.durabilidad());
         hachaConstruida.usarContra(piedra);
-        assertEquals(96,hachaConstruida.durabilidad());
+        assertEquals(98,hachaConstruida.durabilidad());
         hachaConstruida.usarContra(metal);
-        assertEquals(94,hachaConstruida.durabilidad());
+        assertEquals(98,hachaConstruida.durabilidad());
     }
     @Test
     public void test07HachaDePiedraSeUsaContraCadaMaterialYReduceSuDurabilidad(){
@@ -84,15 +81,14 @@ public class TestsTP2 {
         Piedra piedra= new Piedra();
         Metal metal= new Metal();
 
-        Hacha modeloDeHacha= new Hacha();
-        Hacha hachaConstruida = (Hacha) constructor.construir(piedra,modeloDeHacha);
+        Hacha hachaConstruida = constructor.construirHacha(piedra);
 
         hachaConstruida.usarContra(madera);
         assertEquals(195,hachaConstruida.durabilidad());
         hachaConstruida.usarContra(piedra);
-        assertEquals(190,hachaConstruida.durabilidad());
+        assertEquals(195,hachaConstruida.durabilidad());
         hachaConstruida.usarContra(metal);
-        assertEquals(185,hachaConstruida.durabilidad());
+        assertEquals(195,hachaConstruida.durabilidad());
     }
     @Test
     public void test08HachaDeMetalSeUsaContraCadaMaterialYReduceSuDurabilidad(){
@@ -101,15 +97,14 @@ public class TestsTP2 {
         Piedra piedra= new Piedra();
         Metal metal= new Metal();
 
-        Hacha modeloDeHacha= new Hacha();
-        Hacha hachaConstruida = (Hacha) constructor.construir(metal,modeloDeHacha);
+        Hacha hachaConstruida =  constructor.construirHacha(metal);
 
         hachaConstruida.usarContra(madera);
         assertEquals(395,hachaConstruida.durabilidad());
         hachaConstruida.usarContra(piedra);
-        assertEquals(390,hachaConstruida.durabilidad());
+        assertEquals(395,hachaConstruida.durabilidad());
         hachaConstruida.usarContra(metal);
-        assertEquals(385,hachaConstruida.durabilidad());
+        assertEquals(395,hachaConstruida.durabilidad());
     }
     @Test
     public void test09PicoDeMaderaSeUsaContraCadaMaterialYReduceSuDurabilidad(){
@@ -118,15 +113,14 @@ public class TestsTP2 {
         Piedra piedra= new Piedra();
         Metal metal= new Metal();
 
-        Pico modeloDePico= new Pico();
-        Pico picoConstruido = (Pico) constructor.construir(madera,modeloDePico);
+        Pico picoConstruido = constructor.construirPico(madera);
 
         picoConstruido.usarContra(madera);
-        assertEquals(98,picoConstruido.durabilidad());
+        assertEquals(100,picoConstruido.durabilidad());
         picoConstruido.usarContra(piedra);
-        assertEquals(96,picoConstruido.durabilidad());
+        assertEquals(98,picoConstruido.durabilidad());
         picoConstruido.usarContra(metal);
-        assertEquals(94,picoConstruido.durabilidad());
+        assertEquals(98,picoConstruido.durabilidad());
     }
     @Test
     public void test10PicoDePiedraSeUsaContraCadaMaterialYReduceSuDurabilidad(){
@@ -135,25 +129,29 @@ public class TestsTP2 {
         Piedra piedra= new Piedra();
         Metal metal= new Metal();
 
-        Pico modeloDePico= new Pico();
-        Pico picoConstruido = (Pico) constructor.construir(piedra,modeloDePico);
+        int desgaste = (int) (5/1.5);
+        int primerDesgasteReal = (200-desgaste);
+        int segundoDesgasteReal = (primerDesgasteReal-desgaste);
+
+        Pico picoConstruido = constructor.construirPico(piedra);
 
         picoConstruido.usarContra(madera);
-        assertEquals(198,picoConstruido.durabilidad());
+        assertEquals(200,picoConstruido.durabilidad());
         picoConstruido.usarContra(piedra);
-        assertEquals(196,picoConstruido.durabilidad());
+        assertEquals(primerDesgasteReal,picoConstruido.durabilidad());
         picoConstruido.usarContra(metal);
-        assertEquals(194,picoConstruido.durabilidad());
+        assertEquals(segundoDesgasteReal,picoConstruido.durabilidad());
+
     }
     @Test
+
     public void test10PicoDeMetalSeUsaContraCadaMaterialYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
         Madera madera= new Madera();
         Piedra piedra= new Piedra();
         Metal metal= new Metal();
 
-        Pico modeloDePico= new Pico();
-        Pico picoConstruido = (Pico) constructor.construir(metal,modeloDePico);
+        Pico picoConstruido =  constructor.construirPico(metal);
 
         picoConstruido.usarContra(madera);
         assertEquals(400,picoConstruido.durabilidad());
@@ -161,29 +159,32 @@ public class TestsTP2 {
         assertEquals(400,picoConstruido.durabilidad());
         picoConstruido.usarContra(metal);
         assertEquals(400,picoConstruido.durabilidad());
-        picoConstruido.usarContra(metal);
-        picoConstruido.usarContra(metal);
-        picoConstruido.usarContra(metal);
-        picoConstruido.usarContra(metal);
-        picoConstruido.usarContra(metal);
-        picoConstruido.usarContra(metal);
-        picoConstruido.usarContra(metal);
+        /*cuenta un solo uso , por la piedra*/
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
+        picoConstruido.usarContra(piedra);
         assertEquals(0,picoConstruido.durabilidad());
     }
     @Test
     public void test10PicoFinoSeUsaContraDiamanteYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
         Diamante diamante= new Diamante();
+        Piedra piedra = new Piedra();
         Metal metal= new Metal();
 
-        PicoFino modeloDePicoFino= new PicoFino();
-        PicoFino picoFinoConstruido = (PicoFino) constructor.construir(metal,modeloDePicoFino);
+        Pico picoFinoConstruido = constructor.construirPico(metal,piedra);
 
-        picoFinoConstruido.usarContra(diamante);
+        picoFinoConstruido.usarContra(diamante,true);
         assertEquals(900,picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(diamante);
+        picoFinoConstruido.usarContra(diamante,true);
         assertEquals(810,picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(diamante);
+        picoFinoConstruido.usarContra(diamante,true);
         assertEquals(729,picoFinoConstruido.durabilidad());
     }
     @Test
@@ -191,9 +192,9 @@ public class TestsTP2 {
         Constructor constructor= new Constructor();
         Madera madera= new Madera();
         Metal metal= new Metal();
+        Piedra piedra = new Piedra();
 
-        PicoFino modeloDePicoFino= new PicoFino();
-        PicoFino picoFinoConstruido = (PicoFino) constructor.construir(metal,modeloDePicoFino);
+        Pico picoFinoConstruido = constructor.construirPico(metal,piedra);
 
         picoFinoConstruido.usarContra(madera);
         assertEquals(1000,picoFinoConstruido.durabilidad());
@@ -208,23 +209,22 @@ public class TestsTP2 {
         Piedra piedra= new Piedra();
         Metal metal= new Metal();
 
-        PicoFino modeloDePicoFino= new PicoFino();
-        PicoFino picoFinoConstruido = (PicoFino) constructor.construir(metal,modeloDePicoFino);
+        Pico picoFinoConstruido =  constructor.construirPico(metal,piedra);
 
-        picoFinoConstruido.usarContra(piedra);
+        picoFinoConstruido.usarContra(piedra,true);
         assertEquals(1000,picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(piedra);
+        picoFinoConstruido.usarContra(piedra,true);
         assertEquals(1000,picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(piedra);
+        picoFinoConstruido.usarContra(piedra,true);
         assertEquals(1000,picoFinoConstruido.durabilidad());
     }
     @Test
     public void test11PicoFinoSeUsaContraMetalYNoReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
         Metal metal= new Metal();
+        Piedra piedra= new Piedra();
 
-        PicoFino modeloDePicoFino= new PicoFino();
-        PicoFino picoFinoConstruido = (PicoFino) constructor.construir(metal,modeloDePicoFino);
+        Pico picoFinoConstruido = constructor.construirPico(metal,piedra);
 
         picoFinoConstruido.usarContra(metal);
         assertEquals(1000,picoFinoConstruido.durabilidad());
