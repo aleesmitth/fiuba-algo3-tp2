@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TestDeHacha {
-
     @Test
     public void test01ArmarHachaDeMaderaConFuerzaYDurabilidadCorrespondientes(){
         Constructor constructor = new Constructor();
@@ -19,8 +18,6 @@ public class TestDeHacha {
         assertEquals(2,hachaDeMadera.fuerza());
         assertEquals(100, hachaDeMadera.durabilidad());
     }
-
-
     @Test
     public void test02ArmarHachaDeMetalConSuDurabilidadYFuerzaCorrespondiente() {
         Constructor constructor = new Constructor();
@@ -31,7 +28,6 @@ public class TestDeHacha {
         assertEquals(10, hachaDeMetal.fuerza());
         assertEquals(400, hachaDeMetal.durabilidad());
     }
-
     @Test
     public void test03HachaDeMaderaSeUsaContraMaderaYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -43,8 +39,6 @@ public class TestDeHacha {
         hachaDeMadera.usarContra(madera);
         assertEquals(98,hachaDeMadera.durabilidad());
     }
-
-
     @Test
     public void test04HachaDeMaderaSeUsaContraPiedraYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -57,8 +51,6 @@ public class TestDeHacha {
         hachaDeMadera.usarContra(piedra);
         assertEquals(98,hachaDeMadera.durabilidad());
     }
-
-
     @Test
     public void test05HachaDeMaderaSeUsaContraMetalYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -71,8 +63,6 @@ public class TestDeHacha {
         hachaDeMadera.usarContra(metal);
         assertEquals(98,hachaDeMadera.durabilidad());
     }
-
-
     @Test
     public void test06HachaDePiedraSeUsaContraMaderaYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -87,9 +77,6 @@ public class TestDeHacha {
         hachaDePiedra.usarContra(piedra);
         assertEquals(190,hachaDePiedra.durabilidad());
     }
-
-
-
     @Test
     public void test07HachaDePiedraSeUsaContraPiedraYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -101,8 +88,6 @@ public class TestDeHacha {
         hachaDePiedra.usarContra(piedra);
         assertEquals(195,hachaDePiedra.durabilidad());
     }
-
-
     @Test
     public void test08HachaDePiedraSeUsaContraMetalYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -115,8 +100,6 @@ public class TestDeHacha {
         hachaDePiedra.usarContra(metal);
         assertEquals(195,hachaDePiedra.durabilidad());
     }
-
-
     @Test
     public void test09HachaDeMetalSeUsaContraMaderaYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -129,9 +112,6 @@ public class TestDeHacha {
         hachaDeMetal.usarContra(madera);
         assertEquals(395,hachaDeMetal.durabilidad());
     }
-
-
-
     @Test
     public void test10HachaDeMetalSeUsaContraPiedraYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -145,8 +125,6 @@ public class TestDeHacha {
         hachaDeMetal.usarContra(piedra);
         assertEquals(395,hachaDeMetal.durabilidad());
     }
-
-
     @Test
     public void test11HachaDeMetalSeUsaContraMetalYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -158,9 +136,6 @@ public class TestDeHacha {
         hachaDeMetal.usarContra(metal);
         assertEquals(395,hachaDeMetal.durabilidad());
     }
-
-
-
     @Test
     public void test12HachaDeMaderaSeUsaContraCadaMaterialConsecutivoYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -178,9 +153,6 @@ public class TestDeHacha {
         hachaDeMadera.usarContra(metal);
         assertEquals(94,hachaDeMadera.durabilidad());
     }
-
-
-
     @Test
     public void test13HachaDePiedraSeUsaContraCadaMaterialConsecutivoYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();
@@ -198,10 +170,6 @@ public class TestDeHacha {
         hachaDePiedra.usarContra(metal);
         assertEquals(185,hachaDePiedra.durabilidad());
     }
-
-
-
-
     @Test
     public void test14HachaDeMetalSeUsaContraCadaMaterialConsecutivoYReduceSuDurabilidad(){
         Constructor constructor= new Constructor();

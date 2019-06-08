@@ -8,6 +8,7 @@ public class Pico extends Herramienta{
 
     public Pico(){}
 
+    @Override
     protected void desgastar() {
         atributos.durabilidad-=atributos.desgaste;
     }
@@ -17,7 +18,6 @@ public class Pico extends Herramienta{
         this.atributos = new AtributosHerramienta(fuerzaRecibida, durabilidadInicial,madera,this);
 
     }
-
 
     public Pico(int fuerzaRecibida, int durabilidadInicial, Piedra piedra){
 
@@ -31,30 +31,31 @@ public class Pico extends Herramienta{
 
     }
 
+    @Override
     public Pico armar(Madera madera){
 
         return new Pico(2,100,madera);
     }
 
-
+    @Override
     public Pico armar(Piedra piedra){
 
         return new Pico(4,200,piedra);
     }
 
-
+    @Override
     public Pico armar(Metal metal){
 
         return new Pico(12,400,metal);
     }
 
-
+    @Override
     public void usarContra(Material material){
         try {
             if(this.atributos.durabilidad()<= 0 && this.usos<=0){
-                throw new HerramientaRotaException("Se intento usar una herramienta rota-it's not allowed");
+                throw new UsarHerramientaRotaException("EXCEPCION LANZADA:Se intento usar una herramienta rota-it's not allowed");
             }
-        }catch(HerramientaRotaException excepcion){
+        }catch(UsarHerramientaRotaException excepcion){
             System.out.println(excepcion.getMessage());
         }
         this.usos++;

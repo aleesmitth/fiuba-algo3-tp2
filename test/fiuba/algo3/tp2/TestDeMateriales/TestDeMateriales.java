@@ -41,7 +41,7 @@ public class TestDeMateriales {
 
     }
     @Test
-    public void test02MetalSeGolpeaConPicoDeMaderaYNoPierdeDurabilidad(){
+    public void test03MetalSeGolpeaConPicoDeMaderaYNoPierdeDurabilidad(){
         Constructor constructor = new Constructor();
         Madera madera= new Madera();
         Metal metal= new Metal();

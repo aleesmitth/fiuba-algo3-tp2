@@ -33,7 +33,10 @@ public class AtributosHerramienta {
         this.desgaste = (int)(this.durabilidad*0.1);
     }
 
-    //Constructor aplica polimorfismo,creacion de Herramienta.
+    /**
+     * Constructor aplica polimorfismo,creacion de Herramienta.
+     */
+
 
     public AtributosHerramienta(int fuerzaRecibida, int durabilidadInicial, Madera madera, Hacha hacha){
         this.fuerza=fuerzaRecibida;

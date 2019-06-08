@@ -6,10 +6,11 @@ public class Diamante extends Material{
     {
         this.durabilidadMaterial = 100;
     }
+
     @Override
     public Herramienta armar(Herramienta herramienta) {
         try {
-            throw new CrearHerramientaDeDiamanteException("Se intento crear una herramienta de diamante-it's not allowed"); // aca tiene que tirar excepcion, no estoy seguro de q este tirada correctamente
+            throw new CrearHerramientaDeDiamanteException("EXCEPCION LANZADA:Se intento crear una herramienta de diamante-it's not allowed");
         }catch(CrearHerramientaDeDiamanteException excepcion){
             System.out.println(excepcion.getMessage());
         }

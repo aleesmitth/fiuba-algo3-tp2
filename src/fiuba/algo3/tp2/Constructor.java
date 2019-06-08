@@ -4,9 +4,9 @@ public class Constructor {
 
     public Herramienta construir(Material material, Herramienta herramienta) {
 
-        Herramienta HerramientaArmada = material.armar(herramienta);
+        Herramienta herramientaArmada = material.armar(herramienta);
 
-        return HerramientaArmada;
+        return herramientaArmada;
 
     }
 }
