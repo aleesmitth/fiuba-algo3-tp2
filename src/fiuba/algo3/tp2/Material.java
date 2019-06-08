@@ -1,23 +1,25 @@
 package fiuba.algo3.tp2;
 
-public interface Material {
+public abstract class Material {
 
-    public AtributosHerramienta creable(Hacha hacha);
+    int durabilidad;
 
-    public AtributosHerramienta creable(Pico pico);
+    public AtributosHerramienta creable(Hacha hacha){ return null; }
 
-    public AtributosHerramienta creable(Pico pico,Material material);
+    public AtributosHerramienta creable(Pico pico){ return null; }
 
-    public void golpeadoPor(Hacha hacha,Material material);
+    public AtributosHerramienta creable(Pico pico,Material material){ return null; }
 
-    public void golpeadoPor(Pico pico,Material material);
+    public void golpeadoPor(Hacha hacha,Material material){}
 
-    public void golpeadoPor(Pico pico,Material material,Material materialSecundario);
+    public void golpeadoPor(Pico pico,Material material){}
 
-    public boolean hechoDePiedra();
+    public void golpeadoPor(Pico pico,Material material,Material materialSecundario){}
 
-    public boolean hechoDeMetal();
+    public boolean hechoDePiedra(){ return false; }
 
-    public boolean hechoDeMadera();
+    public boolean hechoDeMetal(){ return false; }
+
+    public boolean hechoDeMadera(){ return false; }
 
 }
