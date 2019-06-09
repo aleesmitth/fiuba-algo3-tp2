@@ -2,14 +2,11 @@ package fiuba.algo3.tp2.Materiales;
 
 import fiuba.algo3.tp2.Herramienta.*;
 
-public class Piedra implements Material {
-
-    int durabilidad;
+public class Piedra extends Material {
 
     public Piedra() {
         this.durabilidad =30;
     }
-
 
     @Override
     public AtributosHerramienta creable(Hacha hacha) {
@@ -30,24 +27,12 @@ public class Piedra implements Material {
     }
 
     @Override
-    public void golpeadoPor(Hacha hacha, Material material) {}
-
-    @Override
     public void golpeadoPor(Pico pico, Material material) {
         this.durabilidad -= pico.fuerza();
         pico.usarLaHerramienta();
     }
 
     @Override
-    public void golpeadoPor(Pico pico, Material material, Material materialSecundario) { }
-
-    @Override
     public boolean hechoDePiedra(){return true;}
-
-    @Override
-    public boolean hechoDeMetal(){return false;}
-
-    @Override
-    public boolean hechoDeMadera(){return false;}
 
 }
