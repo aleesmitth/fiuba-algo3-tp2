@@ -1,4 +1,8 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Mapa;
+
+import fiuba.algo3.tp2.Herramienta.Hacha;
+import fiuba.algo3.tp2.Herramienta.Pico;
+import fiuba.algo3.tp2.Materiales.Material;
 
 public class Constructor {
 

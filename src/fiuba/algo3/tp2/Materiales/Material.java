@@ -1,4 +1,8 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Materiales;
+
+import fiuba.algo3.tp2.Herramienta.AtributosHerramienta;
+import fiuba.algo3.tp2.Herramienta.Hacha;
+import fiuba.algo3.tp2.Herramienta.Pico;
 
 public interface Material {
 

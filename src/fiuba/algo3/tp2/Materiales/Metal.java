@@ -1,4 +1,6 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Materiales;
+
+import fiuba.algo3.tp2.Herramienta.*;
 
 public class Metal implements Material {
 

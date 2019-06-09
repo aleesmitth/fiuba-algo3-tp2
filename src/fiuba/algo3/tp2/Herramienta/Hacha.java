@@ -1,4 +1,6 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Herramienta;
+
+import fiuba.algo3.tp2.Materiales.Material;
 
 public class Hacha extends Herramienta{
 

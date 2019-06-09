@@ -1,5 +1,12 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.Herramienta.Hacha;
+import fiuba.algo3.tp2.Herramienta.Pico;
+import fiuba.algo3.tp2.Mapa.Constructor;
+import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.Materiales.*;
+import fiuba.algo3.tp2.Mapa.MovilidadJugador.Derecha;
+import fiuba.algo3.tp2.Mapa.MovilidadJugador.Movimiento;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -232,6 +239,25 @@ public class TestsTP2 {
         assertEquals(1000,picoFinoConstruido.durabilidad());
         picoFinoConstruido.usarContra(metal);
         assertEquals(1000,picoFinoConstruido.durabilidad());
+    }
+
+    @Test
+    public void test12NoPuedoColocarCosasEnLugaresOcupados(){
+        Material madera = new Madera();
+        boolean debeSerFalso = false;
+        Tablero tablero = new Tablero(4,3);
+        assertEquals(debeSerFalso,tablero.puedoColocar(4,3));
+    }
+
+    @Test
+    public void test13PuedoMoverUsuarioASuDerecha(){
+        Tablero tableroDeJuego = new Tablero(4,4);
+        Movimiento movimiento = new Derecha();
+        tableroDeJuego.moverJugador(movimiento);
+
+        assertEquals(false,tableroDeJuego.puedoColocar(5,4));
+        assertEquals(true,tableroDeJuego.puedoColocar(4,4));
+
     }
 
 }
