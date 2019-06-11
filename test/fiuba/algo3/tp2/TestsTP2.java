@@ -2,6 +2,7 @@ package fiuba.algo3.tp2;
 
 import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Herramienta.Pico;
+import fiuba.algo3.tp2.Jugador.Jugador;
 import fiuba.algo3.tp2.Mapa.Constructor;
 import fiuba.algo3.tp2.Mapa.Tablero;
 import fiuba.algo3.tp2.Materiales.*;
@@ -260,4 +261,12 @@ public class TestsTP2 {
 
     }
 
+    @Test
+    public void test14ElJugadorSeInicializaCorrectamenteConHachaDeMadera(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramientaInventario();
+        jugador.usarHerramientaActual(new Madera());
+
+        assertEquals(98,jugador.obtenerHerramientaActual().durabilidad());
+    }
 }
