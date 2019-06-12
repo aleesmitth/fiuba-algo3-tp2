@@ -1,10 +1,20 @@
-package fiuba.algo3.tp2.Materiales;
+package fiuba.algo3.tp2;
 
 import fiuba.algo3.tp2.Herramienta.Hacha;
+import fiuba.algo3.tp2.Herramienta.Herramienta;
 import fiuba.algo3.tp2.Herramienta.Pico;
-import org.junit.Test;
+import fiuba.algo3.tp2.Jugador.Jugador;
+import fiuba.algo3.tp2.Mapa.Constructor;
+import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.Materiales.*;
+import fiuba.algo3.tp2.Mapa.MovilidadJugador.Derecha;
+import fiuba.algo3.tp2.Mapa.MovilidadJugador.Movimiento;
 
-import static junit.framework.TestCase.assertEquals;
+//import org.junit.Test;
+//import static junit.framework.TestCase.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestPiedra {
 
@@ -24,7 +34,7 @@ public class TestPiedra {
         Material metal = new Metal();
         Material piedra = new Piedra();
         Hacha hacha = new Hacha(metal);
-        hacha.usarContra(piedra);
+        hacha.usarContra(metal);
 
         assertEquals(30,piedra.durabilidad());
 
@@ -40,39 +50,4 @@ public class TestPiedra {
         assertEquals(30,piedra.durabilidad());
 
     }
-
-
-    @Test
-    public void test04PiedraGolpeablePorPicoDeMadera(){
-        Material madera = new Madera();
-        Material piedra = new Piedra();
-        Pico pico = new Pico(madera);
-        pico.usarContra(piedra);
-
-        assertEquals(28,piedra.durabilidad());
-
-    }
-
-    @Test
-    public void test05PiedraGolpeablePorPicoDeMetal(){
-        Material metal = new Metal();
-        Material piedra = new Piedra();
-        Pico pico = new Pico(metal);
-        pico.usarContra(piedra);
-
-        assertEquals(18,piedra.durabilidad());
-
-    }
-
-    @Test
-    public void test06PiedraGolpeablePorPicoDePiedra(){
-        Material madera = new Madera();
-        Material piedra = new Piedra();
-        Pico pico = new Pico(piedra);
-        pico.usarContra(piedra);
-
-        assertEquals(26,piedra.durabilidad());
-
-    }
-
 }
