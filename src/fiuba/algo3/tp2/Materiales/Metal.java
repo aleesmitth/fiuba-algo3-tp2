@@ -34,6 +34,13 @@ public class Metal extends Material {
             pico.usarLaHerramienta();
         }
     }
+
+    @Override
+    public void golpeadoPor(Hacha hacha, Material material) {
+        this.durabilidad -= hacha.fuerza();
+        hacha.usarLaHerramienta();
+    }
+
     @Override
     public boolean hechoDeMetal(){ return true; }
 

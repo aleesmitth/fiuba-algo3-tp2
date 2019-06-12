@@ -20,6 +20,8 @@ public abstract class Material {
 
     public void golpeadoPor(Pico pico,Material material,Material materialSecundario){}
 
+    public int durabilidad(){return this.durabilidad;}
+
     public boolean hechoDePiedra(){ return false; }
 
     public boolean hechoDeMetal(){ return false; }

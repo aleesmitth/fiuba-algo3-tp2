@@ -19,20 +19,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * pero no esta implementado el sistema de destruccion.
  */
 
-public class TestsTP2 {
+public class TestPico {
+
 
     @Test
-    public void test01ArmarHachaDeMaderaConFuerzaYDurabilidadCorrespondientes() {
-        Constructor constructor = new Constructor();
-        Material madera = new Madera();
-        Hacha hachaConstruida = constructor.construirHacha(madera);
-
-        assertEquals(2, hachaConstruida.fuerza());
-        assertEquals(100, hachaConstruida.durabilidad());
-    }
-
-    @Test
-    public void test02ArmarPicoDeMaderaConFuerzaYDurabilidadCorrespondientes() {
+    public void test01ArmarPicoDeMaderaConFuerzaYDurabilidadCorrespondientes() {
         Constructor constructor = new Constructor();
         Material madera = new Madera();
         Pico picoConstruido = constructor.construirPico(madera);
@@ -42,17 +33,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test03ArmarHachaDeMetalConSuDurabilidadYFuerzaCorrespondiente() {
-        Constructor constructor = new Constructor();
-        Material metal = new Metal();
-        Hacha hachaConstruida = constructor.construirHacha(metal);
-
-        assertEquals(10, hachaConstruida.fuerza());
-        assertEquals(400, hachaConstruida.durabilidad());
-    }
-
-    @Test
-    public void test04ArmarPicoDeMetalConFuerzaYDurabilidadCorrespondientes() {
+    public void test02ArmarPicoDeMetalConFuerzaYDurabilidadCorrespondientes() {
         Constructor constructor = new Constructor();
         Material metal = new Metal();
         Pico picoConstruido = constructor.construirPico(metal);
@@ -62,7 +43,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test05ArmarPicoFinoConFuerzaYDurabilidadCorrespondientes() {
+    public void test03ArmarPicoFinoConFuerzaYDurabilidadCorrespondientes() {
         Constructor constructor = new Constructor();
         Material metal = new Metal();
         Material piedra = new Piedra();
@@ -73,58 +54,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test06HachaDeMaderaSeUsaContraCadaMaterialYReduceSuDurabilidad() {
-        Constructor constructor = new Constructor();
-        Material madera = new Madera();
-        Material piedra = new Piedra();
-        Material metal = new Metal();
-
-        Hacha hachaConstruida = constructor.construirHacha(madera);
-
-        hachaConstruida.usarContra(madera);
-        assertEquals(98, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(piedra);
-        assertEquals(98, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(metal);
-        assertEquals(98, hachaConstruida.durabilidad());
-    }
-
-    @Test
-    public void test07HachaDePiedraSeUsaContraCadaMaterialYReduceSuDurabilidad() {
-        Constructor constructor = new Constructor();
-        Madera madera = new Madera();
-        Piedra piedra = new Piedra();
-        Metal metal = new Metal();
-
-        Hacha hachaConstruida = constructor.construirHacha(piedra);
-
-        hachaConstruida.usarContra(madera);
-        assertEquals(195, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(piedra);
-        assertEquals(195, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(metal);
-        assertEquals(195, hachaConstruida.durabilidad());
-    }
-
-    @Test
-    public void test08HachaDeMetalSeUsaContraCadaMaterialYReduceSuDurabilidad() {
-        Constructor constructor = new Constructor();
-        Madera madera = new Madera();
-        Piedra piedra = new Piedra();
-        Metal metal = new Metal();
-
-        Hacha hachaConstruida = constructor.construirHacha(metal);
-
-        hachaConstruida.usarContra(madera);
-        assertEquals(395, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(piedra);
-        assertEquals(395, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(metal);
-        assertEquals(395, hachaConstruida.durabilidad());
-    }
-
-    @Test
-    public void test09PicoDeMaderaSeUsaContraCadaMaterialYReduceSuDurabilidad() {
+    public void test04PicoDeMaderaSeUsaContraCadaMaterialYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
@@ -141,7 +71,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test10PicoDePiedraSeUsaContraCadaMaterialYReduceSuDurabilidad() {
+    public void test05PicoDePiedraSeUsaContraCadaMaterialYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
@@ -164,7 +94,7 @@ public class TestsTP2 {
 
     @Test
 
-    public void test10PicoDeMetalSeUsaContraCadaMaterialYReduceSuDurabilidad() {
+    public void test06PicoDeMetalSeUsaContraCadaMaterialYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
@@ -192,7 +122,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test10PicoFinoSeUsaContraDiamanteYReduceSuDurabilidad() {
+    public void test07PicoFinoSeUsaContraDiamanteYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Diamante diamante = new Diamante();
         Piedra piedra = new Piedra();
@@ -209,7 +139,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test11PicoFinoSeUsaContraMaderaYNoReduceSuDurabilidad() {
+    public void test08PicoFinoSeUsaContraMaderaYNoReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Metal metal = new Metal();
@@ -226,7 +156,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test11PicoFinoSeUsaContraPiedraYNoReduceSuDurabilidad() {
+    public void test09PicoFinoSeUsaContraPiedraYNoReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
@@ -242,7 +172,7 @@ public class TestsTP2 {
     }
 
     @Test
-    public void test11PicoFinoSeUsaContraMetalYNoReduceSuDurabilidad() {
+    public void test10PicoFinoSeUsaContraMetalYNoReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Metal metal = new Metal();
         Piedra piedra = new Piedra();
@@ -255,18 +185,5 @@ public class TestsTP2 {
         assertEquals(1000, picoFinoConstruido.durabilidad());
         picoFinoConstruido.usarContra(metal);
         assertEquals(1000, picoFinoConstruido.durabilidad());
-    }
-
-    @Test
-    public void test12NoPuedoColocarCosasEnLugaresOcupados() {
-        Material madera = new Madera();
-        boolean debeSerFalso = false;
-        Tablero tablero = new Tablero(4, 3);
-        assertEquals(debeSerFalso, tablero.puedoColocar(4, 3));
-    }
-
-    @Test
-    public void test13PuedoMoverUsuarioASuDerecha() {
-        Tablero tableroDeJuego = new Tablero(4, 4);
     }
 }
