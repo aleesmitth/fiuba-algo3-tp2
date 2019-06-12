@@ -36,12 +36,6 @@ public class Metal extends Material {
     }
 
     @Override
-    public void golpeadoPor(Hacha hacha, Material material) {
-        this.durabilidad -= hacha.fuerza();
-        hacha.usarLaHerramienta();
-    }
-
-    @Override
     public boolean hechoDeMetal(){ return true; }
 
 
