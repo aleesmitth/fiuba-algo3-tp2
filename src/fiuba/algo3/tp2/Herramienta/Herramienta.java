@@ -6,7 +6,6 @@ public abstract class Herramienta {
 
     protected AtributosHerramienta atributos;
 
-
     public int fuerza(){ return this.atributos.fuerza();}
 
     public int durabilidad(){
