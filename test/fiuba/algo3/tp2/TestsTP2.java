@@ -4,7 +4,7 @@ import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Herramienta.Pico;
 import fiuba.algo3.tp2.Mapa.Constructor;
 import fiuba.algo3.tp2.Mapa.Tablero;
-import fiuba.algo3.tp2.Materiales.*;
+import fiuba.algo3.tp2.Entidad.Materiales.*;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -258,13 +258,13 @@ public class TestsTP2 {
     public void test12NoPuedoColocarCosasEnLugaresOcupados() {
         Material madera = new Madera();
         boolean debeSerFalso = false;
-        Tablero tablero = new Tablero(4, 3);
-        assertEquals(debeSerFalso, tablero.puedoColocar(4, 3));
+        Tablero tablero = new Tablero(9, 9);
+        assertEquals(debeSerFalso, tablero.puedoColocar(9, 9));
     }
 
     @Test
     public void test13PuedoMoverUsuarioASuDerecha() {
-        Tablero tableroDeJuego = new Tablero(4, 4);
+        Tablero tableroDeJuego = new Tablero(9, 9);
     }
 
 

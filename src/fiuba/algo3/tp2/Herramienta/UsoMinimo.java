@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.Herramienta;
 
-import fiuba.algo3.tp2.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class UsoMinimo extends AtributosHerramienta {
 

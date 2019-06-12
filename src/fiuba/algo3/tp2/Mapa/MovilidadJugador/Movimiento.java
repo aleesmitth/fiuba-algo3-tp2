@@ -9,5 +9,5 @@ public interface Movimiento {
 
     public void obtenerEntorno(Tablero tablero);
 
-
+    public void nuevaPosicionValida(int posicionNuevaFila,int posicionNuevaColumna);
     }

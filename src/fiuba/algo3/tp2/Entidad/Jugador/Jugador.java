@@ -1,10 +1,10 @@
-package fiuba.algo3.tp2.Jugador;
+package fiuba.algo3.tp2.Entidad.Jugador;
 
 import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Herramienta.Herramienta;
 import fiuba.algo3.tp2.Mapa.Constructor;
-import fiuba.algo3.tp2.Materiales.Madera;
-import fiuba.algo3.tp2.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.Materiales.Madera;
+import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class Jugador {
     Constructor constructor;

@@ -1,7 +1,5 @@
-package fiuba.algo3.tp2.Materiales;
+package fiuba.algo3.tp2.Entidad.Materiales;
 
-import fiuba.algo3.tp2.Herramienta.AtributosHerramienta;
-import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Herramienta.Pico;
 
 public class Diamante extends Material{

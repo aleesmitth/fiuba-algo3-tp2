@@ -2,14 +2,14 @@ package fiuba.algo3.tp2.Herramientas;
 
 import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Mapa.Constructor;
-import fiuba.algo3.tp2.Materiales.*;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import fiuba.algo3.tp2.Entidad.Materiales.Madera;
+import fiuba.algo3.tp2.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.Materiales.Metal;
+import fiuba.algo3.tp2.Entidad.Materiales.Piedra;
+import org.junit.Test;
 
-/**
- * faltaria hacer la implementacion de las destrucciones de las herramientas, solo esta considerada la del pico de metal
- * pero no esta implementado el sistema de destruccion.
- */
+import static junit.framework.TestCase.assertEquals;
+
 
 public class TestHacha {
 
