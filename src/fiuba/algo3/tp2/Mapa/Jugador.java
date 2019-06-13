@@ -1,8 +1,8 @@
 package fiuba.algo3.tp2.Mapa;
 
 import fiuba.algo3.tp2.Herramienta.Herramienta;
-import fiuba.algo3.tp2.Materiales.Madera;
-import fiuba.algo3.tp2.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.Materiales.Madera;
+import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class Jugador {
     private Constructor mesaDeCrafteo;

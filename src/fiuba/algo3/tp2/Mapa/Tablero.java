@@ -1,21 +1,23 @@
 package fiuba.algo3.tp2.Mapa;
 
 import fiuba.algo3.tp2.Mapa.MovilidadJugador.Movimiento;
-import fiuba.algo3.tp2.Materiales.Diamante;
-import fiuba.algo3.tp2.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.Materiales.Diamante;
+import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class Tablero {
 
     private Celda tableroDeElementos[][];
     private Celda celdaConJugador ;
+    private int cantidadDeFilas;
+    private int cantidadDeColumnas;
 
-    public Tablero(int posicionFilaInicialJugador,int posicionColumnaInicialJugador){
-        this.tableroDeElementos = new Celda[9][9];
-        for(int numeroDeFila = 0;numeroDeFila<9;numeroDeFila++){
-            for(int numeroDeColumna = 0;numeroDeColumna<9;numeroDeColumna++)
+    public Tablero(int limiteDeFila,int limiteDeColumnas){
+        this.tableroDeElementos = new Celda[limiteDeFila][limiteDeColumnas];
+        for(int numeroDeFila = 0;numeroDeFila<limiteDeFila;numeroDeFila++){
+            for(int numeroDeColumna = 0;numeroDeColumna<limiteDeColumnas;numeroDeColumna++)
                 this.tableroDeElementos[numeroDeFila][numeroDeColumna] = new Celda(numeroDeFila, numeroDeColumna);
         }
-        this.lugaresIniciales(posicionFilaInicialJugador-1,posicionColumnaInicialJugador-1);
+        this.lugaresIniciales(8,8);
     }
 
     public boolean puedoColocar(int fila,int columna){
@@ -32,10 +34,15 @@ public class Tablero {
         this.celdaConJugador = this.tableroDeElementos[jugadorEnColumna][jugadorEnColumna];
     }
 
-    private void posicionValida(int posicionSolicitada){
-        boolean esValido = (posicionSolicitada>=0);
-        if(!esValido){
-            //LanzarExcepcion
+    public void filaValida(int posicionSolicitada){
+        if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeFilas){
+            /*LanzoExcepcion*/
+        }
+    }
+
+    public void columnaValida(int posicionSolicitada){
+        if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeColumnas){
+            /*LanzoExcepcion*/
         }
     }
 

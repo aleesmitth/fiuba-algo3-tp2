@@ -1,13 +1,8 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Herramientas;
 
-import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Herramienta.Pico;
-import fiuba.algo3.tp2.Jugador.Jugador;
 import fiuba.algo3.tp2.Mapa.Constructor;
-import fiuba.algo3.tp2.Mapa.Tablero;
-import fiuba.algo3.tp2.Materiales.*;
-import fiuba.algo3.tp2.Mapa.MovilidadJugador.Derecha;
-import fiuba.algo3.tp2.Mapa.MovilidadJugador.Movimiento;
+import fiuba.algo3.tp2.Entidad.Materiales.*;
 
 //import org.junit.Test;
 //import static junit.framework.TestCase.assertEquals;

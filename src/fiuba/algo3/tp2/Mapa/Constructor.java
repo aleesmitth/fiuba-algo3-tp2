@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.Mapa;
 
 import fiuba.algo3.tp2.Herramienta.Hacha;
 import fiuba.algo3.tp2.Herramienta.Pico;
-import fiuba.algo3.tp2.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class Constructor {
 
