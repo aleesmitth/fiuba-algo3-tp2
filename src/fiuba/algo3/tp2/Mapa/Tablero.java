@@ -30,8 +30,8 @@ public class Tablero {
     void lugaresIniciales(int jugadorEnFila,int jugadorEnColumna){
         Material diamante = new Diamante();
         Jugador jugador = new Jugador();
-        this.tableroDeElementos[1][1] = new Celda(1,1,diamante);
-        this.tableroDeElementos[jugadorEnFila][jugadorEnColumna] = new Celda(jugadorEnFila,jugadorEnColumna,jugador);
+        this.tableroDeElementos[1][1].ocuparCelda(diamante);
+        this.tableroDeElementos[jugadorEnFila][jugadorEnColumna].ocuparCelda(jugador);
         this.celdaConJugador = this.tableroDeElementos[jugadorEnColumna][jugadorEnColumna];
     }
 

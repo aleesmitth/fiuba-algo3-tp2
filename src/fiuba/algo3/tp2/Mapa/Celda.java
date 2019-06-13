@@ -18,22 +18,6 @@ public class Celda {
         this.columnaDeCelda = numeroDeColumna;
     };
 
-    public Celda(int numeroDeFila,int numeroDeColumna,Jugador jugador){
-        this.jugador = jugador;
-        this.estaOcupado = true;
-        this.filaDeCelda = numeroDeFila;
-        this.columnaDeCelda = numeroDeColumna;
-        this.material = null;
-    };
-
-    public Celda(int numeroDeFila,int numeroDeColumna,Material material){
-        this.material = material;
-        this.estaOcupado = true;
-        this.filaDeCelda = numeroDeFila;
-        this.columnaDeCelda = numeroDeColumna;
-        this.jugador = null;
-    };
-
     public boolean celdaEstaOcupada(){
         return this.estaOcupado;
     }

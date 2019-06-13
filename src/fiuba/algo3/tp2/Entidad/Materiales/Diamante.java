@@ -48,4 +48,8 @@ public class Diamante extends Material{
         pico.usarLaHerramienta();
     }
 
+    @Override
+    public void golpeadoPor(Hacha hacha, Material material) {
+
+    }
 }

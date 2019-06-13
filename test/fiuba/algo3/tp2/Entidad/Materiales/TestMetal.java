@@ -73,4 +73,16 @@ public class TestMetal {
 
     }
 
+
+    @Test
+    public void test07MetalEsGolpeadoPorPicoFino(){
+        Material piedra = new Piedra();
+        Material metal = new Metal();
+        Pico pico = new Pico(piedra,metal);
+        pico.usarContra(metal,true);
+
+        assertEquals(50,metal.durabilidad());
+
+    }
+
 }

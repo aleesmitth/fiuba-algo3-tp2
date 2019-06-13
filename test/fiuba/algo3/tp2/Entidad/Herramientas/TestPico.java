@@ -6,10 +6,6 @@ import fiuba.algo3.tp2.Entidad.Materiales.*;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-/**
- * faltaria hacer la implementacion de las destrucciones de las herramientas, tiran excepciones y printean el mensaje
- * pero no esta implementado el sistema de destruccion.
- */
 
 public class TestPico {
 
