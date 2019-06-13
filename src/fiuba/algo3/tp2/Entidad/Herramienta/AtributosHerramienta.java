@@ -1,4 +1,5 @@
-package fiuba.algo3.tp2.Herramienta;
+package fiuba.algo3.tp2.Entidad.Herramienta;
+
 
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
@@ -14,7 +15,7 @@ public abstract class AtributosHerramienta {
 
     public int fuerza(){ return this.fuerza;}
 
-    public void usar(){ this.durabilidad-=this.desgaste;}
+    public abstract void usar();
 
     public int durabilidad(){ return this.durabilidad; }
 

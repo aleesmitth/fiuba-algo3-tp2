@@ -1,32 +1,26 @@
 package fiuba.algo3.tp2.Entidad.Jugador;
 
-import fiuba.algo3.tp2.Herramienta.Hacha;
-import fiuba.algo3.tp2.Herramienta.Herramienta;
-import fiuba.algo3.tp2.Mapa.Constructor;
+import fiuba.algo3.tp2.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.Entidad.MesaDeCrafteo.Constructor;
 
 public class Jugador {
-    Constructor constructor;
-    Herramienta herramientaDelJugador;
-    Herramienta herramientaActual;
+    private Constructor mesaDeCrafteo;
+    private Herramienta itemEquipado;
 
     public Jugador(){
-        this.constructor = new Constructor();
-        this.herramientaDelJugador = new Hacha(new Madera());
-        this.herramientaActual = null;
+        this.mesaDeCrafteo = new Constructor();
+        Material madera = new Madera();
+        this.itemEquipado = this.mesaDeCrafteo.construirHacha(madera);
     }
 
-    public Herramienta obtenerHerramientaActual(){
-        return this.herramientaActual;
+    public Herramienta obtenerHerramientaEquipada(){
+        return this.itemEquipado;
     }
 
-    public void equiparHerramientaInventario(){
-        this.herramientaActual = this.herramientaDelJugador;
-    }
-
-    public void usarHerramientaActual(Material material){
-        this.herramientaActual.usarContra(material);
+    public void usarHerramientaContra(Material material){
+        this.itemEquipado.usarContra(material);
     }
 
 }

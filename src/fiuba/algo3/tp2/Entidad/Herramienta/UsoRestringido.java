@@ -1,6 +1,7 @@
-package fiuba.algo3.tp2.Herramienta;
+package fiuba.algo3.tp2.Entidad.Herramienta;
 
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.Excepciones.UsarHerramientaRotaException;
 
 public class UsoRestringido extends AtributosHerramienta{
 
@@ -19,7 +20,16 @@ public class UsoRestringido extends AtributosHerramienta{
     }
 
     @Override
-    public void usar(){this.usos++;}
+    public void usar(){
+        try {
+            if(this.durabilidad()>0) {
+                this.usos++;
+            }
+            else throw new UsarHerramientaRotaException("Se intento usar una herramienta rota");
+        }catch(UsarHerramientaRotaException exception){
+            System.out.println(exception.getMessage());
+        }
+    }
 
     @Override
     public int durabilidad(){

@@ -1,17 +1,15 @@
 package fiuba.algo3.tp2.Entidad.Materiales;
 
-import fiuba.algo3.tp2.Herramienta.Hacha;
+import fiuba.algo3.tp2.Entidad.Herramienta.Hacha;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//import org.junit.Test;
-//import static junit.framework.TestCase.assertEquals;
 
 public class TestMadera {
 
     @Test
-    public void test01MaderaGolpeablePorHachaDeMadera(){
+    public void test01MaderaEsGolpeadaPorHachaDeMadera(){
         Material madera = new Madera();
         Hacha hacha = new Hacha(madera);
         hacha.usarContra(madera);
@@ -21,7 +19,7 @@ public class TestMadera {
     }
 
     @Test
-    public void test02MaderaGolpeablePorHachaDeMetal(){
+    public void test02MaderaEsGolpeadaPorHachaDeMetal(){
         Material metal = new Metal();
         Material madera = new Madera();
         Hacha hacha = new Hacha(metal);
@@ -32,7 +30,7 @@ public class TestMadera {
     }
 
     @Test
-    public void test03MaderaGolpeablePorHachaDePiedra(){
+    public void test03MaderaEsGolpeadaPorHachaDePiedra(){
         Material madera = new Madera();
         Material piedra = new Piedra();
         Hacha hacha = new Hacha(piedra);

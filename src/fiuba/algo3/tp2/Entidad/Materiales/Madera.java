@@ -1,9 +1,10 @@
 package fiuba.algo3.tp2.Entidad.Materiales;
 
-import fiuba.algo3.tp2.Herramienta.AtributosHerramienta;
-import fiuba.algo3.tp2.Herramienta.Hacha;
-import fiuba.algo3.tp2.Herramienta.Pico;
-import fiuba.algo3.tp2.Herramienta.UsoLineal;
+import fiuba.algo3.tp2.Excepciones.CrearPicoFinoDeMaderaException;
+import fiuba.algo3.tp2.Entidad.Herramienta.AtributosHerramienta;
+import fiuba.algo3.tp2.Entidad.Herramienta.Hacha;
+import fiuba.algo3.tp2.Entidad.Herramienta.Pico;
+import fiuba.algo3.tp2.Entidad.Herramienta.UsoLineal;
 
 public class Madera extends Material {
 
@@ -13,16 +14,26 @@ public class Madera extends Material {
 
 
     @Override
-    public AtributosHerramienta creable(Hacha hacha) {
+    public AtributosHerramienta crear(Hacha hacha) {
         AtributosHerramienta atributosHerramienta = new UsoLineal(2, 100, this, 1);
         return atributosHerramienta;
     }
 
     @Override
-    public AtributosHerramienta creable(Pico pico) {
+    public AtributosHerramienta crear(Pico pico) {
         AtributosHerramienta atributosHerramienta = new UsoLineal(2, 100, this, 1);
         return atributosHerramienta;
     }
+    @Override
+    public AtributosHerramienta crear(Pico pico, Material material) {
+        try {
+            throw new CrearPicoFinoDeMaderaException("Se intento crear un pico fino de madera");
+        }catch(CrearPicoFinoDeMaderaException exception){
+            System.out.println(exception.getMessage());
+        }
+        return null;
+    }
+
     @Override
     public boolean hechoDeMadera(){ return true; }
 

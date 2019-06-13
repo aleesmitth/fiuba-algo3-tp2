@@ -1,16 +1,14 @@
-package fiuba.algo3.tp2.Herramienta;
+package fiuba.algo3.tp2.Entidad.Herramienta;
 
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class Pico extends Herramienta{
 
-    public Pico(Material material) { this.atributos = material.creable(this); }
+    public Pico(Material material) { this.atributos = material.crear(this); }
 
-    public Pico(Material materialPrimario,Material materialSecundario) {
-        this.atributos = materialPrimario.creable(this,materialSecundario);
-    }
+    public Pico(Material materialPrimario,Material materialSecundario) { this.atributos = materialPrimario.crear(this, materialSecundario); }
 
-    public void usarLaHerramienta(){this.atributos.usar();}
+    public void usarLaHerramienta(){ this.atributos.usar(); }
 
     @Override
     public void usarContra(Material material) {

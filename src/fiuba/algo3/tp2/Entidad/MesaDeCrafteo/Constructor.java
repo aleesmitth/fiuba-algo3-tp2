@@ -1,7 +1,7 @@
-package fiuba.algo3.tp2.Mapa;
+package fiuba.algo3.tp2.Entidad.MesaDeCrafteo;
 
-import fiuba.algo3.tp2.Herramienta.Hacha;
-import fiuba.algo3.tp2.Herramienta.Pico;
+import fiuba.algo3.tp2.Entidad.Herramienta.Hacha;
+import fiuba.algo3.tp2.Entidad.Herramienta.Pico;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
 public class Constructor {
@@ -17,8 +17,8 @@ public class Constructor {
     }
 
     public Pico construirPico(Material materialPrimario,Material materialSecundario) {
-        Pico pico = new Pico(materialPrimario,materialSecundario);
-        return pico;
+            Pico pico = new Pico(materialPrimario, materialSecundario);
+            return pico;
     }
 
 
