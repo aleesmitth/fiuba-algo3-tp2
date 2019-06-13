@@ -1,15 +1,14 @@
 package fiuba.algo3.tp2.Entidad.Materiales;
 
-import fiuba.algo3.tp2.Herramienta.Hacha;
-import fiuba.algo3.tp2.Herramienta.Pico;
-import org.junit.Test;
-
-import static junit.framework.TestCase.assertEquals;
+import fiuba.algo3.tp2.Entidad.Herramienta.Hacha;
+import fiuba.algo3.tp2.Entidad.Herramienta.Pico;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestMetal {
 
     @Test
-    public void test01MetalGolpeablePorHachaDeMadera(){
+    public void test01MetalEsGolpeadoPorHachaDeMadera(){
         Material madera = new Madera();
         Material metal = new Metal();
         Hacha hacha = new Hacha(madera);
@@ -20,7 +19,7 @@ public class TestMetal {
     }
 
     @Test
-    public void test02MetalGolpeablePorHachaDeMetal(){
+    public void test02MetalEsGolpeadoPorHachaDeMetal(){
         Material metal = new Metal();
         Hacha hacha = new Hacha(metal);
         hacha.usarContra(metal);
@@ -30,7 +29,7 @@ public class TestMetal {
     }
 
     @Test
-    public void test03MetalGolpeablePorHachaDePiedra(){
+    public void test03MetalEsGolpeadoPorHachaDePiedra(){
         Material metal = new Metal();
         Material piedra = new Piedra();
         Hacha hacha = new Hacha(piedra);
@@ -42,7 +41,7 @@ public class TestMetal {
 
 
     @Test
-    public void test04MetalGolpeablePorPicoDeMadera(){
+    public void test04MetalEsGolpeadoPorPicoDeMadera(){
         Material madera = new Madera();
         Material metal = new Metal();
         Pico pico = new Pico(madera);
@@ -53,7 +52,7 @@ public class TestMetal {
     }
 
     @Test
-    public void test05MetalGolpeablePorPicoDeMetal(){
+    public void test05MetalEsGolpeadoPorPicoDeMetal(){
         Material metal = new Metal();
         Pico pico = new Pico(metal);
         pico.usarContra(metal);
@@ -63,7 +62,7 @@ public class TestMetal {
     }
 
     @Test
-    public void test06MetalGolpeablePorPicoDePiedra(){
+    public void test06MetalEsGolpeadoPorPicoDePiedra(){
         Material piedra = new Piedra();
         Material metal = new Metal();
         Pico pico = new Pico(piedra);

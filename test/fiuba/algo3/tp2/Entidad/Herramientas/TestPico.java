@@ -1,16 +1,13 @@
-package fiuba.algo3.tp2.Herramientas;
+package fiuba.algo3.tp2.Entidad.Herramientas;
 
-import fiuba.algo3.tp2.Herramienta.Pico;
-import fiuba.algo3.tp2.Mapa.Constructor;
+import fiuba.algo3.tp2.Entidad.Herramienta.Pico;
+import fiuba.algo3.tp2.Entidad.MesaDeCrafteo.Constructor;
 import fiuba.algo3.tp2.Entidad.Materiales.*;
-
-//import org.junit.Test;
-//import static junit.framework.TestCase.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
- * faltaria hacer la implementacion de las destrucciones de las herramientas, solo esta considerada la del pico de metal
+ * faltaria hacer la implementacion de las destrucciones de las herramientas, tiran excepciones y printean el mensaje
  * pero no esta implementado el sistema de destruccion.
  */
 
@@ -142,11 +139,11 @@ public class TestPico {
 
         Pico picoFinoConstruido = constructor.construirPico(metal, piedra);
 
-        picoFinoConstruido.usarContra(madera);
+        picoFinoConstruido.usarContra(madera,true);
         assertEquals(1000, picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(madera);
+        picoFinoConstruido.usarContra(madera,true);
         assertEquals(1000, picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(madera);
+        picoFinoConstruido.usarContra(madera,true);
         assertEquals(1000, picoFinoConstruido.durabilidad());
     }
 
@@ -174,11 +171,11 @@ public class TestPico {
 
         Pico picoFinoConstruido = constructor.construirPico(metal, piedra);
 
-        picoFinoConstruido.usarContra(metal);
+        picoFinoConstruido.usarContra(metal,true);
         assertEquals(1000, picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(metal);
+        picoFinoConstruido.usarContra(metal,true);
         assertEquals(1000, picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(metal);
+        picoFinoConstruido.usarContra(metal,true);
         assertEquals(1000, picoFinoConstruido.durabilidad());
     }
 }

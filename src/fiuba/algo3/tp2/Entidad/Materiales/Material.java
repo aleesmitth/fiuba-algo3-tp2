@@ -1,18 +1,18 @@
 package fiuba.algo3.tp2.Entidad.Materiales;
 
-import fiuba.algo3.tp2.Herramienta.AtributosHerramienta;
-import fiuba.algo3.tp2.Herramienta.Hacha;
-import fiuba.algo3.tp2.Herramienta.Pico;
+import fiuba.algo3.tp2.Entidad.Herramienta.AtributosHerramienta;
+import fiuba.algo3.tp2.Entidad.Herramienta.Hacha;
+import fiuba.algo3.tp2.Entidad.Herramienta.Pico;
 
 public abstract class Material {
 
     int durabilidad;
 
-    public AtributosHerramienta creable(Hacha hacha){ return null; }
+    public abstract AtributosHerramienta crear(Hacha hacha);
 
-    public AtributosHerramienta creable(Pico pico){ return null; }
+    public abstract AtributosHerramienta crear(Pico pico);
 
-    public AtributosHerramienta creable(Pico pico,Material material){ return null; }
+    public abstract AtributosHerramienta crear(Pico pico, Material material);
 
     public void golpeadoPor(Hacha hacha,Material material){}
 

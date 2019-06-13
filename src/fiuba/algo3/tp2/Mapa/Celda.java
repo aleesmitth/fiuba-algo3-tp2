@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.Mapa;
 
+import fiuba.algo3.tp2.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.Mapa.MovilidadJugador.Movimiento;
 

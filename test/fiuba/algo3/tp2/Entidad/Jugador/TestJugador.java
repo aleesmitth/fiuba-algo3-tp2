@@ -1,23 +1,34 @@
 package fiuba.algo3.tp2.Entidad.Jugador;
 
-import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
-import org.junit.Test;
-
-import static junit.framework.TestCase.assertEquals;
+import fiuba.algo3.tp2.Mapa.Tablero;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 
 public class TestJugador {
 
     @Test
-    public void test01NoPuedoColocarCosasEnLugaresOcupados() {
+    public void test01CorrectaInicialzacionDelJugador() {
+        Jugador jugador = new Jugador();
+        Herramienta hacha = jugador.obtenerHerramientaEquipada();
+
+        assertEquals(100,hacha.durabilidad());
+        assertEquals(2,hacha.fuerza());
+    }
+    @Test
+    public void test02JugadorUsaHachaContraMadera() {
+        Jugador jugador = new Jugador();
         Material madera = new Madera();
-        boolean debeSerFalso = false;
-        Tablero tablero = new Tablero(9, 9);
-        //Jugador iniciado en (9.9)
-        assertEquals(debeSerFalso, tablero.puedoColocar(9, 9));
+        jugador.usarHerramientaContra(madera);
+        Herramienta hacha = jugador.obtenerHerramientaEquipada();
+
+        assertEquals(98,hacha.durabilidad());
+        assertEquals(2,hacha.fuerza());
+        assertEquals(8,madera.durabilidad());
     }
 
 }
