@@ -5,6 +5,7 @@ import fiuba.algo3.tp2.Mapa.Tablero;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class TestJuego {
 
@@ -12,7 +13,7 @@ public class TestJuego {
     public void SeVerificaJugadorInicializadoEnElJuego(){
         AlgoCraft juego = new AlgoCraft();
 
-        assertEquals(false , juego.entidadIniciadaEnPosicion(9,9));
+        assertFalse(juego.entidadIniciadaEnPosicion(9,9));
 
     }
 
@@ -20,7 +21,7 @@ public class TestJuego {
     public void SeVerificaMaterialInicializadoEnElJuego(){
         AlgoCraft juego = new AlgoCraft();
 
-        assertEquals(false , juego.entidadIniciadaEnPosicion(2,2));
+        assertFalse(juego.entidadIniciadaEnPosicion(2,2));
 
     }
 }

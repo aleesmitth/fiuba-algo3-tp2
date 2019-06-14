@@ -45,8 +45,9 @@ public class TestJugador {
     public void test04JugadorSeMueveCorrectamenteDerechaVacia() {
         Tablero tablero = new Tablero(10,10);
         Movimiento derecha = new Derecha();
-        assertEquals(false,tablero.puedoColocar(9,9));
         tablero.moverJugador(derecha);
+
+        assertEquals(true,tablero.puedoColocar(9,9));
         assertEquals(false,tablero.puedoColocar(9,10));
 
     }
@@ -56,8 +57,9 @@ public class TestJugador {
     public void test05JugadorSeMueveCorrectamenteIzquierdaVacia() {
         Tablero tablero = new Tablero(9,9);
         Movimiento izquierda = new Izquierda();
-        assertEquals(false,tablero.puedoColocar(9,9));
         tablero.moverJugador(izquierda);
+
+        assertEquals(true,tablero.puedoColocar(9,9));
         assertEquals(false,tablero.puedoColocar(9,8));
 
     }
@@ -67,8 +69,9 @@ public class TestJugador {
     public void test06JugadorSeMueveCorrectamenteArribaVacio() {
         Tablero tablero = new Tablero(9,9);
         Movimiento arriba = new Arriba();
-        assertEquals(false,tablero.puedoColocar(9,9));
         tablero.moverJugador(arriba);
+
+        assertEquals(true,tablero.puedoColocar(9,9));
         assertEquals(false,tablero.puedoColocar(8,9));
 
     }
@@ -76,47 +79,6 @@ public class TestJugador {
 
     @Test
     public void test07JugadorSeMueveCorrectamenteAbajoVacio() {
-        Tablero tablero = new Tablero(10,9);
-        Movimiento abajo = new Abajo();
-        assertEquals(false,tablero.puedoColocar(9,9));
-        tablero.moverJugador(abajo);
-        assertEquals(false,tablero.puedoColocar(10,9));
-    }
-
-
-    @Test
-    public void test08JugadorNoSeMueveFueraDeRangoInferior() {
-        Tablero tablero = new Tablero(9,9);
-        Movimiento abajo = new Abajo();
-
-        assertEquals(false,tablero.puedoColocar(9,9));
-
-        tablero.moverJugador(abajo);
-
-        assertEquals(false,tablero.puedoColocar(9,9));
-    }
-
-    @Test
-    public void test09JugadorNoSeMueveFueraDeRangoSuperior() {
-        Tablero tablero = new Tablero(10,9);
-        Movimiento abajo = new Abajo();
-        tablero.moverJugador(abajo);
-
-        assertEquals(true,tablero.puedoColocar(9,9));
-        assertEquals(false,tablero.puedoColocar(10,9));
-    }
-
-    @Test
-    public void test10JugadorNoSeMueveFueraDeRangoDerecho() {
-        Tablero tablero = new Tablero(9,9);
-        Movimiento derecha = new Derecha();
-        assertEquals(false,tablero.puedoColocar(9,9));
-        tablero.moverJugador(derecha);
-        assertEquals(false,tablero.puedoColocar(9,9));
-    }
-
-    @Test
-    public void test11JugadorNoSeMueveFueraDeRangoIzquierdo() {
         Tablero tablero = new Tablero(10,9);
         Movimiento abajo = new Abajo();
         tablero.moverJugador(abajo);
