@@ -16,7 +16,7 @@ public class TestMapa {
          * Jugador iniciado en (9.9)
          */
 
-        Tablero tablero = new Tablero(9, 9);
+        Tablero tablero = Tablero.getTablero(9, 9);
 
         assertEquals(false, tablero.puedoColocar(9, 9));
     }
@@ -27,7 +27,7 @@ public class TestMapa {
          * Diamante iniciado en (2.2)
          */
 
-        Tablero tablero = new Tablero(9, 9);
+        Tablero tablero = Tablero.getTablero(9, 9);
 
         assertEquals(false, tablero.puedoColocar(2,2));
     }
@@ -37,7 +37,7 @@ public class TestMapa {
         /**
          * Diamante iniciado en (2.2)
          */
-        Tablero tablero = new Tablero(9, 9);
+        Tablero tablero = Tablero.getTablero(9, 9);
 
         assertEquals(true, tablero.puedoColocar(1, 1));
         assertEquals(false, tablero.puedoColocar(2, 2));

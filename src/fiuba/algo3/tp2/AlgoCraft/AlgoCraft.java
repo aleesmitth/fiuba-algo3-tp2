@@ -8,7 +8,7 @@ public class AlgoCraft {
 
 
 public AlgoCraft(){
-    this.tableroDelJuego = new Tablero(9,9);
+    this.tableroDelJuego = Tablero.getTablero(9,9);
 }
 
 public boolean entidadIniciadaEnPosicion(int posicionEnFila,int posicionEnColumna){
