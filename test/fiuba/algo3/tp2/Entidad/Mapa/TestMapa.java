@@ -7,7 +7,7 @@ import fiuba.algo3.tp2.Mapa.Celda;
 import fiuba.algo3.tp2.Mapa.Tablero;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestMapa {
     @Test
@@ -18,7 +18,7 @@ public class TestMapa {
 
         Tablero tablero = Tablero.getTablero(9, 9);
 
-        assertEquals(false, tablero.puedoColocar(9, 9));
+        assertFalse(tablero.puedoColocar(9, 9));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class TestMapa {
 
         Tablero tablero = Tablero.getTablero(9, 9);
 
-        assertEquals(false, tablero.puedoColocar(2,2));
+        assertFalse(tablero.puedoColocar(2,2));
     }
 
     @Test
@@ -39,9 +39,9 @@ public class TestMapa {
          */
         Tablero tablero = Tablero.getTablero(9, 9);
 
-        assertEquals(true, tablero.puedoColocar(1, 1));
-        assertEquals(false, tablero.puedoColocar(2, 2));
-        assertEquals(true, tablero.puedoColocar(3, 3));
+        assertTrue(tablero.puedoColocar(1, 1));
+        assertFalse(tablero.puedoColocar(2, 2));
+        assertTrue(tablero.puedoColocar(3, 3));
 
     }
 
@@ -53,7 +53,7 @@ public class TestMapa {
 
         celda.ocuparCelda(jugador);
 
-        assertEquals(true, celda.celdaEstaOcupada());
+        assertTrue(celda.celdaEstaOcupada());
 
     }
 
@@ -66,7 +66,7 @@ public class TestMapa {
 
         celda.ocuparCelda(madera);
 
-        assertEquals(true, celda.celdaEstaOcupada());
+        assertTrue(celda.celdaEstaOcupada());
 
     }
 }
