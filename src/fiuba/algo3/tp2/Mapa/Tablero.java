@@ -13,6 +13,8 @@ public class Tablero {
     private int cantidadDeColumnas;
 
     public Tablero(int limiteDeFila,int limiteDeColumnas){
+        this.cantidadDeColumnas = limiteDeColumnas - 1;
+        this.cantidadDeFilas = limiteDeFila - 1;
         this.tableroDeElementos = new Celda[limiteDeFila][limiteDeColumnas];
         for(int numeroDeFila = 0;numeroDeFila<limiteDeFila;numeroDeFila++){
             for(int numeroDeColumna = 0;numeroDeColumna<limiteDeColumnas;numeroDeColumna++)
@@ -35,16 +37,31 @@ public class Tablero {
         this.celdaConJugador = this.tableroDeElementos[jugadorEnColumna][jugadorEnColumna];
     }
 
-    public void filaValida(int posicionSolicitada){
-        if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeFilas){
-            /*LanzoExcepcion*/
+    public int filaValida(int posicionSolicitada){
+        int posicionEnRangoValido = posicionSolicitada;
+
+        if(posicionSolicitada < 0){
+            posicionEnRangoValido = 0;
         }
+        if((posicionSolicitada) > (this.cantidadDeFilas+1)){
+            posicionEnRangoValido = (this.cantidadDeFilas+1);
+
+        }
+
+        return posicionEnRangoValido;
     }
 
-    public void columnaValida(int posicionSolicitada){
-        if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeColumnas){
-            /*LanzoExcepcion*/
+    public int columnaValida(int posicionSolicitada){
+        int posicionEnRangoValido = posicionSolicitada;
+
+        if(posicionSolicitada < 0){
+            posicionEnRangoValido = 0;
         }
+        if((posicionSolicitada) > (this.cantidadDeColumnas+1)){
+            posicionEnRangoValido = (this.cantidadDeColumnas+1);
+        }
+
+        return posicionEnRangoValido;
     }
 
     public void moverJugador(Movimiento movimiento){

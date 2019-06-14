@@ -17,9 +17,10 @@ public class Izquierda implements Movimiento {
     public void movible(Celda celdaDeJugador) {
         int nuevaFila = celdaDeJugador.obtenerSiguienteFila(0);
         int nuevaColumna = celdaDeJugador.obtenerSiguienteColumna(-1);
-        //this.nuevaPosicionValida(nuevaFila,nuevaColumna);
+        nuevaFila = this.entornoMovimiento.filaValida(nuevaFila);
+        nuevaColumna = this.entornoMovimiento.columnaValida(nuevaColumna);
         if(this.entornoMovimiento.puedoColocar(nuevaFila,nuevaColumna)){
-            this.entornoMovimiento.ocuparCelda(nuevaFila,nuevaColumna,celdaDeJugador);
+            this.entornoMovimiento.ocuparCelda(nuevaFila-1,nuevaColumna-1,celdaDeJugador);
         }
     }
 
