@@ -11,8 +11,9 @@ public class Tablero {
     private Celda celdaConJugador ;
     private int cantidadDeFilas;
     private int cantidadDeColumnas;
+    private static Tablero tablero;
 
-    public Tablero(int limiteDeFila,int limiteDeColumnas){
+    private Tablero(int limiteDeFila,int limiteDeColumnas){
         this.tableroDeElementos = new Celda[limiteDeFila][limiteDeColumnas];
         for(int numeroDeFila = 0;numeroDeFila<limiteDeFila;numeroDeFila++){
             for(int numeroDeColumna = 0;numeroDeColumna<limiteDeColumnas;numeroDeColumna++)
@@ -55,5 +56,10 @@ public class Tablero {
     public void ocuparCelda(int posicionDeFila,int posicionDeColumna,Celda celdaQueEnvia){
         Celda nuevaCeldaDeJugador = this.tableroDeElementos[posicionDeFila][posicionDeColumna];
         celdaQueEnvia.enviarJugador(nuevaCeldaDeJugador);
+    }
+
+    public static Tablero getTablero(int limDeFilas,int limDeColumnas){
+        tablero = new Tablero(limDeFilas,limDeColumnas);
+        return tablero;
     }
 }

@@ -36,14 +36,14 @@ public class TestJugador {
 
     @Test
     public void test03JugadorSeIniciaCorrectamenteEnPosicionNueveXNueve() {
-    Tablero tablero = new Tablero(9,9);
+    Tablero tablero = Tablero.getTablero(9,9);
 
     assertEquals(false,tablero.puedoColocar(9,9));
     }
 
     @Test
     public void test04JugadorSeMueveCorrectamenteDerechaVacia() {
-        Tablero tablero = new Tablero(10,10);
+        Tablero tablero = Tablero.getTablero(10,10);
         Movimiento derecha = new Derecha();
         tablero.moverJugador(derecha);
 
@@ -55,7 +55,7 @@ public class TestJugador {
 
     @Test
     public void test05JugadorSeMueveCorrectamenteIzquierdaVacia() {
-        Tablero tablero = new Tablero(9,9);
+        Tablero tablero = Tablero.getTablero(9,9);
         Movimiento izquierda = new Izquierda();
         tablero.moverJugador(izquierda);
 
@@ -67,7 +67,7 @@ public class TestJugador {
 
     @Test
     public void test06JugadorSeMueveCorrectamenteArribaVacio() {
-        Tablero tablero = new Tablero(9,9);
+        Tablero tablero = Tablero.getTablero(9,9);
         Movimiento arriba = new Arriba();
         tablero.moverJugador(arriba);
 
@@ -79,7 +79,7 @@ public class TestJugador {
 
     @Test
     public void test07JugadorSeMueveCorrectamenteAbajoVacio() {
-        Tablero tablero = new Tablero(10,9);
+        Tablero tablero = Tablero.getTablero(10,9);
         Movimiento abajo = new Abajo();
         tablero.moverJugador(abajo);
 
