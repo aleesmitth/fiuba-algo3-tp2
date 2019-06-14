@@ -35,6 +35,7 @@ public class TestHacha {
         Material madera = new Madera();
         Material piedra = new Piedra();
         Material metal = new Metal();
+        Material diamante = new Diamante();
 
         Hacha hachaConstruida = constructor.construirHacha(madera);
 
@@ -43,6 +44,8 @@ public class TestHacha {
         hachaConstruida.usarContra(piedra);
         assertEquals(98, hachaConstruida.durabilidad());
         hachaConstruida.usarContra(metal);
+        assertEquals(98, hachaConstruida.durabilidad());
+        hachaConstruida.usarContra(diamante);
         assertEquals(98, hachaConstruida.durabilidad());
     }
 
@@ -100,6 +103,7 @@ public class TestHacha {
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Diamante diamante = new Diamante();
 
         Hacha hachaConstruida = constructor.construirHacha(piedra);
 
@@ -108,6 +112,8 @@ public class TestHacha {
         hachaConstruida.usarContra(piedra);
         assertEquals(195, hachaConstruida.durabilidad());
         hachaConstruida.usarContra(metal);
+        assertEquals(195, hachaConstruida.durabilidad());
+        hachaConstruida.usarContra(diamante);
         assertEquals(195, hachaConstruida.durabilidad());
     }
 
@@ -170,6 +176,7 @@ public class TestHacha {
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Diamante diamante = new Diamante();
 
         Hacha hachaConstruida = constructor.construirHacha(metal);
 
@@ -178,6 +185,8 @@ public class TestHacha {
         hachaConstruida.usarContra(piedra);
         assertEquals(395, hachaConstruida.durabilidad());
         hachaConstruida.usarContra(metal);
+        assertEquals(395, hachaConstruida.durabilidad());
+        hachaConstruida.usarContra(diamante);
         assertEquals(395, hachaConstruida.durabilidad());
     }
 
