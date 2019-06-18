@@ -11,9 +11,11 @@ public class Tablero {
     private Celda celdaConJugador ;
     private int cantidadDeFilas;
     private int cantidadDeColumnas;
-    private static Tablero tablero;
+    private static Tablero tablero=new Tablero(20,20);
 
     private Tablero(int limiteDeFila,int limiteDeColumnas){
+        this.cantidadDeFilas = limiteDeFila - 1;
+        this.cantidadDeColumnas = limiteDeColumnas - 1;
         this.tableroDeElementos = new Celda[limiteDeFila][limiteDeColumnas];
         for(int numeroDeFila = 0;numeroDeFila<limiteDeFila;numeroDeFila++){
             for(int numeroDeColumna = 0;numeroDeColumna<limiteDeColumnas;numeroDeColumna++)
@@ -32,20 +34,21 @@ public class Tablero {
         Material diamante = new Diamante();
         Jugador jugador = new Jugador();
         this.tableroDeElementos[1][1].ocuparCelda(diamante);
+        this.tableroDeElementos[7][7].ocuparCelda(diamante);
         this.tableroDeElementos[jugadorEnFila][jugadorEnColumna].ocuparCelda(jugador);
         this.celdaConJugador = this.tableroDeElementos[jugadorEnColumna][jugadorEnColumna];
     }
 
     public int filaValida(int posicionSolicitada){
-        if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeFilas){
-            /*LanzoExcepcion*/
+        if(posicionSolicitada > this.cantidadDeFilas){
+           posicionSolicitada =  this.cantidadDeFilas+1;
         }
         return posicionSolicitada;
     }
 
     public int columnaValida(int posicionSolicitada){
-        if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeColumnas){
-            /*LanzoExcepcion*/
+        if(posicionSolicitada > this.cantidadDeColumnas){
+            posicionSolicitada =  this.cantidadDeColumnas+1;
         }
         return posicionSolicitada;
     }
@@ -60,14 +63,21 @@ public class Tablero {
         celdaQueEnvia.enviarJugador(nuevaCeldaDeJugador);
     }
 
-    public static Tablero getTablero(int limDeFilas,int limDeColumnas){
-        if(tablero == null){
-            tablero = new Tablero(limDeFilas,limDeColumnas);
-        }
-        else {
-            System.out.println("Ya hay tablero creado");
-        }
-
+    public static Tablero getTablero(){
         return tablero;
     }
+
+
+    public static Tablero getTableroTest(){
+        return new Tablero(9,9);
+    }
+
+    public static Tablero getTableroTest(int x , int y){
+
+        return new Tablero(x,y);
+    }
+
+
+
+
 }
