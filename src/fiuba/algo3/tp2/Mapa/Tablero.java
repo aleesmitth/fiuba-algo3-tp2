@@ -11,8 +11,9 @@ public class Tablero {
     private Celda celdaConJugador ;
     private int cantidadDeFilas;
     private int cantidadDeColumnas;
+    private static Tablero tablero;
 
-    public Tablero(int limiteDeFila,int limiteDeColumnas){
+    private Tablero(int limiteDeFila,int limiteDeColumnas){
         this.tableroDeElementos = new Celda[limiteDeFila][limiteDeColumnas];
         for(int numeroDeFila = 0;numeroDeFila<limiteDeFila;numeroDeFila++){
             for(int numeroDeColumna = 0;numeroDeColumna<limiteDeColumnas;numeroDeColumna++)
@@ -35,16 +36,18 @@ public class Tablero {
         this.celdaConJugador = this.tableroDeElementos[jugadorEnColumna][jugadorEnColumna];
     }
 
-    public void filaValida(int posicionSolicitada){
+    public int filaValida(int posicionSolicitada){
         if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeFilas){
             /*LanzoExcepcion*/
         }
+        return posicionSolicitada;
     }
 
-    public void columnaValida(int posicionSolicitada){
+    public int columnaValida(int posicionSolicitada){
         if(posicionSolicitada < 0 && posicionSolicitada > cantidadDeColumnas){
             /*LanzoExcepcion*/
         }
+        return posicionSolicitada;
     }
 
     public void moverJugador(Movimiento movimiento){
@@ -55,5 +58,16 @@ public class Tablero {
     public void ocuparCelda(int posicionDeFila,int posicionDeColumna,Celda celdaQueEnvia){
         Celda nuevaCeldaDeJugador = this.tableroDeElementos[posicionDeFila][posicionDeColumna];
         celdaQueEnvia.enviarJugador(nuevaCeldaDeJugador);
+    }
+
+    public static Tablero getTablero(int limDeFilas,int limDeColumnas){
+        if(tablero == null){
+            tablero = new Tablero(limDeFilas,limDeColumnas);
+        }
+        else {
+            System.out.println("Ya hay tablero creado");
+        }
+
+        return tablero;
     }
 }

@@ -6,8 +6,8 @@ import fiuba.algo3.tp2.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.Mapa.MovilidadJugador.*;
 import fiuba.algo3.tp2.Mapa.Tablero;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TestJugador {
@@ -36,55 +36,55 @@ public class TestJugador {
 
     @Test
     public void test03JugadorSeIniciaCorrectamenteEnPosicionNueveXNueve() {
-    Tablero tablero = new Tablero(9,9);
+    Tablero tablero = Tablero.getTablero(9,9);
 
-    assertEquals(false,tablero.puedoColocar(9,9));
+    assertFalse(tablero.puedoColocar(9,9));
     }
 
     @Test
     public void test04JugadorSeMueveCorrectamenteDerechaVacia() {
-        Tablero tablero = new Tablero(10,10);
+        Tablero tablero = Tablero.getTablero(10,10);
         Movimiento derecha = new Derecha();
         tablero.moverJugador(derecha);
 
-        assertEquals(true,tablero.puedoColocar(9,9));
-        assertEquals(false,tablero.puedoColocar(9,10));
+        assertTrue(tablero.puedoColocar(9,9));
+        assertFalse(tablero.puedoColocar(9,10));
 
     }
 
 
     @Test
     public void test05JugadorSeMueveCorrectamenteIzquierdaVacia() {
-        Tablero tablero = new Tablero(9,9);
+        Tablero tablero = Tablero.getTablero(9,9);
         Movimiento izquierda = new Izquierda();
         tablero.moverJugador(izquierda);
 
-        assertEquals(true,tablero.puedoColocar(9,9));
-        assertEquals(false,tablero.puedoColocar(9,8));
+        assertTrue(tablero.puedoColocar(9,9));
+        assertFalse(tablero.puedoColocar(9,8));
 
     }
 
 
     @Test
     public void test06JugadorSeMueveCorrectamenteArribaVacio() {
-        Tablero tablero = new Tablero(9,9);
+        Tablero tablero = Tablero.getTablero(9,9);
         Movimiento arriba = new Arriba();
         tablero.moverJugador(arriba);
 
-        assertEquals(true,tablero.puedoColocar(9,9));
-        assertEquals(false,tablero.puedoColocar(8,9));
+        assertTrue(tablero.puedoColocar(9,9));
+        assertFalse(tablero.puedoColocar(8,9));
 
     }
 
 
     @Test
     public void test07JugadorSeMueveCorrectamenteAbajoVacio() {
-        Tablero tablero = new Tablero(10,9);
+        Tablero tablero = Tablero.getTablero(10,9);
         Movimiento abajo = new Abajo();
         tablero.moverJugador(abajo);
 
-        assertEquals(true,tablero.puedoColocar(9,9));
-        assertEquals(false,tablero.puedoColocar(10,9));
+        assertFalse(tablero.puedoColocar(9,9));
+        assertFalse(tablero.puedoColocar(10,9));
     }
 
 
