@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.Juego;
 
-import fiuba.algo3.tp2.AlgoCraft.AlgoCraft;
-import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.modelo.AlgoCraft.AlgoCraft;
+import fiuba.algo3.tp2.modelo.Mapa.Tablero;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
