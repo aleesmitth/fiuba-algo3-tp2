@@ -4,8 +4,7 @@ import fiuba.algo3.tp2.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.Entidad.Materiales.MaterialVacio;
-import fiuba.algo3.tp2.Entidad.MesaDeCrafteo.Constructor;
-import fiuba.algo3.tp2.TableroConstructor;
+import fiuba.algo3.tp2.Entidad.MesaDeCrafteo.TableroConstructor;
 
 public class Jugador {
     private TableroConstructor mesaDeCrafteo;
