@@ -18,6 +18,7 @@ public class Diamante extends Material{
             throw new CrearHerramientaDeDiamanteException("Se intento crear un hacha de diamante");
         }catch(CrearHerramientaDeDiamanteException exception){
             System.out.println(exception.getMessage());
+            System.exit(1);
         }
         return null;
     }
@@ -28,6 +29,7 @@ public class Diamante extends Material{
             throw new CrearHerramientaDeDiamanteException("Se intento crear un pico de diamante");
         }catch(CrearHerramientaDeDiamanteException exception){
             System.out.println(exception.getMessage());
+            System.exit(1);
         }
         return null;
     }
@@ -38,6 +40,7 @@ public class Diamante extends Material{
             throw new CrearHerramientaDeDiamanteException("Se intento crear un pico fino de diamante");
         }catch(CrearHerramientaDeDiamanteException exception){
             System.out.println(exception.getMessage());
+            System.exit(1);
         }
         return null;
     }
@@ -51,5 +54,9 @@ public class Diamante extends Material{
     @Override
     public void golpeadoPor(Hacha hacha, Material material) {
 
+    }
+
+    public String obtenerCodigoMaterial(){
+        return "D";
     }
 }

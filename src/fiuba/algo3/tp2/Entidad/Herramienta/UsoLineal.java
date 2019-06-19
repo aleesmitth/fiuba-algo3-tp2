@@ -21,6 +21,7 @@ public class UsoLineal extends AtributosHerramienta {
             else throw new UsarHerramientaRotaException("Se intento usar una herramienta rota");
         }catch(UsarHerramientaRotaException exception){
             System.out.println(exception.getMessage());
+            System.exit(1);
         }
     }
 }

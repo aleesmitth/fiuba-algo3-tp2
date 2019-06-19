@@ -38,6 +38,10 @@ public class Metal extends Material {
     @Override
     public boolean hechoDeMetal(){ return true; }
 
+    public String obtenerCodigoMaterial(){
+        return "A";
+    }
+
 
 }
 
