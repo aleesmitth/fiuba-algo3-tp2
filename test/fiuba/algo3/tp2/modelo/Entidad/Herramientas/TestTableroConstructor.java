@@ -4,7 +4,6 @@ import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.*;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.MaterialVacio;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestTableroConstructor {

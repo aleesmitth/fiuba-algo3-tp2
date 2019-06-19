@@ -23,7 +23,7 @@ public class BarraDeMenu extends MenuBar {
 
         OpcionPantallaCompletaEventHandler opcionPantallaCompletaEventHandler = new OpcionPantallaCompletaEventHandler(stage, opcionPantallaCompleta);
         opcionPantallaCompleta.setOnAction(opcionPantallaCompletaEventHandler);
-        opcionPantallaCompleta.setDisable(true);
+        opcionPantallaCompleta.setDisable(false);
 
         menuVista.getItems().addAll(opcionPantallaCompleta);
         menuArchivo.getItems().addAll(opcionSalir);
