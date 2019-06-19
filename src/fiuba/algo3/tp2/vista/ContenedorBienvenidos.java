@@ -28,7 +28,7 @@ public class ContenedorBienvenidos extends VBox {
         this.setSpacing(20);
         this.setPadding(new Insets(25));
 
-        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ImagenPantallaBienvenida.jpg");
+        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/wallpaperInicio.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
