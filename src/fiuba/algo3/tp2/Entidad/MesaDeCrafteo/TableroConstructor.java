@@ -2,70 +2,76 @@ package fiuba.algo3.tp2.Entidad.MesaDeCrafteo;
 
 import fiuba.algo3.tp2.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.Entidad.Materiales.*;
+import fiuba.algo3.tp2.Excepciones.RecetaIntroducidaNoExisteEnElJuegoException;
 
 import java.util.HashMap;
 
 public class TableroConstructor {
     private static int FILASTABLEROCONSTRUCTOR=3;
     private static int COLUMNASTABLEROCONSTRUCTOR=3;
-    Casillero casillero[][];
-    HashMap<String, Herramienta> Recetas = new HashMap<>();
-    Constructor constructor = new Constructor();
-    Material[] materialesEnTableroConstructor;
-
-    public TableroConstructor(int a){
-        for(int i=0; i<FILASTABLEROCONSTRUCTOR; i++){
-            for(int j=0; j<COLUMNASTABLEROCONSTRUCTOR; j++){
-                casillero[i][j] = new Casillero();
-            }
-        }
-    }
-
-    public void agregarMaterialEnCasillero(Material material, int fila, int columna){
-        casillero[fila][columna].agregarMaterial(material);
-    }
-
+    Casillero casilleros[][] = new Casillero[FILASTABLEROCONSTRUCTOR][COLUMNASTABLEROCONSTRUCTOR];
+    Constructor constructor;
+    HashMap<String, Herramienta> recetas = new HashMap<>();
 
 
     public TableroConstructor(){
-
-        Recetas.put("MMM-M--M-",constructor.construirPico(new Madera()));
-        Recetas.put("MM-MM--M-",constructor.construirHacha(new Madera()));
-        Recetas.put("PPP-M--M-",constructor.construirPico(new Piedra()));
-        Recetas.put("PP-PM--M-",constructor.construirHacha(new Piedra()));
-        Recetas.put("AAA-M--M-",constructor.construirPico(new Metal()));
-        Recetas.put("AA-AM--M-",constructor.construirHacha(new Metal()));
-        Recetas.put("AAAPM--M-",constructor.construirPico(new Metal(),new Piedra()));
-
+        this.constructor = new Constructor();
+        inicializarIndiceParaRecetas();
+        inicializarMatrizCasillerosVacios();
     }
 
-    public void distribuirMateriales(Material material1,Material material2,Material material3,Material material4,Material material5,Material material6,Material material7,Material material8,Material material9){
-        materialesEnTableroConstructor[0] = material1;
-        materialesEnTableroConstructor[1] = material2;
-        materialesEnTableroConstructor[2] = material3;
-        materialesEnTableroConstructor[3] = material4;
-        materialesEnTableroConstructor[4] = material5;
-        materialesEnTableroConstructor[5] = material6;
-        materialesEnTableroConstructor[6] = material7;
-        materialesEnTableroConstructor[7] = material8;
-        materialesEnTableroConstructor[8] = material9;
+    private void inicializarMatrizCasillerosVacios() {
+        for (int i = 0; i < FILASTABLEROCONSTRUCTOR; i++) {
+            for (int j = 0; j < COLUMNASTABLEROCONSTRUCTOR; j++) {
+                casilleros[i][j] = new Casillero();
+            }
+
+        }
+    }
+
+    private void limpiarTablero(){
+        inicializarMatrizCasillerosVacios();
+    }
+
+    private void inicializarIndiceParaRecetas(){
+        recetas.put("MMM-M--M-",constructor.construirPico(new Madera()));
+        recetas.put("MM-MM--M-",constructor.construirHacha(new Madera()));
+        recetas.put("PPP-M--M-",constructor.construirPico(new Piedra()));
+        recetas.put("PP-PM--M-",constructor.construirHacha(new Piedra()));
+        recetas.put("AAA-M--M-",constructor.construirPico(new Metal()));
+        recetas.put("AA-AM--M-",constructor.construirHacha(new Metal()));
+        recetas.put("AAAPM--M-",constructor.construirPico(new Metal(),new Piedra()));
     }
 
     private String obtenerCodigoHerramienta() {
         String codigo = "";
-        for (int i = 0; i < this.materialesEnTableroConstructor.length; i++){
-            if(materialesEnTableroConstructor[i] != null){
-                codigo = codigo + this.materialesEnTableroConstructor[i].obtenerCodigoMaterial();
-            }
-            else {
-                codigo = codigo + "-";
+        for (int i = 0; i < FILASTABLEROCONSTRUCTOR; i++){
+            for(int j = 0; j< COLUMNASTABLEROCONSTRUCTOR; j++) {
+                codigo = codigo + this.casilleros[i][j].obtenerCodigoMaterial();
             }
         }
         return codigo;
     }
 
+
+    public void agregarMaterialEnCasillero(Material material, int fila, int columna){
+        casilleros[fila][columna].agregarMaterial(material);
+    }
+
     public Herramienta construirHerramienta(){
-        return Recetas.get(this.obtenerCodigoHerramienta());
+
+        Herramienta herramienta = recetas.get(this.obtenerCodigoHerramienta());
+        try {
+            if(herramienta==null){
+                throw new RecetaIntroducidaNoExisteEnElJuegoException("Ese patron no crea ningun objeto en AlgoCraft... por ahora");
+            }
+        }
+        catch (RecetaIntroducidaNoExisteEnElJuegoException exception){
+            System.out.println(exception.getMessage());
+            System.exit(1);
+        }
+        limpiarTablero();
+        return herramienta;
     }
 
 }

@@ -30,6 +30,7 @@ public class Madera extends Material {
             throw new CrearPicoFinoDeMaderaException("Se intento crear un pico fino de madera");
         }catch(CrearPicoFinoDeMaderaException exception){
             System.out.println(exception.getMessage());
+            System.exit(1);
         }
         return null;
     }

@@ -21,6 +21,14 @@ public class Casillero {
             else throw new PonerMaterialEnCasilleroDeTableroOcupadoException("Se quiso colocar un material en un casillero del tablero ya ocupado");
         } catch (PonerMaterialEnCasilleroDeTableroOcupadoException exception){
             System.out.println(exception.getMessage());
+            System.exit(1);
         }
+    }
+
+    public String obtenerCodigoMaterial() {
+        if(this.tengoUnMaterial) {
+            return material.obtenerCodigoMaterial();
+        }
+        else return "-";
     }
 }
