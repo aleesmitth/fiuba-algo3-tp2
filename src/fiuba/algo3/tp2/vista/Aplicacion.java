@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.modelo.AlgoCraft.AlgoCraft;
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Aplicacion extends Application {
@@ -13,5 +15,18 @@ public class Aplicacion extends Application {
     public void start(final Stage stage) throws Exception {
 
         stage.setTitle("AlgoCraft");
+
+        AlgoCraft algoCraft = new AlgoCraft();
+
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage,algoCraft);
+        Scene escenaJuego = new Scene(contenedorPrincipal, 200,200);
+
+        ContenedorBienvenidos contenedorBienvenidos2 = new ContenedorBienvenidos(stage, escenaJuego);
+        Scene escenaBienvenidos = new Scene(contenedorBienvenidos2,200,200);
+
+        stage.setScene(escenaBienvenidos);
+        stage.setFullScreen(true);
+
+        stage.show();
     }
 }

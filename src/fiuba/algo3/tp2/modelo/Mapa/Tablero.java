@@ -67,7 +67,6 @@ public class Tablero {
         return tablero;
     }
 
-
     public static Tablero getTableroTest(){
         return new Tablero(9,9);
     }

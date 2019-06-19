@@ -6,15 +6,12 @@ public class AlgoCraft {
 
     Tablero tableroDelJuego;
 
-
-public AlgoCraft(){
+    public AlgoCraft(){
     this.tableroDelJuego = Tablero.getTablero();
 }
 
-public boolean entidadIniciadaEnPosicion(int posicionEnFila,int posicionEnColumna){
-    return this.tableroDelJuego.puedoColocar(posicionEnFila,posicionEnColumna);
-}
-
-
+    public boolean entidadIniciadaEnPosicion(int posicionEnFila,int posicionEnColumna){
+        return this.tableroDelJuego.puedoColocar(posicionEnFila,posicionEnColumna);
+    }
 
 }
