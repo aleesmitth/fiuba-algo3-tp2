@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.modelo;
+package fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.MaterialVacio;
