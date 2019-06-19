@@ -6,8 +6,11 @@
 
 # carpeta enunciado
 enunciado/*
+<<<<<<< HEAD
 out/*
 README.md
+=======
+>>>>>>> d1e6380b847dd3ce50e6eecff4456a29daac8abb
 
 # Eclipse
 .project

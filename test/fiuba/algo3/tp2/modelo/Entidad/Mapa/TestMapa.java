@@ -6,6 +6,7 @@ import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Mapa.Celda;
 import fiuba.algo3.tp2.modelo.Mapa.Tablero;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestMapa {
     @Test

@@ -43,5 +43,8 @@ public class Madera extends Material {
         this.durabilidad -= hacha.fuerza();
     }
 
+    public String obtenerCodigoMaterial(){
+        return "M";
+    }
 }
 
