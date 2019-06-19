@@ -52,4 +52,8 @@ public class Diamante extends Material{
     public void golpeadoPor(Hacha hacha, Material material) {
 
     }
+
+    public String obtenerCodigoMaterial(){
+        return "D";
+    }
 }

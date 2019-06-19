@@ -35,4 +35,8 @@ public class Piedra extends Material {
     @Override
     public boolean hechoDePiedra(){return true;}
 
+    public String obtenerCodigoMaterial(){
+        return "P";
+    }
+
 }
