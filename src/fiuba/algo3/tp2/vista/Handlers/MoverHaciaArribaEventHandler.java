@@ -6,7 +6,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
 public class MoverHaciaArribaEventHandler implements EventHandler<ActionEvent> {
-    public MoverHaciaArribaEventHandler(Stage stage, AlgoCraft algoCraft){
+    public MoverHaciaArribaEventHandler(){
 
     }
 

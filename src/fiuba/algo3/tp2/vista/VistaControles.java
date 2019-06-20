@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.vista.Handlers.MoverHaciaArribaEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -13,7 +14,11 @@ public class VistaControles {
 
     private void dibujar(GridPane contenedorControles) {
 
-        contenedorControles.add(new Button("Up"),1,0);
+        Button botonArriba = new Button("Up");
+        MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler();
+        botonArriba.setOnAction(botonMoverHaciaArribaEventHandler);
+
+        contenedorControles.add(botonArriba,1,0);
         contenedorControles.add(new Button("Left"),0,1);
         contenedorControles.add(new Button("Down"),1,1);
         contenedorControles.add(new Button("Right"),2,1);

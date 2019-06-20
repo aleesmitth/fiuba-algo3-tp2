@@ -17,12 +17,14 @@ public class ContenedorPrincipal extends BorderPane {
     GridPane contenedorCentral;
     GridPane contenedorInventario;
     GridPane contenedorControles;
+    GridPane contenedorMesDeCrafteo;
 
     public ContenedorPrincipal(Stage stage, AlgoCraft algocraft) {
         this.setMenu(stage);
         this.setCentro(algocraft);
         this.setInventario(algocraft);
         this.setControles(algocraft);
+        this.setMesaDeCrafteo(algocraft);
 
     }
 
@@ -57,6 +59,15 @@ public class ContenedorPrincipal extends BorderPane {
         VistaControles vistaControles = new VistaControles(contenedorControles);
 
         this.setBottom(contenedorControles);
+    }
+
+    private void setMesaDeCrafteo(AlgoCraft algoCraft) {
+
+        contenedorMesDeCrafteo = new GridPane();
+
+        VistaMesaDeCrafteo vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesDeCrafteo);
+
+        this.setLeft(contenedorMesDeCrafteo);
     }
 
 
