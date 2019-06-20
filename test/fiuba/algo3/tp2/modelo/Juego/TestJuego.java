@@ -9,6 +9,7 @@ public class TestJuego {
     @Test
     public void SeVerificaJugadorInicializadoEnElJuego(){
         Juego juego = new Juego();
+        juego.crearUnMapaParaTestConMateriales();
 
         assertTrue(juego.jugadorEstaEn(9,9));
 
@@ -17,6 +18,7 @@ public class TestJuego {
     @Test
     public void SeVerificaMaterialInicializadoEnElJuego(){
         Juego juego = new Juego();
+        juego.crearUnMapaParaTestConMateriales();
 
         assertTrue(juego.posicionOcupadaEnMapa(2,2));
 
