@@ -1,18 +1,18 @@
 package fiuba.algo3.tp2.AlgoCraft;
 
-import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.Mapa.Mapa;
 
 public class AlgoCraft {
 
-    Tablero tableroDelJuego;
+    Mapa mapaDelJuego;
 
 
 public AlgoCraft(){
-    this.tableroDelJuego = Tablero.getTablero();
+    this.mapaDelJuego = Mapa.getMapa();
 }
 
 public boolean entidadIniciadaEnPosicion(int posicionEnFila,int posicionEnColumna){
-    return this.tableroDelJuego.puedoColocar(posicionEnFila,posicionEnColumna);
+    return this.mapaDelJuego.puedoColocar(posicionEnFila,posicionEnColumna);
 }
 
 

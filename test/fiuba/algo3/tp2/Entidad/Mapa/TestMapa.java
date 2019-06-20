@@ -4,7 +4,7 @@ import fiuba.algo3.tp2.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.Mapa.Celda;
-import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.Mapa.Mapa;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,9 +16,9 @@ public class TestMapa {
          * Jugador iniciado en (9.9)
          */
 
-        Tablero tablero = Tablero.getTablero();
+        Mapa mapa = Mapa.getMapa();
 
-        assertFalse(tablero.puedoColocar(9, 9));
+        assertFalse(mapa.puedoColocar(9, 9));
     }
 
     @Test
@@ -27,9 +27,9 @@ public class TestMapa {
          * Diamante iniciado en (2.2)
          */
 
-        Tablero tablero = Tablero.getTablero();
+        Mapa mapa = Mapa.getMapa();
 
-        assertFalse(tablero.puedoColocar(2,2));
+        assertFalse(mapa.puedoColocar(2,2));
     }
 
     @Test
@@ -37,11 +37,11 @@ public class TestMapa {
         /**
          * Diamante iniciado en (2.2)
          */
-        Tablero tablero = Tablero.getTablero();
+        Mapa mapa = Mapa.getMapa();
 
-        assertTrue(tablero.puedoColocar(1, 1));
-        assertFalse(tablero.puedoColocar(2, 2));
-        assertTrue(tablero.puedoColocar(3, 3));
+        assertTrue(mapa.puedoColocar(1, 1));
+        assertFalse(mapa.puedoColocar(2, 2));
+        assertTrue(mapa.puedoColocar(3, 3));
 
     }
 

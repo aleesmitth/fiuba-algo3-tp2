@@ -1,16 +1,16 @@
 package fiuba.algo3.tp2.Mapa.MovilidadJugador;
 
 import fiuba.algo3.tp2.Mapa.Celda;
-import fiuba.algo3.tp2.Mapa.Tablero;
+import fiuba.algo3.tp2.Mapa.Mapa;
 
 public class Abajo implements Movimiento {
 
-    private Tablero entornoMovimiento;
+    private Mapa entornoMovimiento;
 
     public Abajo(){}
 
-    public void obtenerEntorno(Tablero tablero){
-        this.entornoMovimiento = tablero;
+    public void obtenerEntorno(Mapa mapa){
+        this.entornoMovimiento = mapa;
     }
 
     @Override

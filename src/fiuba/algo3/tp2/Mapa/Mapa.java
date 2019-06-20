@@ -5,15 +5,15 @@ import fiuba.algo3.tp2.Mapa.MovilidadJugador.Movimiento;
 import fiuba.algo3.tp2.Entidad.Materiales.Diamante;
 import fiuba.algo3.tp2.Entidad.Materiales.Material;
 
-public class Tablero {
+public class Mapa {
 
     private Celda tableroDeElementos[][];
     private Celda celdaConJugador ;
     private int cantidadDeFilas;
     private int cantidadDeColumnas;
-    private static Tablero tablero=new Tablero(20,20);
+    private static Mapa mapa =new Mapa(20,20);
 
-    private Tablero(int limiteDeFila,int limiteDeColumnas){
+    private Mapa(int limiteDeFila, int limiteDeColumnas){
         this.cantidadDeFilas = limiteDeFila - 1;
         this.cantidadDeColumnas = limiteDeColumnas - 1;
         this.tableroDeElementos = new Celda[limiteDeFila][limiteDeColumnas];
@@ -63,18 +63,18 @@ public class Tablero {
         celdaQueEnvia.enviarJugador(nuevaCeldaDeJugador);
     }
 
-    public static Tablero getTablero(){
-        return tablero;
+    public static Mapa getMapa(){
+        return mapa;
     }
 
 
-    public static Tablero getTableroTest(){
-        return new Tablero(9,9);
+    public static Mapa getTableroTest(){
+        return new Mapa(9,9);
     }
 
-    public static Tablero getTableroTest(int x , int y){
+    public static Mapa getTableroTest(int x , int y){
 
-        return new Tablero(x,y);
+        return new Mapa(x,y);
     }
 
 
