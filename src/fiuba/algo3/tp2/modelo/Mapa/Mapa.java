@@ -6,10 +6,10 @@ import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
 
 public class Mapa {
-    private static int FILAS_DEL_MAPA = 79;
-    private static int COLUMNAS_DEL_MAPA = 59;
-    private static int POSICION_X_INICIAL_JUGADOR = 8;
-    private static int POSICION_Y_INICIAL_JUGADOR = 8;
+    private static int FILAS_DEL_MAPA = 80;
+    private static int COLUMNAS_DEL_MAPA = 60;
+    private static int POSICION_X_INICIAL_JUGADOR = 9;
+    private static int POSICION_Y_INICIAL_JUGADOR = 9;
     private Celda tableroDeElementos[][];
     private Celda celdaConJugador ;
     private static Mapa mapa =new Mapa();
@@ -22,10 +22,10 @@ public class Mapa {
         }
     }
 
-    public boolean puedoColocar(int fila,int columna){
+    public boolean posicionOcupada(int fila,int columna){
         int filaEnTablero = fila - 1;
         int columnaEnTablero = columna - 1;
-        return !this.tableroDeElementos[filaEnTablero][columnaEnTablero].celdaEstaOcupada();
+        return this.tableroDeElementos[filaEnTablero][columnaEnTablero].celdaEstaOcupada();
     }
 
     public int filaValida(int posicionSolicitada){
@@ -70,5 +70,9 @@ public class Mapa {
         Material diamante = new Diamante();
         this.tableroDeElementos[1][1].ocuparCelda(diamante);
         this.tableroDeElementos[7][7].ocuparCelda(diamante);
+    }
+
+    public boolean jugadorEstaEn(int posicionEnFila, int posicionEnColumna) {
+        return this.tableroDeElementos[posicionEnFila][posicionEnColumna].tengoAlJugador();
     }
 }

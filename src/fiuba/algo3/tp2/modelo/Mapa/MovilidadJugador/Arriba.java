@@ -19,7 +19,7 @@ public class Arriba implements Movimiento {
         int nuevaColumna = celdaDeJugador.obtenerSiguienteColumna(0);
         nuevaFila = this.entornoMovimiento.filaValida(nuevaFila);
         nuevaColumna = this.entornoMovimiento.columnaValida(nuevaColumna);
-        if(this.entornoMovimiento.puedoColocar(nuevaFila,nuevaColumna)){
+        if(!this.entornoMovimiento.posicionOcupada(nuevaFila,nuevaColumna)){
             this.entornoMovimiento.ocuparCelda(nuevaFila-1,nuevaColumna-1,celdaDeJugador);
         }
     }

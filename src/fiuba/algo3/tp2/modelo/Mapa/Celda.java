@@ -49,6 +49,10 @@ public class Celda {
         this.jugador = null;
         this.estaOcupado = false;
     }
+    public boolean tengoAlJugador(){
+        if (jugador!=null) return true;
+        return false;
+    }
 
 
 }

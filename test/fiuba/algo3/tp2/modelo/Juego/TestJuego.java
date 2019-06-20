@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.modelo.Juego;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestJuego {
 
@@ -10,7 +10,7 @@ public class TestJuego {
     public void SeVerificaJugadorInicializadoEnElJuego(){
         Juego juego = new Juego();
 
-        assertFalse(juego.entidadIniciadaEnPosicion(9,9));
+        assertTrue(juego.jugadorEstaEn(9,9));
 
     }
 
@@ -18,7 +18,7 @@ public class TestJuego {
     public void SeVerificaMaterialInicializadoEnElJuego(){
         Juego juego = new Juego();
 
-        assertFalse(juego.entidadIniciadaEnPosicion(2,2));
+        assertTrue(juego.posicionOcupadaEnMapa(2,2));
 
     }
 }

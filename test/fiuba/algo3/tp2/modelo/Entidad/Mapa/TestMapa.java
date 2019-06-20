@@ -3,11 +3,12 @@ package fiuba.algo3.tp2.modelo.Entidad.Mapa;
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.modelo.Mapa.Celda;
-import fiuba.algo3.tp2.modelo.Mapa.Mapa;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestMapa {
     @Test
@@ -16,9 +17,9 @@ public class TestMapa {
          * Jugador iniciado en (9.9)
          */
 
-        Mapa mapa = Mapa.getMapa();
-
-        assertFalse(mapa.puedoColocar(9, 9));
+        Juego juego = new Juego();
+        juego.crearUnMapaParaTestSinMateriales();
+        assertTrue(juego.jugadorEstaEn(9, 9));
     }
 
     @Test
@@ -27,9 +28,9 @@ public class TestMapa {
          * Diamante iniciado en (2.2)
          */
 
-        Mapa mapa = Mapa.getMapa();
-
-        assertFalse(mapa.puedoColocar(2,2));
+        Juego juego = new Juego();
+        juego.crearUnMapaParaTestConMateriales();
+        assertTrue(juego.posicionOcupadaEnMapa(2, 2));
     }
 
     @Test
@@ -37,14 +38,18 @@ public class TestMapa {
         /**
          * Diamante iniciado en (2.2)
          */
-        Mapa mapa = Mapa.getMapa();
+        Juego juego = new Juego();
+        juego.crearUnMapaParaTestConMateriales();
 
-        assertTrue(mapa.puedoColocar(1, 1));
-        assertFalse(mapa.puedoColocar(2, 2));
-        assertTrue(mapa.puedoColocar(3, 3));
+        assertFalse(juego.posicionOcupadaEnMapa(1, 1));
+        assertTrue(juego.posicionOcupadaEnMapa(2, 2));
+        assertFalse(juego.posicionOcupadaEnMapa(3, 3));
 
     }
 
+    /**
+     * aca la colocacion de cosas sobre el mapa tendria que hacerlo juego, todavia no esta implementado
+     */
     @Test
     public void test04PuedoColocarJugadorEnCasilleroVacio() {
 
