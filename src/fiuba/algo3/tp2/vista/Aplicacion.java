@@ -19,10 +19,10 @@ public class Aplicacion extends Application {
         AlgoCraft algoCraft = new AlgoCraft();
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage,algoCraft);
-        Scene escenaJuego = new Scene(contenedorPrincipal, 800,400);
+        Scene escenaJuego = new Scene(contenedorPrincipal, 1280,720);
 
-        ContenedorBienvenidos contenedorBienvenidos2 = new ContenedorBienvenidos(stage, escenaJuego);
-        Scene escenaBienvenidos = new Scene(contenedorBienvenidos2,800,400);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
+        Scene escenaBienvenidos = new Scene(contenedorBienvenidos ,1280,720);
 
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(false);
