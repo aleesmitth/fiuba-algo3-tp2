@@ -25,8 +25,8 @@ public Juego(){
     }
 
     public boolean entidadIniciadaEnPosicion(int posicionEnFila,int posicionEnColumna){
-    return this.mapaDelJuego.puedoColocar(posicionEnFila,posicionEnColumna);
-}
+        return this.mapaDelJuego.puedoColocar(posicionEnFila,posicionEnColumna);
+    }
 
 
 
