@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
-import fiuba.algo3.tp2.vista.Handlers.BotonEntrarEventHandler;
-import fiuba.algo3.tp2.vista.Handlers.OpcionSalirEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.BotonEntrarEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.OpcionSalirEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;

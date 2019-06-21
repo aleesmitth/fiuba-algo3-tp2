@@ -1,10 +1,10 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.modelo.Juego.Juego;
-import fiuba.algo3.tp2.vista.Handlers.MoverHaciaAbajoEventHandler;
-import fiuba.algo3.tp2.vista.Handlers.MoverHaciaArribaEventHandler;
-import fiuba.algo3.tp2.vista.Handlers.MoverHaciaDerechaEventHandler;
-import fiuba.algo3.tp2.vista.Handlers.MoverHaciaIzquierdaEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.MoverHaciaAbajoEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.MoverHaciaArribaEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.MoverHaciaDerechaEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.MoverHaciaIzquierdaEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

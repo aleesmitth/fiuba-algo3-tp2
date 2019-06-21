@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.vista.Handlers;
+package fiuba.algo3.tp2.vista.Handlers.ButtonHandlers;
 
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Arriba;

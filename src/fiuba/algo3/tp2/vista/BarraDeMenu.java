@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
-import fiuba.algo3.tp2.vista.Handlers.OpcionPantallaCompletaEventHandler;
-import fiuba.algo3.tp2.vista.Handlers.OpcionSalirEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.OpcionPantallaCompletaEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.OpcionSalirEventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -29,5 +29,10 @@ public class BarraDeMenu extends MenuBar {
         menuArchivo.getItems().addAll(opcionSalir);
 
         this.getMenus().addAll(menuArchivo, menuVista);
+    }
+
+    public void aplicacionMaximizada() {
+        opcionPantallaCompleta.setDisable(false);
+
     }
 }

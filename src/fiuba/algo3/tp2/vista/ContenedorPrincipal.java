@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.vista;
 
 
 import fiuba.algo3.tp2.modelo.Juego.Juego;
+import fiuba.algo3.tp2.vista.Handlers.OnKeyPressHandlers.MoverOnKeyPressEventHandler;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -25,6 +26,10 @@ public class ContenedorPrincipal extends BorderPane {
         this.setInventario(juego);
         this.setControles(juego);
         this.setMesaDeCrafteo(juego);
+
+        MoverOnKeyPressEventHandler moverOnKeyPressEventHandler = new MoverOnKeyPressEventHandler(juego, vistaTablero);
+        this.setOnKeyPressed(moverOnKeyPressEventHandler);
+
 
     }
 
@@ -68,6 +73,10 @@ public class ContenedorPrincipal extends BorderPane {
         vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesaDeCrafteo, juego);
 
         this.setLeft(contenedorMesaDeCrafteo);
+    }
+
+    public BarraDeMenu getBarraDeMenu() {
+        return menuBar;
     }
 
 
