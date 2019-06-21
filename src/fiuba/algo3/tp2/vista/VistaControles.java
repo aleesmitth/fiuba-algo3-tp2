@@ -12,8 +12,6 @@ import javafx.scene.layout.GridPane;
 
 public class VistaControles {
 
-    GridPane contenedorControles;
-
     public VistaControles(GridPane contenedorControles, Juego juego) {
         this.dibujar(contenedorControles, juego);
     }

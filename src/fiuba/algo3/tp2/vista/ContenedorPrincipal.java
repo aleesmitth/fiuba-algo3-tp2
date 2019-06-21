@@ -5,7 +5,6 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.scene.canvas.Canvas;
 
 
 public class ContenedorPrincipal extends BorderPane {
