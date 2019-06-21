@@ -12,27 +12,30 @@ import javafx.scene.layout.GridPane;
 
 public class VistaControles {
 
-    public VistaControles(GridPane contenedorControles, Juego juego) {
+    private VistaTablero vistaTablero;
+
+    public VistaControles(GridPane contenedorControles, Juego juego, VistaTablero vistaTablero) {
         this.dibujar(contenedorControles, juego);
+        this.vistaTablero = vistaTablero;
     }
 
     private void dibujar(GridPane contenedorControles, Juego juego) {
 
         Button botonArriba = new Button("Arriba");
-        MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler(juego);
+        MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler(juego, vistaTablero);
         botonArriba.setOnAction(botonMoverHaciaArribaEventHandler);
 
         Button botonIzquierda = new Button("Izquierda");
-        MoverHaciaIzquierdaEventHandler botonMoverHaciaIzquierdaEventHandler = new MoverHaciaIzquierdaEventHandler(juego);
-        botonArriba.setOnAction(botonMoverHaciaIzquierdaEventHandler);
+        MoverHaciaIzquierdaEventHandler botonMoverHaciaIzquierdaEventHandler = new MoverHaciaIzquierdaEventHandler(juego, vistaTablero);
+        botonIzquierda.setOnAction(botonMoverHaciaIzquierdaEventHandler);
 
         Button botonAbajo = new Button("Abajo");
-        MoverHaciaAbajoEventHandler botonMoverHaciaAbajoEventHandler = new MoverHaciaAbajoEventHandler(juego);
-        botonArriba.setOnAction(botonMoverHaciaAbajoEventHandler);
+        MoverHaciaAbajoEventHandler botonMoverHaciaAbajoEventHandler = new MoverHaciaAbajoEventHandler(juego, vistaTablero);
+        botonAbajo.setOnAction(botonMoverHaciaAbajoEventHandler);
 
         Button botonDerecha = new Button("Derecha");
-        MoverHaciaDerechaEventHandler botonMoverHaciaDerechaEventHandler = new MoverHaciaDerechaEventHandler(juego);
-        botonArriba.setOnAction(botonMoverHaciaDerechaEventHandler);
+        MoverHaciaDerechaEventHandler botonMoverHaciaDerechaEventHandler = new MoverHaciaDerechaEventHandler(juego, vistaTablero);
+        botonDerecha.setOnAction(botonMoverHaciaDerechaEventHandler);
 
         contenedorControles.add(botonArriba,1,0);
         contenedorControles.add(botonIzquierda,0,1);

@@ -11,11 +11,16 @@ import javafx.scene.paint.Color;
 
 public class VistaTablero {
 
+    private GridPane contenedorCentral;
+    private Juego juego;
+
     public VistaTablero(GridPane contenedorCentral, Juego juego){
-        this.dibujar(contenedorCentral);
+        this.contenedorCentral = contenedorCentral;
+        this.dibujar();
+        this.juego = juego;
     }
 
-    private void dibujar(GridPane contenedorCentral) {
+    public void dibujar() {
 
         for(int i = 0; i< 80; i++) {
             for(int j = 0; j<60; j++) {
@@ -30,6 +35,10 @@ public class VistaTablero {
         contenedorCentral.setVgap(0);
         contenedorCentral.setHgap(0);
         contenedorCentral.setAlignment(Pos.CENTER);
+    }
+
+    public void actualizar() {
+        this.dibujar();
     }
 }
 

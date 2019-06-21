@@ -16,7 +16,7 @@ public class Celda {
         this.estaOcupado = false;
         this.filaDeCelda = numeroDeFila;
         this.columnaDeCelda = numeroDeColumna;
-    };
+    }
 
     public boolean celdaEstaOcupada(){
         return this.estaOcupado;

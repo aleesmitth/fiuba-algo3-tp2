@@ -56,7 +56,7 @@ public class ContenedorPrincipal extends BorderPane {
 
         contenedorControles = new GridPane();
 
-        vistaControles = new VistaControles(contenedorControles, juego);
+        vistaControles = new VistaControles(contenedorControles, juego, vistaTablero);
 
         this.setBottom(contenedorControles);
     }

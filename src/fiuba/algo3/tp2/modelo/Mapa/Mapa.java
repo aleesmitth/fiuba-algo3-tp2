@@ -4,12 +4,9 @@ import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Diamante;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
+import static fiuba.algo3.tp2.modelo.Juego.Juego.*;
 
 public class Mapa {
-    private static int FILAS_DEL_MAPA = 80;
-    private static int COLUMNAS_DEL_MAPA = 60;
-    private static int POSICION_X_INICIAL_JUGADOR = 9;
-    private static int POSICION_Y_INICIAL_JUGADOR = 9;
     private Celda tableroDeElementos[][];
     private Celda celdaConJugador ;
     private static Mapa mapa =new Mapa();
@@ -36,8 +33,8 @@ public class Mapa {
     }
 
     public int columnaValida(int posicionSolicitada){
-        if(posicionSolicitada > this.COLUMNAS_DEL_MAPA){
-            posicionSolicitada =  this.COLUMNAS_DEL_MAPA+1;
+        if(posicionSolicitada > COLUMNAS_DEL_MAPA){
+            posicionSolicitada =  COLUMNAS_DEL_MAPA+1;
         }
         return posicionSolicitada;
     }

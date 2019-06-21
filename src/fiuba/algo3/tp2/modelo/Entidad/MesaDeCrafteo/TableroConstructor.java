@@ -3,13 +3,11 @@ package fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.*;
 import fiuba.algo3.tp2.modelo.Excepciones.RecetaIntroducidaNoExisteEnElJuegoException;
-
+import static fiuba.algo3.tp2.modelo.Juego.Juego.COLUMNAS_TABLERO_CONSTRUCTOR;
+import static fiuba.algo3.tp2.modelo.Juego.Juego.FILAS_TABLERO_CONSTRUCTOR;
 import java.util.HashMap;
 
-public class TableroConstructor {
-    private static int FILASTABLEROCONSTRUCTOR=3;
-    private static int COLUMNASTABLEROCONSTRUCTOR=3;
-    Casillero casilleros[][] = new Casillero[FILASTABLEROCONSTRUCTOR][COLUMNASTABLEROCONSTRUCTOR];
+public class TableroConstructor {Casillero casilleros[][] = new Casillero[FILAS_TABLERO_CONSTRUCTOR][COLUMNAS_TABLERO_CONSTRUCTOR];
     Constructor constructor;
     HashMap<String, Herramienta> recetas = new HashMap<>();
 
@@ -21,8 +19,8 @@ public class TableroConstructor {
     }
 
     private void inicializarMatrizCasillerosVacios() {
-        for (int i = 0; i < FILASTABLEROCONSTRUCTOR; i++) {
-            for (int j = 0; j < COLUMNASTABLEROCONSTRUCTOR; j++) {
+        for (int i = 0; i < FILAS_TABLERO_CONSTRUCTOR; i++) {
+            for (int j = 0; j < COLUMNAS_TABLERO_CONSTRUCTOR; j++) {
                 casilleros[i][j] = new Casillero();
             }
 
@@ -45,8 +43,8 @@ public class TableroConstructor {
 
     private String obtenerCodigoHerramienta() {
         String codigo = "";
-        for (int i = 0; i < FILASTABLEROCONSTRUCTOR; i++){
-            for(int j = 0; j< COLUMNASTABLEROCONSTRUCTOR; j++) {
+        for (int i = 0; i < FILAS_TABLERO_CONSTRUCTOR; i++){
+            for(int j = 0; j< COLUMNAS_TABLERO_CONSTRUCTOR; j++) {
                 codigo = codigo + this.casilleros[i][j].obtenerCodigoMaterial();
             }
         }
