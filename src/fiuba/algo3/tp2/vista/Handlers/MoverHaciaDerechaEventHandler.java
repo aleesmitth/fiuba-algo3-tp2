@@ -4,8 +4,8 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class MoverHaciaArribaEventHandler implements EventHandler<ActionEvent> {
-    public MoverHaciaArribaEventHandler(Juego juego){
+public class MoverHaciaDerechaEventHandler implements EventHandler<ActionEvent> {
+    public MoverHaciaDerechaEventHandler(Juego juego){
 
     }
 

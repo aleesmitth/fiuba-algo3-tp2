@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -7,7 +8,7 @@ import javafx.scene.layout.GridPane;
 
 public class VistaInventario {
 
-    public VistaInventario(GridPane contenedorInventario) {
+    public VistaInventario(GridPane contenedorInventario, Juego juego) {
         this.dibujar(contenedorInventario);
     }
 

@@ -1,30 +1,31 @@
 package fiuba.algo3.tp2.vista;
 
 
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.control.TextField;
 
 
 public class ContenedorPrincipal extends BorderPane {
 
-    BarraDeMenu menuBar;
-    Canvas canvasCentral;
-    GridPane contenedorCentral;
-    GridPane contenedorInventario;
-    GridPane contenedorControles;
-    GridPane contenedorMesDeCrafteo;
+    private BarraDeMenu menuBar;
+    private GridPane contenedorCentral;
+    private GridPane contenedorInventario;
+    private GridPane contenedorControles;
+    private GridPane contenedorMesDeCrafteo;
+    private VistaTablero vistaTablero;
+    private VistaMesaDeCrafteo vistaMesaDeCrafteo;
+    private VistaControles vistaControles;
+    private VistaInventario vistaInventario;
 
-    public ContenedorPrincipal(Stage stage) {
+    public ContenedorPrincipal(Stage stage, Juego juego) {
         this.setMenu(stage);
-        this.setCentro();
-        this.setInventario();
-        this.setControles();
-        this.setMesaDeCrafteo();
+        this.setCentro(juego);
+        this.setInventario(juego);
+        this.setControles(juego);
+        this.setMesaDeCrafteo(juego);
 
     }
 
@@ -33,39 +34,39 @@ public class ContenedorPrincipal extends BorderPane {
         this.setTop(menuBar);
     }
 
-    private void setCentro() {
+    private void setCentro(Juego juego) {
 
         contenedorCentral = new GridPane();
 
-        VistaTablero vistaTablero = new VistaTablero(contenedorCentral);
+        vistaTablero = new VistaTablero(contenedorCentral, juego);
 
         this.setCenter(contenedorCentral);
 
     }
 
-    private void setInventario() {
+    private void setInventario(Juego juego) {
 
         contenedorInventario = new GridPane();
 
-        VistaInventario vistaInventario = new VistaInventario(contenedorInventario);
+        vistaInventario = new VistaInventario(contenedorInventario, juego);
 
         this.setRight(contenedorInventario);
     }
 
-    private void setControles() {
+    private void setControles(Juego juego) {
 
         contenedorControles = new GridPane();
 
-        VistaControles vistaControles = new VistaControles(contenedorControles);
+        vistaControles = new VistaControles(contenedorControles, juego);
 
         this.setBottom(contenedorControles);
     }
 
-    private void setMesaDeCrafteo() {
+    private void setMesaDeCrafteo(Juego juego) {
 
         contenedorMesDeCrafteo = new GridPane();
 
-        VistaMesaDeCrafteo vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesDeCrafteo);
+        vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesDeCrafteo, juego);
 
         this.setLeft(contenedorMesDeCrafteo);
     }

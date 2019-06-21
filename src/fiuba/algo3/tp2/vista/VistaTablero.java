@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 
+import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
@@ -10,7 +11,7 @@ import javafx.scene.paint.Color;
 
 public class VistaTablero {
 
-    public VistaTablero(GridPane contenedorCentral){
+    public VistaTablero(GridPane contenedorCentral, Juego juego){
         this.dibujar(contenedorCentral);
     }
 

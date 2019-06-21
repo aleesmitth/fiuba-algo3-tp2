@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -8,7 +9,7 @@ import javafx.scene.layout.GridPane;
 
 public class VistaMesaDeCrafteo {
 
-    public VistaMesaDeCrafteo(GridPane contenedorCentral){
+    public VistaMesaDeCrafteo(GridPane contenedorCentral, Juego juego){
         this.dibujar(contenedorCentral);
     }
 

@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.vista;
 
-
+import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -16,9 +16,9 @@ public class Aplicacion extends Application {
 
         stage.setTitle("AlgoCraft");
 
+        Juego juego = new Juego();
 
-
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, juego);
         Scene escenaJuego = new Scene(contenedorPrincipal, 1280,720);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
