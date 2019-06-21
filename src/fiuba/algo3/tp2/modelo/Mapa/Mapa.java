@@ -72,4 +72,8 @@ public class Mapa {
     public boolean jugadorEstaEn(int posicionEnFila, int posicionEnColumna) {
         return this.tableroDeElementos[posicionEnFila][posicionEnColumna].tengoAlJugador();
     }
+
+    public Celda[][] getMapaDelJuego() {
+        return this.tableroDeElementos;
+    }
 }

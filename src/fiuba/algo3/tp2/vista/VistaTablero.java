@@ -2,11 +2,15 @@ package fiuba.algo3.tp2.vista;
 
 
 import fiuba.algo3.tp2.modelo.Juego.Juego;
+
+import fiuba.algo3.tp2.modelo.Mapa.Celda;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
+
+import static fiuba.algo3.tp2.modelo.Juego.Juego.*;
 
 
 public class VistaTablero {
@@ -16,19 +20,42 @@ public class VistaTablero {
 
     public VistaTablero(GridPane contenedorCentral, Juego juego){
         this.contenedorCentral = contenedorCentral;
-        this.dibujar();
         this.juego = juego;
+        this.dibujar();
+
     }
 
     public void dibujar() {
 
-        for(int i = 0; i< 80; i++) {
-            for(int j = 0; j<60; j++) {
-                contenedorCentral.add(new Rectangle(10,10,Color.GRAY),i,j);
+        Celda[][] mapaDelJuego = this.juego.getMapaDelJuego();
+
+        for(int i = 0; i< FILAS_DEL_MAPA; i++) {
+            for(int j = 0; j<COLUMNAS_DEL_MAPA; j++) {
+
+                //madera:M piedra:P metal:A diamante:D vacio:-
+
+                switch(mapaDelJuego[i][j].obtenerCodigo()){
+                //switch("-") {
+                    case "J":
+                        contenedorCentral.add(new Rectangle(10,10,Color.RED),i,j);
+                    case "M":
+                        contenedorCentral.add(new Rectangle(10,10,Color.BROWN),i,j);
+                        break;
+                    case "P":
+                        contenedorCentral.add(new Rectangle(10,10,Color.GRAY),i,j);
+                        break;
+                    case "A":
+                        contenedorCentral.add(new Rectangle(10,10,Color.GAINSBORO),i,j);
+                        break;
+                    case "D":
+                        contenedorCentral.add(new Rectangle(10,10,Color.LIGHTBLUE),i,j);
+                        break;
+                    case "-":
+                        contenedorCentral.add(new Rectangle(10,10,Color.GREEN),i,j);
+                        break;
+                }
             }
         }
-        //Dibuja supuesto jugador.
-        contenedorCentral.add(new Rectangle(10,10,Color.RED),9,9);
 
         contenedorCentral.setMinSize(200, 200);
         contenedorCentral.setPadding(new Insets(10, 10, 10, 10));
@@ -39,6 +66,7 @@ public class VistaTablero {
 
     public void actualizar() {
         this.dibujar();
+
     }
 }
 

@@ -54,5 +54,13 @@ public class Celda {
         return false;
     }
 
-
+    public String obtenerCodigo(){
+        if(tengoAlJugador()) {
+            return "J";
+        }
+        else if (this.estaOcupado) {
+            return this.material.obtenerCodigoMaterial();
+        }
+        else return "-";
+    }
 }
