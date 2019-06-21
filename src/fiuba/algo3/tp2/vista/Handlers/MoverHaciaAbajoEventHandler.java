@@ -19,9 +19,9 @@ public class MoverHaciaAbajoEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        juego.moverJugador(new Abajo());
+        this.juego.moverJugador(new Abajo());
         System.out.println("Abajo was pressed");
-        vistaTablero.actualizar();
+        this.vistaTablero.actualizar();
 
     }
 }

@@ -32,10 +32,12 @@ public class VistaTablero {
         for(int i = 0; i< FILAS_DEL_MAPA; i++) {
             for(int j = 0; j<COLUMNAS_DEL_MAPA; j++) {
 
-                //madera:M piedra:P metal:A diamante:D vacio:-
+                /**
+                 * jugador:J madera:M piedra:P metal:A diamante:D vacio:-
+                 */
+
 
                 switch(mapaDelJuego[i][j].obtenerCodigo()){
-                //switch("-") {
                     case "J":
                         contenedorCentral.add(new Rectangle(10,10,Color.RED),i,j);
                     case "M":

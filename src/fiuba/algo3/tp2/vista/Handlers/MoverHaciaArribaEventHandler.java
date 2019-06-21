@@ -8,19 +8,20 @@ import javafx.event.EventHandler;
 
 public class MoverHaciaArribaEventHandler implements EventHandler<ActionEvent> {
 
-    private Juego juego;
     private VistaTablero vistaTablero;
+    private Juego juego;
 
     public MoverHaciaArribaEventHandler(Juego juego, VistaTablero vistaTablero){
-        this.juego = juego;
         this.vistaTablero = vistaTablero;
+        this.juego = juego;
+
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        juego.moverJugador(new Arriba());
+        this.juego.moverJugador(new Arriba());
         System.out.println("Arriba was pressed");
-        vistaTablero.actualizar();
+        this.vistaTablero.actualizar();
     }
 
 }

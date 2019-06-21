@@ -12,14 +12,14 @@ public class MoverHaciaIzquierdaEventHandler implements EventHandler<ActionEvent
     private VistaTablero vistaTablero;
 
     public MoverHaciaIzquierdaEventHandler(Juego juego, VistaTablero vistaTablero){
-        this.juego = juego;
         this.vistaTablero = vistaTablero;
+        this.juego = juego;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        juego.moverJugador(new Izquierda());
+        this.juego.moverJugador(new Izquierda());
         System.out.println("Left was pressed");
-        vistaTablero.actualizar();
+        this.vistaTablero.actualizar();
     }
 }

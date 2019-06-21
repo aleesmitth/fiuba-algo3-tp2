@@ -15,26 +15,26 @@ public class VistaControles {
     private VistaTablero vistaTablero;
 
     public VistaControles(GridPane contenedorControles, Juego juego, VistaTablero vistaTablero) {
-        this.dibujar(contenedorControles, juego);
         this.vistaTablero = vistaTablero;
+        this.dibujar(contenedorControles, juego);
     }
 
     private void dibujar(GridPane contenedorControles, Juego juego) {
 
         Button botonArriba = new Button("Arriba");
-        MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler(juego, vistaTablero);
+        MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler(juego, this.vistaTablero);
         botonArriba.setOnAction(botonMoverHaciaArribaEventHandler);
 
         Button botonIzquierda = new Button("Izquierda");
-        MoverHaciaIzquierdaEventHandler botonMoverHaciaIzquierdaEventHandler = new MoverHaciaIzquierdaEventHandler(juego, vistaTablero);
+        MoverHaciaIzquierdaEventHandler botonMoverHaciaIzquierdaEventHandler = new MoverHaciaIzquierdaEventHandler(juego, this.vistaTablero);
         botonIzquierda.setOnAction(botonMoverHaciaIzquierdaEventHandler);
 
         Button botonAbajo = new Button("Abajo");
-        MoverHaciaAbajoEventHandler botonMoverHaciaAbajoEventHandler = new MoverHaciaAbajoEventHandler(juego, vistaTablero);
+        MoverHaciaAbajoEventHandler botonMoverHaciaAbajoEventHandler = new MoverHaciaAbajoEventHandler(juego, this.vistaTablero);
         botonAbajo.setOnAction(botonMoverHaciaAbajoEventHandler);
 
         Button botonDerecha = new Button("Derecha");
-        MoverHaciaDerechaEventHandler botonMoverHaciaDerechaEventHandler = new MoverHaciaDerechaEventHandler(juego, vistaTablero);
+        MoverHaciaDerechaEventHandler botonMoverHaciaDerechaEventHandler = new MoverHaciaDerechaEventHandler(juego, this.vistaTablero);
         botonDerecha.setOnAction(botonMoverHaciaDerechaEventHandler);
 
         contenedorControles.add(botonArriba,1,0);
