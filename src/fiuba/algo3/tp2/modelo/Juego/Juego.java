@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.modelo.Juego;
 
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
-import fiuba.algo3.tp2.modelo.Mapa.Celda;
 import fiuba.algo3.tp2.modelo.Mapa.Mapa;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
 
@@ -53,7 +52,7 @@ public class Juego {
         cargarMaterialesEnElMapa();
     }
 
-    public Celda[][] getMapaDelJuego() {
-        return this.mapaDelJuego.getMapaDelJuego();
+    public String obtenerCodigoObjetoEnPosicion(int filaEnElMapa, int columnaEnElMapa) {
+        return this.mapaDelJuego.obtenerCodigo(filaEnElMapa,columnaEnElMapa);
     }
 }

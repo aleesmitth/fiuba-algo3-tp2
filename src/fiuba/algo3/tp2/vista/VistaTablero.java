@@ -2,15 +2,14 @@ package fiuba.algo3.tp2.vista;
 
 
 import fiuba.algo3.tp2.modelo.Juego.Juego;
-
-import fiuba.algo3.tp2.modelo.Mapa.Celda;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-import static fiuba.algo3.tp2.modelo.Juego.Juego.*;
+import static fiuba.algo3.tp2.modelo.Juego.Juego.COLUMNAS_DEL_MAPA;
+import static fiuba.algo3.tp2.modelo.Juego.Juego.FILAS_DEL_MAPA;
 
 
 public class VistaTablero {
@@ -27,7 +26,6 @@ public class VistaTablero {
 
     public void dibujar() {
 
-        Celda[][] mapaDelJuego = this.juego.getMapaDelJuego();
 
         for(int i = 0; i< FILAS_DEL_MAPA; i++) {
             for(int j = 0; j<COLUMNAS_DEL_MAPA; j++) {
@@ -37,7 +35,7 @@ public class VistaTablero {
                  */
 
 
-                switch(mapaDelJuego[i][j].obtenerCodigo()){
+                switch(juego.obtenerCodigoObjetoEnPosicion(i,j)){
                     case "J":
                         contenedorCentral.add(new Rectangle(10,10,Color.RED),i,j);
                     case "M":

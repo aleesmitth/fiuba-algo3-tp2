@@ -73,7 +73,5 @@ public class Mapa {
         return this.tableroDeElementos[posicionEnFila][posicionEnColumna].tengoAlJugador();
     }
 
-    public Celda[][] getMapaDelJuego() {
-        return this.tableroDeElementos;
-    }
+    public String obtenerCodigo(int fila, int columna) { return this.tableroDeElementos[fila][columna].obtenerCodigo(); }
 }
