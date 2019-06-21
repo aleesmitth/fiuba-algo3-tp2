@@ -30,11 +30,11 @@ public class VistaControles {
 
         Button botonAbajo = new Button("Abajo");
         MoverHaciaAbajoEventHandler botonMoverHaciaAbajoEventHandler = new MoverHaciaAbajoEventHandler(juego);
-        botonArriba.setOnAction(botonMoverHaciaArribaEventHandler);
+        botonArriba.setOnAction(botonMoverHaciaAbajoEventHandler);
 
         Button botonDerecha = new Button("Derecha");
         MoverHaciaDerechaEventHandler botonMoverHaciaDerechaEventHandler = new MoverHaciaDerechaEventHandler(juego);
-        botonArriba.setOnAction(botonMoverHaciaArribaEventHandler);
+        botonArriba.setOnAction(botonMoverHaciaDerechaEventHandler);
 
         Button botonRomper = new Button("Romper");
         /*
