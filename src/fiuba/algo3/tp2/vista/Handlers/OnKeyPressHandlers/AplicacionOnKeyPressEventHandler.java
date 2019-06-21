@@ -19,9 +19,15 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
     @Override
     public void handle(KeyEvent event) {
 
-        if (event.getCode() == KeyCode.ESCAPE) {
-            stage.setMaximized(true);
-            menuBar.aplicacionMaximizada();
+        switch (event.getCode()) {
+            case ESCAPE:
+                stage.setMaximized(false);
+                menuBar.aplicacionMinimizada();
+                break;
+            case F:
+                stage.setFullScreen(true);
+                menuBar.aplicacionFullScreen();
+                break;
         }
     }
 }

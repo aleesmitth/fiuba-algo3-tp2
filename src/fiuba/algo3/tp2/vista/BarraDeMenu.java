@@ -31,8 +31,10 @@ public class BarraDeMenu extends MenuBar {
         this.getMenus().addAll(menuArchivo, menuVista);
     }
 
-    public void aplicacionMaximizada() {
+    public void aplicacionFullScreen() {
+        opcionPantallaCompleta.setDisable(true);
+    }
+    public void aplicacionMinimizada() {
         opcionPantallaCompleta.setDisable(false);
-
     }
 }
