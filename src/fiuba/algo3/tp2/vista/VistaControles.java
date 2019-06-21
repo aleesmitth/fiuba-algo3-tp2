@@ -36,18 +36,10 @@ public class VistaControles {
         MoverHaciaDerechaEventHandler botonMoverHaciaDerechaEventHandler = new MoverHaciaDerechaEventHandler(juego);
         botonArriba.setOnAction(botonMoverHaciaDerechaEventHandler);
 
-        Button botonRomper = new Button("Romper");
-        /*
-            MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler(juego);
-            botonArriba.setOnAction(botonMoverHaciaArribaEventHandler);
-         */
-
-
         contenedorControles.add(botonArriba,1,0);
         contenedorControles.add(botonIzquierda,0,1);
         contenedorControles.add(botonAbajo,1,1);
         contenedorControles.add(botonDerecha,2,1);
-        contenedorControles.add(botonRomper,3,0);
 
         contenedorControles.setMinSize(400, 200);
         contenedorControles.setPadding(new Insets(10, 10, 10, 10));

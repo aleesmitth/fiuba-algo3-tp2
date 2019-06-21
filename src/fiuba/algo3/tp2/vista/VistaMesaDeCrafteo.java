@@ -9,25 +9,25 @@ import javafx.scene.layout.GridPane;
 
 public class VistaMesaDeCrafteo {
 
-    public VistaMesaDeCrafteo(GridPane contenedorCentral, Juego juego){
-        this.dibujar(contenedorCentral);
+    public VistaMesaDeCrafteo(GridPane contenedorMesaDeCrafteo, Juego juego){
+        this.dibujar(contenedorMesaDeCrafteo);
     }
 
-    private void dibujar(GridPane contenedorCentral) {
+    private void dibujar(GridPane contenedorMesaDeCrafteo) {
 
         for(int i = 0; i< 3; i++) {
             for(int j = 0; j<3; j++) {
-                contenedorCentral.add(new TextField(),i,j);
+                contenedorMesaDeCrafteo.add(new TextField(),i,j);
             }
         }
 
         Button botonConstruir = new Button("Construir");
-        contenedorCentral.add(botonConstruir,1,3);
+        contenedorMesaDeCrafteo.add(botonConstruir,1,3);
 
-        contenedorCentral.setMaxSize(200, 200);
-        contenedorCentral.setPadding(new Insets(10, 10, 10, 10));
-        contenedorCentral.setVgap(5);
-        contenedorCentral.setHgap(5);
-        contenedorCentral.setAlignment(Pos.CENTER);
+        contenedorMesaDeCrafteo.setMinSize(10, 10);
+        contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
+        contenedorMesaDeCrafteo.setVgap(5);
+        contenedorMesaDeCrafteo.setHgap(5);
+        contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
     }
 }

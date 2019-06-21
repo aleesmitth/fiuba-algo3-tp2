@@ -14,7 +14,7 @@ public class ContenedorPrincipal extends BorderPane {
     private GridPane contenedorCentral;
     private GridPane contenedorInventario;
     private GridPane contenedorControles;
-    private GridPane contenedorMesDeCrafteo;
+    private GridPane contenedorMesaDeCrafteo;
     private VistaTablero vistaTablero;
     private VistaMesaDeCrafteo vistaMesaDeCrafteo;
     private VistaControles vistaControles;
@@ -64,9 +64,9 @@ public class ContenedorPrincipal extends BorderPane {
 
     private void setMesaDeCrafteo(Juego juego) {
 
-        contenedorMesDeCrafteo = new GridPane();
+        contenedorMesaDeCrafteo = new GridPane();
 
-        vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesDeCrafteo, juego);
+        vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesaDeCrafteo, juego);
 
         this.setLeft(contenedorMesDeCrafteo);
     }
