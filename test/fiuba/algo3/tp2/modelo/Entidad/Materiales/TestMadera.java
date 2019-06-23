@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.modelo.Entidad.Materiales;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,9 +14,13 @@ public class TestMadera {
     public void test01MaderaEsGolpeadaPorHachaDeMadera(){
         Material madera = new Madera();
         Hacha hacha = new Hacha(madera);
-        hacha.usarContra(madera);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(hacha);
+        jugador.usarHerramientaContra(madera);
 
         assertEquals(8,madera.durabilidad());
+
 
     }
 
@@ -24,7 +29,10 @@ public class TestMadera {
         Material metal = new Metal();
         Material madera = new Madera();
         Hacha hacha = new Hacha(metal);
-        hacha.usarContra(madera);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(hacha);
+        jugador.usarHerramientaContra(madera);
 
         assertEquals(0,madera.durabilidad());
 
@@ -35,7 +43,10 @@ public class TestMadera {
         Material madera = new Madera();
         Material piedra = new Piedra();
         Hacha hacha = new Hacha(piedra);
-        hacha.usarContra(madera);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(hacha);
+        jugador.usarHerramientaContra(madera);
 
         assertEquals(5,madera.durabilidad());
 
@@ -46,7 +57,10 @@ public class TestMadera {
     public void test04MaderaEsGolpeadaPorPicoDeMadera(){
         Material madera = new Madera();
         Pico pico = new Pico(madera);
-        pico.usarContra(madera);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(madera);
 
 
         assertEquals(10,madera.durabilidad());
@@ -58,7 +72,10 @@ public class TestMadera {
         Material metal = new Metal();
         Material madera = new Madera();
         Pico pico = new Pico(metal);
-        pico.usarContra(madera);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(madera);
 
         assertEquals(10,madera.durabilidad());
 
@@ -69,7 +86,10 @@ public class TestMadera {
         Material madera = new Madera();
         Material piedra = new Piedra();
         Pico pico = new Pico(piedra);
-        pico.usarContra(madera);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(madera);
 
         assertEquals(10,madera.durabilidad());
 
@@ -82,7 +102,10 @@ public class TestMadera {
         Material madera = new Madera();
         Material metal = new Metal();
         Pico pico = new Pico(madera);
-        pico.usarContra(metal);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(metal);
 
         assertEquals(50,metal.durabilidad());
 
@@ -92,7 +115,10 @@ public class TestMadera {
     public void test05MetalEsGolpeadoPorPicoDeMetal(){
         Material metal = new Metal();
         Pico pico = new Pico(metal);
-        pico.usarContra(metal);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(metal);
 
         assertEquals(50,metal.durabilidad());
 
@@ -104,7 +130,10 @@ public class TestMadera {
         Material madera = new Madera();
         Material metal = new Metal();
         Pico pico = new Pico(piedra,metal);
-        pico.usarContra(madera,true);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(madera);
 
 
         assertEquals(50,metal.durabilidad());

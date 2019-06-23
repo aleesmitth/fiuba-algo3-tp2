@@ -7,10 +7,11 @@ import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.TableroConstructor;
 
 public class Jugador {
     private TableroConstructor mesaDeCrafteo;
-    private Herramienta itemEquipado;
+    private Inventario inventario;
 
     public Jugador(){
         this.mesaDeCrafteo = new TableroConstructor();
+        this.inventario = new Inventario();
 
         /*
          * aca no estoy seguro si convendria hacer solamente new Hacha(new Madera());
@@ -18,28 +19,22 @@ public class Jugador {
          *
          * BORRAR ESTE COMENTARIO!!.
          */
-        this.agregarMaterialEnCasillero(new Madera(),0,0);
-        this.agregarMaterialEnCasillero(new Madera(), 0,1);
-        this.agregarMaterialEnCasillero(new Madera(), 1,0);
-        this.agregarMaterialEnCasillero(new Madera(), 1,1);
-        this.agregarMaterialEnCasillero(new Madera(), 2,1);
-        this.itemEquipado = this.mesaDeCrafteo.construirHerramienta();
+        this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(),0,0);
+        this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 0,1);
+        this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 1,0);
+        this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 1,1);
+        this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 2,1);
+        this.equiparHerramienta(mesaDeCrafteo.construirHerramienta());
     }
 
     public Herramienta construirHerramienta(){ return this.mesaDeCrafteo.construirHerramienta(); }
 
-    public void equiparHerramienta(Herramienta herramienta){
-        this.itemEquipado = herramienta;
-    }
+    public void equiparHerramienta(Herramienta herramienta){ this.inventario.equiparHerramienta(herramienta); }
 
-    public Herramienta obtenerHerramientaEquipada(){
-        return this.itemEquipado;
-    }
+    public Herramienta obtenerHerramientaEquipada(){ return this.inventario.getHerramienta(); }
 
-    public void usarHerramientaContra(Material material){
-        this.itemEquipado.usarContra(material);
-    }
+    public void usarHerramientaContra(Material material){ this.inventario.getHerramienta().usarContra(material, this.inventario); }
 
-    public void agregarMaterialEnCasillero(Material material, int fila, int columna){ this.mesaDeCrafteo.agregarMaterialEnCasillero(material,fila,columna); }
+    public void agregarMaterialEnCasilleroMesaDeCrafteo(Material material, int fila, int columna){ this.mesaDeCrafteo.agregarMaterialEnCasillero(material,fila,columna); }
 
 }

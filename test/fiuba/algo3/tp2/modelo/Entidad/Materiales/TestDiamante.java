@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.modelo.Entidad.Materiales;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +12,10 @@ public class TestDiamante {
         Material diamante = new Diamante();
         Material madera = new Madera();
         Hacha hacha = new Hacha(madera);
-        hacha.usarContra(diamante);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(hacha);
+        jugador.usarHerramientaContra(diamante);
 
         assertEquals(100,diamante.durabilidad());
 
@@ -21,7 +25,10 @@ public class TestDiamante {
         Material diamante = new Diamante();
         Material piedra = new Piedra();
         Pico pico = new Pico(piedra);
-        pico.usarContra(diamante);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(diamante);
 
         assertEquals(100,diamante.durabilidad());
 
@@ -32,7 +39,10 @@ public class TestDiamante {
         Material piedra = new Piedra();
         Material metal = new Metal();
         Pico pico = new Pico(piedra,metal);
-        pico.usarContra(diamante, true);
+        Jugador jugador = new Jugador();
+
+        jugador.equiparHerramienta(pico);
+        jugador.usarHerramientaContra(diamante);
 
         assertEquals(80,diamante.durabilidad());
 

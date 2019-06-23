@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.modelo.Entidad.Herramientas;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.*;
 import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Constructor;
 import org.junit.jupiter.api.Test;
@@ -36,16 +37,18 @@ public class TestHacha {
         Material piedra = new Piedra();
         Material metal = new Metal();
         Material diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(madera);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(98, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(98, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(98, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(98, hachaConstruida.durabilidad());
     }
 
@@ -53,10 +56,12 @@ public class TestHacha {
     public void test04HachaDeMaderaSeUsaContraMaderaYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Material madera = new Madera();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(madera);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(98, hachaConstruida.durabilidad());
     }
 
@@ -65,10 +70,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Material madera = new Madera();
         Material piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(madera);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(100, hachaConstruida.durabilidad());
 
     }
@@ -78,10 +85,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Material madera = new Madera();
         Material metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(madera);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(100, hachaConstruida.durabilidad());
     }
 
@@ -90,10 +99,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Material madera = new Madera();
         Material diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(madera);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(100, hachaConstruida.durabilidad());
     }
 
@@ -104,16 +115,18 @@ public class TestHacha {
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(piedra);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(195, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(195, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(195, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(195, hachaConstruida.durabilidad());
     }
 
@@ -123,10 +136,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Madera madera= new Madera();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(piedra);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(195, hachaConstruida.durabilidad());
     }
 
@@ -135,10 +150,12 @@ public class TestHacha {
     public void test10HachaDePiedraSeUsaContraPiedraYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(piedra);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(200, hachaConstruida.durabilidad());
     }
 
@@ -148,11 +165,13 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(piedra);
+        jugador.equiparHerramienta(hachaConstruida);
 
 
-        hachaConstruida.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(200, hachaConstruida.durabilidad());
     }
 
@@ -162,10 +181,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Material diamante = new Diamante();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(piedra);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(200, hachaConstruida.durabilidad());
     }
 
@@ -177,16 +198,18 @@ public class TestHacha {
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(metal);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(395, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(395, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(395, hachaConstruida.durabilidad());
-        hachaConstruida.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(395, hachaConstruida.durabilidad());
     }
 
@@ -196,10 +219,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(metal);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(395, hachaConstruida.durabilidad());
         }
 
@@ -209,10 +234,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(metal);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(400, hachaConstruida.durabilidad());
     }
 
@@ -221,10 +248,12 @@ public class TestHacha {
     public void test16HachaDeMetalSeUsaContraMetalYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(metal);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(400, hachaConstruida.durabilidad());
     }
 
@@ -234,10 +263,12 @@ public class TestHacha {
         Constructor constructor = new Constructor();
         Diamante diamante = new Diamante();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Hacha hachaConstruida = constructor.construirHacha(metal);
+        jugador.equiparHerramienta(hachaConstruida);
 
-        hachaConstruida.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(400, hachaConstruida.durabilidad());
     }
 

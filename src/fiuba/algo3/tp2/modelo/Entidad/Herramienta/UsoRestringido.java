@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.modelo.Entidad.Herramienta;
 
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Excepciones.UsarHerramientaRotaException;
 
@@ -20,10 +21,11 @@ public class UsoRestringido extends AtributosHerramienta{
     }
 
     @Override
-    public void usar(){
+    public void usar(Inventario inventario){
         try {
             if(this.durabilidad()>0) {
                 this.usos++;
+                if(this.durabilidad() <= 0) inventario.romperHerramienta();
             }
             else throw new UsarHerramientaRotaException("Se intento usar una herramienta rota");
         }catch(UsarHerramientaRotaException exception){
@@ -34,7 +36,7 @@ public class UsoRestringido extends AtributosHerramienta{
 
     @Override
     public int durabilidad(){
-        if(this.usos==this.limiteDeUsos){
+        if(this.usos>=this.limiteDeUsos){
            this.durabilidad = 0;
         }
         return this.durabilidad;

@@ -1,12 +1,15 @@
 package fiuba.algo3.tp2.modelo.Entidad.Materiales;
 
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
+import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
 import fiuba.algo3.tp2.modelo.Excepciones.CrearHerramientaDeDiamanteException;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.AtributosHerramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
 
-public class Diamante extends Material{
+import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_DIAMANTE;
 
+public class Diamante extends Material{
 
     public Diamante(){
         this.durabilidad=100;
@@ -46,17 +49,24 @@ public class Diamante extends Material{
     }
 
     @Override
-    public void golpeadoPor(Pico pico, Material material, Material materialSecundario) {
+    public void golpeadoPor(Pico pico, Material material, Material materialSecundario, Inventario inventario) {
         this.durabilidad -= pico.fuerza();
-        pico.usarLaHerramienta();
+        pico.usarLaHerramienta(inventario);
+        if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
     }
 
     @Override
-    public void golpeadoPor(Hacha hacha, Material material) {
-
-    }
-
     public String obtenerCodigoMaterial(){
         return "D";
+    }
+
+    @Override
+    public void agregarAlInventario(Casillero[] casilleroConMateriales) {
+        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_DIAMANTE].agregarMaterial(this);
+    }
+
+    @Override
+    public void sacarDelInventario(Casillero[] casilleroConMateriales) {
+        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_DIAMANTE].sacarMaterial();
     }
 }
