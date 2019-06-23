@@ -20,14 +20,12 @@ public class Mapa {
     }
 
     public boolean posicionOcupada(int fila,int columna){
-        int filaEnTablero = fila - 1;
-        int columnaEnTablero = columna - 1;
-        return this.tableroDeElementos[filaEnTablero][columnaEnTablero].celdaEstaOcupada();
+        return this.tableroDeElementos[fila][columna].celdaEstaOcupada();
     }
 
     public int filaValida(int posicionSolicitada){
-        if(posicionSolicitada > FILAS_DEL_MAPA-1){
-           posicionSolicitada =  FILAS_DEL_MAPA+1;
+        if(posicionSolicitada > FILAS_DEL_MAPA){
+           posicionSolicitada =  FILAS_DEL_MAPA;
         }
         if(posicionSolicitada <= 0){
             posicionSolicitada = 1;

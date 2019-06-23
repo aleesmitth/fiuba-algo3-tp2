@@ -25,12 +25,12 @@ public class TestMapa {
     @Test
     public void test02NoPuedoColocarCosasEnLugarOcupadoPorMaterial() {
         /**
-         * Diamante iniciado en (2.2)
+         * Diamante iniciado en (7.7)
          */
 
         Juego juego = new Juego();
         juego.crearUnMapaParaTestConMateriales();
-        assertTrue(juego.posicionOcupadaEnMapa(2, 2));
+        assertTrue(juego.posicionOcupadaEnMapa(7,7));
     }
 
     @Test
@@ -39,11 +39,11 @@ public class TestMapa {
          * Diamante iniciado en (2.2)
          */
         Juego juego = new Juego();
+        assertFalse(juego.posicionOcupadaEnMapa(2, 2));
+
         juego.crearUnMapaParaTestConMateriales();
 
-        assertFalse(juego.posicionOcupadaEnMapa(1, 1));
         assertTrue(juego.posicionOcupadaEnMapa(2, 2));
-        assertFalse(juego.posicionOcupadaEnMapa(3, 3));
 
     }
 

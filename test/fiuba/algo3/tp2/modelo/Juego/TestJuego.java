@@ -18,9 +18,8 @@ public class TestJuego {
     @Test
     public void SeVerificaMaterialInicializadoEnElJuego(){
         Juego juego = new Juego();
-        juego.crearUnMapaParaTestConMateriales();
 
-        assertTrue(juego.posicionOcupadaEnMapa(2,2));
+        assertTrue(juego.posicionOcupadaEnMapa(7,7));
 
     }
 }

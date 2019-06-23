@@ -97,9 +97,6 @@ public class TestJugador {
         assertTrue(juego.jugadorEstaEn(10,9));
     }
 
-    /**
-     * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
-     */
     @Test
     public void test08JugadorSeMueveCorrectamenteDerechaLimite() {
         Juego juego = new Juego();
@@ -110,12 +107,10 @@ public class TestJugador {
         for(int i=0; i<80; i++){
             juego.moverJugador(derecha);
         }
-        //assertTrue(juego.jugadorEstaEn(80,9));
+        assertTrue(juego.jugadorEstaEn(9,59));
     }
 
-    /**
-     * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
-     */
+
     @Test
     public void test09JugadorSeMueveCorrectamenteIzquierdaLimite() {
         Juego juego = new Juego();
@@ -130,9 +125,7 @@ public class TestJugador {
 
     }
 
-    /**
-     * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
-     */
+
     @Test
     public void test10JugadorSeMueveCorrectamenteArribaLimite() {
         Juego juego = new Juego();
@@ -143,12 +136,10 @@ public class TestJugador {
         for(int i=0; i<10; i++){
             juego.moverJugador(arriba);
         }
-        assertTrue(juego.jugadorEstaEn(1,9));
+        assertTrue(juego.jugadorEstaEn(0,9));
     }
 
-    /**
-     * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
-     */
+
     @Test
     public void test11JugadorSeMueveCorrectamenteAbajoLimite() {
         Juego juego = new Juego();
@@ -156,32 +147,32 @@ public class TestJugador {
         Movimiento abajo = new Abajo();
 
         assertTrue(juego.jugadorEstaEn(9,9));
-        for(int i=9; i<80; i++){
+       for(int i=10; i<80; i++){
             juego.moverJugador(abajo);
         }
-        assertTrue(juego.jugadorEstaEn(80,9));
+        assertTrue(juego.jugadorEstaEn(79,9));
     }
 
-    /**
-     * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
-     */
-    /*@Test
-    public void test12JugadorNoSeMueveSobreObjeto() {
 
-        Mapa mapa = Mapa.getTableroTest();
+    @Test
+    public void test12JugadorNoSeMueveSobreObjeto() {
+        Juego juego = new Juego();
         Movimiento arriba = new Arriba();
         Movimiento izquierda = new Izquierda();
+        //Material//
+        assertTrue(juego.posicionOcupadaEnMapa(7,7));
+        //Jugador//
+        assertTrue(juego.jugadorEstaEn(9,9));
 
-        //Diamante inicial en posicion (8.8)//
-        assertFalse(mapa.puedoColocar(8,8));
+        juego.moverJugador(arriba);
+        juego.moverJugador(arriba);
 
+        assertTrue(juego.jugadorEstaEn(7,9));
 
-        assertFalse(mapa.puedoColocar(9,9));
-        mapa.moverJugador(arriba);
-        assertFalse(mapa.puedoColocar(8,9));
-        mapa.moverJugador(izquierda);
-        assertFalse(mapa.puedoColocar(8,9));
+        juego.moverJugador(izquierda);
+        juego.moverJugador(izquierda);
 
+        assertTrue(juego.jugadorEstaEn(7,8));
     }
-    */
+
 }
