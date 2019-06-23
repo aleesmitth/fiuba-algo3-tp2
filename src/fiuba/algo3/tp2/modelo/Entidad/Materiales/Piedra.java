@@ -1,6 +1,10 @@
 package fiuba.algo3.tp2.modelo.Entidad.Materiales;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.*;
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
+import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
+
+import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_PIEDRA;
 
 public class Piedra extends Material {
 
@@ -27,16 +31,27 @@ public class Piedra extends Material {
     }
 
     @Override
-    public void golpeadoPor(Pico pico, Material material) {
+    public void golpeadoPor(Pico pico, Material material, Inventario inventario) {
         this.durabilidad -= pico.fuerza();
-        pico.usarLaHerramienta();
+        pico.usarLaHerramienta(inventario);
+        if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
     }
 
     @Override
-    public boolean hechoDePiedra(){return true;}
+    public boolean hechoDePiedra(){ return true; }
 
+    @Override
     public String obtenerCodigoMaterial(){
         return "P";
     }
 
+    @Override
+    public void agregarAlInventario(Casillero[] casilleroConMateriales) {
+        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_PIEDRA].agregarMaterial(this);
+    }
+
+    @Override
+    public void sacarDelInventario(Casillero[] casilleroConMateriales) {
+        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_PIEDRA].sacarMaterial();
+    }
 }

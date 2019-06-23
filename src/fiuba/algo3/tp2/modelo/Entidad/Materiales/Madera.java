@@ -1,10 +1,14 @@
 package fiuba.algo3.tp2.modelo.Entidad.Materiales;
 
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
+import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
 import fiuba.algo3.tp2.modelo.Excepciones.CrearPicoFinoDeMaderaException;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.AtributosHerramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.UsoLineal;
+
+import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_MADERA;
 
 public class Madera extends Material {
 
@@ -39,13 +43,25 @@ public class Madera extends Material {
     public boolean hechoDeMadera(){ return true; }
 
     @Override
-    public void golpeadoPor(Hacha hacha, Material material) {
-        hacha.usarLaHerramienta();
+    public void golpeadoPor(Hacha hacha, Material material, Inventario inventario) {
+        hacha.usarLaHerramienta(inventario);
         this.durabilidad -= hacha.fuerza();
+        if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
     }
 
+    @Override
     public String obtenerCodigoMaterial(){
         return "M";
+    }
+
+    @Override
+    public void agregarAlInventario(Casillero[] casilleroConMateriales) {
+        //casilleroConMateriales[CASILLERO_INVENTARIO_PARA_MADERA].agregarMaterial(this);
+    }
+
+    @Override
+    public void sacarDelInventario(Casillero[] casilleroConMateriales) {
+        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_MADERA].sacarMaterial();
     }
 }
 

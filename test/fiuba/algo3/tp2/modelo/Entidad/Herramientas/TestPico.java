@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.modelo.Entidad.Herramientas;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
+import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Constructor;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.*;
 
@@ -58,16 +59,18 @@ public class TestPico {
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(madera);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(100, picoConstruido.durabilidad());
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(98, picoConstruido.durabilidad());
-        picoConstruido.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(98, picoConstruido.durabilidad());
-        picoConstruido.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(98, picoConstruido.durabilidad());
 
     }
@@ -76,10 +79,12 @@ public class TestPico {
     public void test06PicoDeMaderaSeUsaContraMaderaYNoReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(madera);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(100, picoConstruido.durabilidad());
     }
 
@@ -88,10 +93,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(madera);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(98, picoConstruido.durabilidad());
 
     }
@@ -101,10 +108,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(madera);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(100, picoConstruido.durabilidad());
     }
 
@@ -113,10 +122,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(madera);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(100, picoConstruido.durabilidad());
     }
 
@@ -127,20 +138,22 @@ public class TestPico {
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         int desgaste = (int) (5 / 1.5);
         int primerDesgasteReal = (200 - desgaste);
         int segundoDesgasteReal = (primerDesgasteReal - desgaste);
 
         Pico picoConstruido = constructor.construirPico(piedra);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(200, picoConstruido.durabilidad());
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(primerDesgasteReal, picoConstruido.durabilidad());
-        picoConstruido.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(segundoDesgasteReal, picoConstruido.durabilidad());
-        picoConstruido.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(segundoDesgasteReal, picoConstruido.durabilidad());
 
     }
@@ -150,10 +163,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(piedra);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(200, picoConstruido.durabilidad());
     }
 
@@ -161,10 +176,12 @@ public class TestPico {
     public void test12PicoDePiedraSeUsaContraPiedraYReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(piedra);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(197, picoConstruido.durabilidad());
 
     }
@@ -174,10 +191,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(piedra);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(197, picoConstruido.durabilidad());
     }
 
@@ -186,12 +205,19 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(piedra);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(200, picoConstruido.durabilidad());
     }
+
+    /**
+     * Bug guarda cantidad de usos del pico por cada material. ej golpeas 9 veces piedra y 9 veces madera y no se rompe
+     * pero si golpeas 10 veces madera si se rompe.
+     */
 
     @Test
     public void test15PicoDeMetalSeUsaContraCadaMaterialYNoReduceSuDurabilidadSoloSeRompeAlDecimoUsoContraPiedra() {
@@ -200,27 +226,26 @@ public class TestPico {
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(metal);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(400, picoConstruido.durabilidad());
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(400, picoConstruido.durabilidad());
-        picoConstruido.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(400, picoConstruido.durabilidad());
-        picoConstruido.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(400, picoConstruido.durabilidad());
         /*cuenta un solo uso , por la piedra*/
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(0, picoConstruido.durabilidad());
     }
 
@@ -229,10 +254,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Madera madera = new Madera();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(metal);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(madera);
+        jugador.usarHerramientaContra(madera);
         assertEquals(400, picoConstruido.durabilidad());
     }
 
@@ -241,10 +268,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(metal);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(400, picoConstruido.durabilidad());
     }
 
@@ -253,20 +282,22 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(metal);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(400, picoConstruido.durabilidad());
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
-        picoConstruido.usarContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(0, picoConstruido.durabilidad());
     }
 
@@ -274,22 +305,26 @@ public class TestPico {
     public void test19PicoDeMetalSeUsaContraMetalYNoReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(metal);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(metal);
+        jugador.usarHerramientaContra(metal);
         assertEquals(400, picoConstruido.durabilidad());
     }
 
     @Test
-    public void test20PicoDeMetalSeUsaContraMetalYNoReduceSuDurabilidad() {
+    public void test20PicoDeMetalSeUsaContraDiamanteYNoReduceSuDurabilidad() {
         Constructor constructor = new Constructor();
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
+        Jugador jugador = new Jugador();
 
         Pico picoConstruido = constructor.construirPico(metal);
+        jugador.equiparHerramienta(picoConstruido);
 
-        picoConstruido.usarContra(diamante);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(400, picoConstruido.durabilidad());
     }
 
@@ -300,14 +335,16 @@ public class TestPico {
         Diamante diamante = new Diamante();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoFinoConstruido = constructor.construirPico(metal, piedra);
+        jugador.equiparHerramienta(picoFinoConstruido);
 
-        picoFinoConstruido.usarContra(diamante, true);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(900, picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(diamante, true);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(810, picoFinoConstruido.durabilidad());
-        picoFinoConstruido.usarContra(diamante, true);
+        jugador.usarHerramientaContra(diamante);
         assertEquals(729, picoFinoConstruido.durabilidad());
     }
 
@@ -317,10 +354,12 @@ public class TestPico {
         Madera madera = new Madera();
         Metal metal = new Metal();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Pico picoFinoConstruido = constructor.construirPico(metal, piedra);
+        jugador.equiparHerramienta(picoFinoConstruido);
 
-        picoFinoConstruido.usarContra(madera,true);
+        jugador.usarHerramientaContra(madera);
         assertEquals(1000, picoFinoConstruido.durabilidad());
     }
 
@@ -329,10 +368,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
+        Jugador jugador = new Jugador();
 
         Pico picoFinoConstruido = constructor.construirPico(metal, piedra);
+        jugador.equiparHerramienta(picoFinoConstruido);
 
-        picoFinoConstruido.usarContra(piedra, true);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(1000, picoFinoConstruido.durabilidad());
     }
 
@@ -341,10 +382,12 @@ public class TestPico {
         Constructor constructor = new Constructor();
         Metal metal = new Metal();
         Piedra piedra = new Piedra();
+        Jugador jugador = new Jugador();
 
         Pico picoFinoConstruido = constructor.construirPico(metal, piedra);
+        jugador.equiparHerramienta(picoFinoConstruido);
 
-        picoFinoConstruido.usarContra(metal,true);
+        jugador.usarHerramientaContra(metal);
         assertEquals(1000, picoFinoConstruido.durabilidad());
     }
 }

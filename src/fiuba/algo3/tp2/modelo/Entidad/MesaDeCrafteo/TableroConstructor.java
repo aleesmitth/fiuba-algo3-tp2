@@ -1,13 +1,19 @@
 package fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
-import fiuba.algo3.tp2.modelo.Entidad.Materiales.*;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Metal;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Piedra;
 import fiuba.algo3.tp2.modelo.Excepciones.RecetaIntroducidaNoExisteEnElJuegoException;
-import static fiuba.algo3.tp2.modelo.Juego.Juego.COLUMNAS_TABLERO_CONSTRUCTOR;
-import static fiuba.algo3.tp2.modelo.Juego.Juego.FILAS_TABLERO_CONSTRUCTOR;
+
 import java.util.HashMap;
 
-public class TableroConstructor {Casillero casilleros[][] = new Casillero[FILAS_TABLERO_CONSTRUCTOR][COLUMNAS_TABLERO_CONSTRUCTOR];
+import static fiuba.algo3.tp2.modelo.Juego.Juego.COLUMNAS_TABLERO_CONSTRUCTOR;
+import static fiuba.algo3.tp2.modelo.Juego.Juego.FILAS_TABLERO_CONSTRUCTOR;
+
+public class TableroConstructor {
+    Casillero casilleros[][] = new Casillero[FILAS_TABLERO_CONSTRUCTOR][COLUMNAS_TABLERO_CONSTRUCTOR];
     Constructor constructor;
     HashMap<String, Herramienta> recetas = new HashMap<>();
 

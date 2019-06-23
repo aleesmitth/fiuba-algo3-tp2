@@ -15,6 +15,11 @@ public class Juego {
     public static int POSICION_Y_INICIAL_JUGADOR = 9;
     public static int FILAS_TABLERO_CONSTRUCTOR = 3;
     public static int COLUMNAS_TABLERO_CONSTRUCTOR = 3;
+    public static int TOTAL_DE_MATERIALES = 4;
+    public static int CASILLERO_INVENTARIO_PARA_MADERA = 0;
+    public static int CASILLERO_INVENTARIO_PARA_PIEDRA = 1;
+    public static int CASILLERO_INVENTARIO_PARA_METAL = 2;
+    public static int CASILLERO_INVENTARIO_PARA_DIAMANTE = 3;
 
 
     public Juego(){
@@ -36,23 +41,13 @@ public class Juego {
         this.mapaDelJuego.colocarMaterialesIniciales();
     }
 
-    public boolean posicionOcupadaEnMapa(int posicionEnFila, int posicionEnColumna){
-        return this.mapaDelJuego.posicionOcupada(posicionEnFila,posicionEnColumna);
-    }
-    public boolean jugadorEstaEn(int posicionEnFila, int posicionEnColumna){
-        return this.mapaDelJuego.jugadorEstaEn(posicionEnFila, posicionEnColumna);
-    }
+    public boolean posicionOcupadaEnMapa(int posicionEnFila, int posicionEnColumna){ return this.mapaDelJuego.posicionOcupada(posicionEnFila,posicionEnColumna); }
 
+    public boolean jugadorEstaEn(int posicionEnFila, int posicionEnColumna){ return this.mapaDelJuego.jugadorEstaEn(posicionEnFila, posicionEnColumna); }
 
-    public void moverJugador(Movimiento movimiento) {
-        this.mapaDelJuego.moverJugador(movimiento);
-    }
+    public void moverJugador(Movimiento movimiento) { this.mapaDelJuego.moverJugador(movimiento); }
 
-    public void crearUnMapaParaTestConMateriales() {
-        cargarMaterialesEnElMapa();
-    }
+    public void crearUnMapaParaTestConMateriales() { cargarMaterialesEnElMapa(); }
 
-    public String obtenerCodigoObjetoEnPosicion(int filaEnElMapa, int columnaEnElMapa) {
-        return this.mapaDelJuego.obtenerCodigo(filaEnElMapa,columnaEnElMapa);
-    }
+    public String obtenerCodigoObjetoEnPosicion(int filaEnElMapa, int columnaEnElMapa) { return this.mapaDelJuego.obtenerCodigo(filaEnElMapa,columnaEnElMapa); }
 }
