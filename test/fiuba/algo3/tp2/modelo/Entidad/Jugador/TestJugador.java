@@ -7,8 +7,7 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TestJugador {
@@ -52,6 +51,7 @@ public class TestJugador {
 
         assertTrue(juego.jugadorEstaEn(9,9));
         juego.moverJugador(derecha);
+        assertFalse(juego.jugadorEstaEn(9,9));
         assertTrue(juego.jugadorEstaEn(9,10));
 
     }
@@ -65,6 +65,7 @@ public class TestJugador {
 
         assertTrue(juego.jugadorEstaEn(9,9));
         juego.moverJugador(izquierda);
+        assertFalse(juego.jugadorEstaEn(9,9));
         assertTrue(juego.jugadorEstaEn(9,8));
 
     }
@@ -78,6 +79,7 @@ public class TestJugador {
 
         assertTrue(juego.jugadorEstaEn(9,9));
         juego.moverJugador(arriba);
+        assertFalse(juego.jugadorEstaEn(9,9));
         assertTrue(juego.jugadorEstaEn(8,9));
 
     }
@@ -91,84 +93,75 @@ public class TestJugador {
 
         assertTrue(juego.jugadorEstaEn(9,9));
         juego.moverJugador(abajo);
+        assertFalse(juego.jugadorEstaEn(9,9));
         assertTrue(juego.jugadorEstaEn(10,9));
     }
 
     /**
      * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
      */
-    /*@Test
+    @Test
     public void test08JugadorSeMueveCorrectamenteDerechaLimite() {
         Juego juego = new Juego();
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento derecha = new Derecha();
 
         assertTrue(juego.jugadorEstaEn(9,9));
-        juego.moverJugador(derecha);
-        assertTrue(juego.jugadorEstaEn(9,10));
-        juego.moverJugador(derecha);
-        assertTrue(juego.jugadorEstaEn(9,11));
-
-
-    }*/
+        for(int i=0; i<80; i++){
+            juego.moverJugador(derecha);
+        }
+        //assertTrue(juego.jugadorEstaEn(80,9));
+    }
 
     /**
      * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
      */
-    /*@Test
+    @Test
     public void test09JugadorSeMueveCorrectamenteIzquierdaLimite() {
         Juego juego = new Juego();
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento izquierda = new Izquierda();
 
         assertTrue(juego.jugadorEstaEn(9,9));
-        for(int i=0; i<60; i++){
+        for(int i=0; i<10; i++){
             juego.moverJugador(izquierda);
         }
-        assertTrue(juego.jugadorEstaEn(9,59));
+        assertTrue(juego.jugadorEstaEn(9,0));
 
-    }*/
+    }
 
     /**
      * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
      */
-    /*@Test
+    @Test
     public void test10JugadorSeMueveCorrectamenteArribaLimite() {
-        Mapa mapa = Mapa.getTableroTest();
+        Juego juego = new Juego();
+        juego.crearUnMapaParaTestSinMateriales();
         Movimiento arriba = new Arriba();
 
-        assertFalse(mapa.puedoColocar(9,9));
-
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-        mapa.moverJugador(arriba);
-
-        assertFalse(mapa.puedoColocar(8,9));
-
-    }*/
+        assertTrue(juego.jugadorEstaEn(9,9));
+        for(int i=0; i<10; i++){
+            juego.moverJugador(arriba);
+        }
+        assertTrue(juego.jugadorEstaEn(1,9));
+    }
 
     /**
      * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
      */
-    /*@Test
+    @Test
     public void test11JugadorSeMueveCorrectamenteAbajoLimite() {
-
-        Mapa mapa = Mapa.getTableroTest();
+        Juego juego = new Juego();
+        juego.crearUnMapaParaTestSinMateriales();
         Movimiento abajo = new Abajo();
 
-        assertFalse(mapa.puedoColocar(9,9));
+        assertTrue(juego.jugadorEstaEn(9,9));
+        for(int i=9; i<80; i++){
+            juego.moverJugador(abajo);
+        }
+        assertTrue(juego.jugadorEstaEn(80,9));
+    }
 
-
-        mapa.moverJugador(abajo);
-
-        assertFalse(mapa.puedoColocar(9,9));
-    }*/
     /**
      * EL JUGADOR NO CAMINA MAS DE 1 TILE ARREGLARLO
      */
@@ -189,9 +182,6 @@ public class TestJugador {
         mapa.moverJugador(izquierda);
         assertFalse(mapa.puedoColocar(8,9));
 
-    }*/
-
-
-
-
+    }
+    */
 }

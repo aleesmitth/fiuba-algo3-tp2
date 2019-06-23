@@ -45,6 +45,7 @@ public class Juego {
 
 
     public void moverJugador(Movimiento movimiento) {
+        movimiento.obtenerEntorno(this.mapaDelJuego);
         this.mapaDelJuego.moverJugador(movimiento);
     }
 

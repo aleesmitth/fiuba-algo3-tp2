@@ -26,22 +26,28 @@ public class Mapa {
     }
 
     public int filaValida(int posicionSolicitada){
-        if(posicionSolicitada > FILAS_DEL_MAPA){
+        if(posicionSolicitada > FILAS_DEL_MAPA-1){
            posicionSolicitada =  FILAS_DEL_MAPA+1;
+        }
+        if(posicionSolicitada <= 0){
+            posicionSolicitada = 1;
         }
         return posicionSolicitada;
     }
 
     public int columnaValida(int posicionSolicitada){
         if(posicionSolicitada > COLUMNAS_DEL_MAPA){
-            posicionSolicitada =  COLUMNAS_DEL_MAPA+1;
+            posicionSolicitada =  COLUMNAS_DEL_MAPA;
+        }
+        if(posicionSolicitada <= 0){
+            posicionSolicitada = 1;
         }
         return posicionSolicitada;
     }
 
     public void moverJugador(Movimiento movimiento){
         movimiento.obtenerEntorno(this);
-        this.celdaConJugador.moverJugadorA(movimiento);
+        this.celdaConJugador = movimiento.movible(this.celdaConJugador);
     }
 
     public void ocuparCelda(int posicionDeFila,int posicionDeColumna,Celda celdaQueEnvia){
@@ -74,4 +80,6 @@ public class Mapa {
     }
 
     public String obtenerCodigo(int fila, int columna) { return this.tableroDeElementos[fila][columna].obtenerCodigo(); }
+
+    public Celda obtenerCelda(int fila,int columna) {return this.tableroDeElementos[fila][columna];}
 }

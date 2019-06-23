@@ -22,13 +22,7 @@ public class Celda {
         return this.estaOcupado;
     }
 
-    public void moverJugadorA(Movimiento direccion){
-        direccion.movible(this);
-    }
-
-    public int obtenerSiguienteFila(int direccionNueva){
-        return (this.filaDeCelda + 1 + direccionNueva);
-    }
+    public int obtenerSiguienteFila(int direccionNueva){ return (this.filaDeCelda + 1 + direccionNueva); }
 
     public int obtenerSiguienteColumna(int direccionNueva){
         return (this.columnaDeCelda +1+ direccionNueva);

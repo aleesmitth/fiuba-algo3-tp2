@@ -14,7 +14,8 @@ public class Derecha implements Movimiento {
     }
 
     @Override
-    public void movible(Celda celdaDeJugador) {
+    public Celda movible(Celda celdaDeJugador) {
+        Celda nuevaCeldaDelJugador;
         int nuevaFila = celdaDeJugador.obtenerSiguienteFila(0);
         int nuevaColumna = celdaDeJugador.obtenerSiguienteColumna(1);
         nuevaFila = this.entornoMovimiento.filaValida(nuevaFila);
@@ -22,11 +23,9 @@ public class Derecha implements Movimiento {
         if(!this.entornoMovimiento.posicionOcupada(nuevaFila,nuevaColumna)){
             this.entornoMovimiento.ocuparCelda(nuevaFila-1,nuevaColumna-1,celdaDeJugador);
         }
+        nuevaCeldaDelJugador = this.entornoMovimiento.obtenerCelda(nuevaFila-1,nuevaColumna-1);
+        return nuevaCeldaDelJugador;
     }
 
-    @Override
-    public void nuevaPosicionValida(int posicionNuevaFila, int posicionNuevaColumna) {
-        this.entornoMovimiento.filaValida(posicionNuevaFila);
-        this.entornoMovimiento.columnaValida(posicionNuevaColumna);
-    }
+
 }
