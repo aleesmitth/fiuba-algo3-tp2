@@ -10,7 +10,7 @@ public class Juego {
     Jugador jugador;
 
     public static int FILAS_DEL_MAPA = 80;
-    public static int COLUMNAS_DEL_MAPA = 60;
+    public static int COLUMNAS_DEL_MAPA = 100;
     public static int POSICION_X_INICIAL_JUGADOR = 9;
     public static int POSICION_Y_INICIAL_JUGADOR = 9;
     public static int FILAS_TABLERO_CONSTRUCTOR = 3;

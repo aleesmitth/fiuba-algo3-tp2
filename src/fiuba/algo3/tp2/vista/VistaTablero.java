@@ -14,8 +14,8 @@ import static fiuba.algo3.tp2.modelo.Juego.Juego.FILAS_DEL_MAPA;
 
 public class VistaTablero {
 
-    private GridPane contenedorCentral;
-    private Juego juego;
+    private final GridPane contenedorCentral;
+    private final Juego juego;
 
     public VistaTablero(GridPane contenedorCentral, Juego juego){
         this.contenedorCentral = contenedorCentral;
@@ -26,9 +26,8 @@ public class VistaTablero {
 
     public void dibujar() {
 
-
-        for(int i = 0; i< FILAS_DEL_MAPA; i++) {
-            for(int j = 0; j<COLUMNAS_DEL_MAPA; j++) {
+        for(int i = 0; i < FILAS_DEL_MAPA; i++) {
+            for(int j = 0; j < COLUMNAS_DEL_MAPA; j++) {
 
                 /**
                  * jugador:J madera:M piedra:P metal:A diamante:D vacio:-
@@ -37,21 +36,22 @@ public class VistaTablero {
 
                 switch(juego.obtenerCodigoObjetoEnPosicion(i,j)){
                     case "J":
-                        contenedorCentral.add(new Rectangle(10,10,Color.RED),i,j);
+                        contenedorCentral.add(new Rectangle(10,10,Color.RED),j,i);
+                        break;
                     case "M":
-                        contenedorCentral.add(new Rectangle(10,10,Color.BROWN),i,j);
+                        contenedorCentral.add(new Rectangle(10,10,Color.BROWN),j,i);
                         break;
                     case "P":
-                        contenedorCentral.add(new Rectangle(10,10,Color.GRAY),i,j);
+                        contenedorCentral.add(new Rectangle(10,10,Color.GRAY),j,i);
                         break;
                     case "A":
-                        contenedorCentral.add(new Rectangle(10,10,Color.GAINSBORO),i,j);
+                        contenedorCentral.add(new Rectangle(10,10,Color.GAINSBORO),j,i);
                         break;
                     case "D":
-                        contenedorCentral.add(new Rectangle(10,10,Color.LIGHTBLUE),i,j);
+                        contenedorCentral.add(new Rectangle(10,10,Color.LIGHTBLUE),j,i);
                         break;
                     case "-":
-                        contenedorCentral.add(new Rectangle(10,10,Color.GREEN),i,j);
+                        contenedorCentral.add(new Rectangle(10,10,Color.GREEN),j,i);
                         break;
                 }
             }
@@ -59,9 +59,12 @@ public class VistaTablero {
 
         contenedorCentral.setMinSize(200, 200);
         contenedorCentral.setPadding(new Insets(10, 10, 10, 10));
+
         contenedorCentral.setVgap(0);
         contenedorCentral.setHgap(0);
         contenedorCentral.setAlignment(Pos.CENTER);
+
+        contenedorCentral.setGridLinesVisible(true);
     }
 
     public void actualizar() {
