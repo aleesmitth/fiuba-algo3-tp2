@@ -8,7 +8,8 @@ import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.MoverHaciaIzquierdaEventHan
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 public class VistaControles {
 
@@ -20,6 +21,8 @@ public class VistaControles {
     }
 
     private void dibujar(GridPane contenedorControles, Juego juego) {
+
+        this.dibujarFondo(contenedorControles);
 
         Button botonArriba = new Button("Arriba");
         MoverHaciaArribaEventHandler botonMoverHaciaArribaEventHandler = new MoverHaciaArribaEventHandler(juego, this.vistaTablero);
@@ -42,10 +45,16 @@ public class VistaControles {
         contenedorControles.add(botonAbajo,1,1);
         contenedorControles.add(botonDerecha,2,1);
 
-        contenedorControles.setMinSize(400, 200);
+        contenedorControles.setMinSize(Region.USE_COMPUTED_SIZE, 200);
         contenedorControles.setPadding(new Insets(10, 10, 10, 10));
         contenedorControles.setVgap(5);
         contenedorControles.setHgap(5);
         contenedorControles.setAlignment(Pos.CENTER);
+    }
+
+    private void dibujarFondo(GridPane contenedorControles){
+        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/Madera.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        contenedorControles.setBackground(new Background(imagenDeFondo));
     }
 }

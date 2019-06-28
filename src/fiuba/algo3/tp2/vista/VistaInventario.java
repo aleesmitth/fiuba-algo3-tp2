@@ -4,7 +4,8 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 public class VistaInventario {
 
@@ -14,16 +15,24 @@ public class VistaInventario {
 
     private void dibujar(GridPane contenedorInventario) {
 
+        this.agregarFondo(contenedorInventario);
+
         contenedorInventario.add(new Label("Inventario:"),0,0);
         contenedorInventario.add(new Label("Madera"),0,1);
         contenedorInventario.add(new Label("1"),1,1);
         contenedorInventario.add(new Label("Piedra"),0,2);
         contenedorInventario.add(new Label("0"),1,2);
 
-        contenedorInventario.setMinSize(400, 200);
+        contenedorInventario.setMinSize(200, Region.USE_COMPUTED_SIZE);
         contenedorInventario.setPadding(new Insets(10, 10, 10, 10));
         contenedorInventario.setVgap(5);
         contenedorInventario.setHgap(5);
         contenedorInventario.setAlignment(Pos.CENTER);
+    }
+
+    private void agregarFondo(GridPane contenedorInventario){
+        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/Madera.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        contenedorInventario.setBackground(new Background(imagenDeFondo));
     }
 }

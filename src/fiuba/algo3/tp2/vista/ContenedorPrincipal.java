@@ -5,6 +5,7 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.vista.Handlers.OnKeyPressHandlers.MoverOnKeyPressEventHandler;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -14,7 +15,7 @@ public class ContenedorPrincipal extends BorderPane {
     private GridPane contenedorCentral;
     private GridPane contenedorInventario;
     private GridPane contenedorControles;
-    private GridPane contenedorMesaDeCrafteo;
+    private VBox contenedorMesaDeCrafteo;
     private VistaTablero vistaTablero;
     private VistaMesaDeCrafteo vistaMesaDeCrafteo;
     private VistaControles vistaControles;
@@ -68,7 +69,7 @@ public class ContenedorPrincipal extends BorderPane {
 
     private void setMesaDeCrafteo(Juego juego) {
 
-        contenedorMesaDeCrafteo = new GridPane();
+        contenedorMesaDeCrafteo = new VBox();
 
         vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesaDeCrafteo, juego);
 

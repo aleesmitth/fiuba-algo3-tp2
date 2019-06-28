@@ -4,7 +4,8 @@ package fiuba.algo3.tp2.vista;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -21,10 +22,11 @@ public class VistaTablero {
         this.contenedorCentral = contenedorCentral;
         this.juego = juego;
         this.dibujar();
-
     }
 
     public void dibujar() {
+
+        this.agregarFondo(contenedorCentral);
 
         for(int i = 0; i < FILAS_DEL_MAPA; i++) {
             for(int j = 0; j < COLUMNAS_DEL_MAPA; j++) {
@@ -36,40 +38,54 @@ public class VistaTablero {
 
                 switch(juego.obtenerCodigoObjetoEnPosicion(i,j)){
                     case "J":
-                        contenedorCentral.add(new Rectangle(10,10,Color.RED),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(Color.RED),j,i);
                         break;
                     case "M":
-                        contenedorCentral.add(new Rectangle(10,10,Color.BROWN),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(Color.BROWN),j,i);
                         break;
                     case "P":
-                        contenedorCentral.add(new Rectangle(10,10,Color.GRAY),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(Color.GRAY),j,i);
                         break;
                     case "A":
-                        contenedorCentral.add(new Rectangle(10,10,Color.GAINSBORO),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(Color.GAINSBORO),j,i);
                         break;
                     case "D":
-                        contenedorCentral.add(new Rectangle(10,10,Color.LIGHTBLUE),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(Color.LIGHTBLUE),j,i);
                         break;
                     case "-":
-                        contenedorCentral.add(new Rectangle(10,10,Color.GREEN),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(Color.GREEN),j,i);
                         break;
                 }
             }
         }
 
-        contenedorCentral.setMinSize(200, 200);
+        contenedorCentral.setGridLinesVisible(true);
         contenedorCentral.setPadding(new Insets(10, 10, 10, 10));
-
         contenedorCentral.setVgap(0);
         contenedorCentral.setHgap(0);
+
         contenedorCentral.setAlignment(Pos.CENTER);
 
-        contenedorCentral.setGridLinesVisible(true);
+        contenedorCentral.setMaxSize(Region.USE_COMPUTED_SIZE,Region.USE_COMPUTED_SIZE);
     }
 
     public void actualizar() {
         this.dibujar();
 
     }
+
+    private Rectangle dibujarRectangulo(Color color){
+
+        Rectangle celda = new Rectangle(10,10, color);
+
+        return celda;
+    }
+
+    private void agregarFondo(GridPane contenedorCentral){
+        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/TexturaPasto.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        contenedorCentral.setBackground(new Background(imagenDeFondo));
+    }
+
 }
 
