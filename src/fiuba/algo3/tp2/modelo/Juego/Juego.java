@@ -9,10 +9,10 @@ public class Juego {
     Mapa mapaDelJuego;
     Jugador jugador;
 
-    public static int FILAS_DEL_MAPA = 80;
-    public static int COLUMNAS_DEL_MAPA = 100;
-    public static int POSICION_X_INICIAL_JUGADOR = 9;
-    public static int POSICION_Y_INICIAL_JUGADOR = 9;
+    public static int FILAS_DEL_MAPA = 40;
+    public static int COLUMNAS_DEL_MAPA = 50;
+    public static int POSICION_X_INICIAL_JUGADOR = 2;
+    public static int POSICION_Y_INICIAL_JUGADOR = 2;
     public static int FILAS_TABLERO_CONSTRUCTOR = 3;
     public static int COLUMNAS_TABLERO_CONSTRUCTOR = 3;
     public static int TOTAL_DE_MATERIALES = 4;

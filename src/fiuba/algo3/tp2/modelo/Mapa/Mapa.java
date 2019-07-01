@@ -72,26 +72,26 @@ public class Mapa {
         Material piedra = new Piedra();
         Material metal = new Metal();
         Material diamante = new Diamante();
-        for(int i=15;i<30;i++){
-            for(int j=3;j<7;j++){
+        for(int i=5;i<8;i++){
+            for(int j=3;j<5;j++){
                 this.tableroDeElementos[i][j].ocuparCelda(madera);
                 this.tableroDeElementos[j*2-j][i+i/2].ocuparCelda(madera);
             }
         }
-        for(int i=33;i<40;i++){
-            for(int j=15;j<19;j++){
+        for(int i=15;i<18;i++){
+            for(int j=20;j<25;j++){
                 this.tableroDeElementos[i][j].ocuparCelda(piedra);
                 this.tableroDeElementos[j*2-j][i+i/3].ocuparCelda(piedra);
             }
         }
-        for(int i=50;i<60;i++){
-            for(int j=40;j<45;j++){
+        for(int i=22;i<27;i++){
+            for(int j=30;j<33;j++){
                 this.tableroDeElementos[i][j].ocuparCelda(metal);
                 this.tableroDeElementos[j-j/2][i-i/2].ocuparCelda(metal);
             }
         }
-        for(int i=70;i<77;i++){
-            for(int j=23;j<29;j++){
+        for(int i=30;i<32;i++){
+            for(int j=38;j<40;j++){
                 this.tableroDeElementos[i][j].ocuparCelda(diamante);
             }
         }

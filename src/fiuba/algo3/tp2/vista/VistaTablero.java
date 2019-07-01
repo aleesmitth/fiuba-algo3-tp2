@@ -5,6 +5,7 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -26,7 +27,12 @@ public class VistaTablero {
 
     public void dibujar() {
 
-        this.agregarFondo(contenedorCentral);
+        Image jugador = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/player.png");
+        Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/madera.png");
+        Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedra.png");
+        Image metal = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/iron.png");
+        Image diamante = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/diamante.png");
+        Image pasto = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/pasto.png");
 
         for(int i = 0; i < FILAS_DEL_MAPA; i++) {
             for(int j = 0; j < COLUMNAS_DEL_MAPA; j++) {
@@ -38,22 +44,22 @@ public class VistaTablero {
 
                 switch(juego.obtenerCodigoObjetoEnPosicion(i,j)){
                     case "J":
-                        contenedorCentral.add(this.dibujarRectangulo(Color.RED),j,i);
+                        contenedorCentral.add(new ImageView(jugador),j,i);
                         break;
                     case "M":
-                        contenedorCentral.add(this.dibujarRectangulo(Color.BROWN),j,i);
+                        contenedorCentral.add(new ImageView(madera),j,i);
                         break;
                     case "P":
-                        contenedorCentral.add(this.dibujarRectangulo(Color.GRAY),j,i);
+                        contenedorCentral.add(new ImageView(piedra),j,i);
                         break;
                     case "A":
-                        contenedorCentral.add(this.dibujarRectangulo(Color.GAINSBORO),j,i);
+                        contenedorCentral.add(new ImageView(metal),j,i);
                         break;
                     case "D":
-                        contenedorCentral.add(this.dibujarRectangulo(Color.LIGHTBLUE),j,i);
+                        contenedorCentral.add(new ImageView(diamante),j,i);
                         break;
                     case "-":
-                        contenedorCentral.add(this.dibujarRectangulo(Color.GREEN),j,i);
+                        contenedorCentral.add(new ImageView(pasto),j,i);
                         break;
                 }
             }
@@ -76,15 +82,9 @@ public class VistaTablero {
 
     private Rectangle dibujarRectangulo(Color color){
 
-        Rectangle celda = new Rectangle(10,10, color);
+        Rectangle celda = new Rectangle(18,18, color);
 
         return celda;
-    }
-
-    private void agregarFondo(GridPane contenedorCentral){
-        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/TexturaPasto.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        contenedorCentral.setBackground(new Background(imagenDeFondo));
     }
 
 }
