@@ -32,7 +32,7 @@ public class Metal extends Material {
 
     @Override
     public void golpeadoPor(Pico pico, Material material, Inventario inventario) {
-        if(material.hechoDePiedra()){
+        if(material.hechoDePiedra() & !pico.esPicoFino()){
             this.durabilidad -= pico.fuerza();
             pico.usarLaHerramienta(inventario);
             if(laHerramientaMeRompio()) inventario.agregarMaterial(this);

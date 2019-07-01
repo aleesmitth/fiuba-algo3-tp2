@@ -32,9 +32,11 @@ public class Piedra extends Material {
 
     @Override
     public void golpeadoPor(Pico pico, Material material, Inventario inventario) {
-        this.durabilidad -= pico.fuerza();
-        pico.usarLaHerramienta(inventario);
-        if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
+        if(!pico.esPicoFino()) {
+            this.durabilidad -= pico.fuerza();
+            pico.usarLaHerramienta(inventario);
+            if (laHerramientaMeRompio()) {inventario.agregarMaterial(this);}
+        }
     }
 
     @Override

@@ -28,4 +28,7 @@ public class UsoMinimo extends AtributosHerramienta {
         }
     }
 
+    @Override
+    public boolean esUsoFino(){return true;};
+
 }

@@ -22,4 +22,5 @@ public abstract class AtributosHerramienta {
 
     public Material hechoDe(){ return this.materialPrimario; }
 
+    public abstract boolean esUsoFino();
 }

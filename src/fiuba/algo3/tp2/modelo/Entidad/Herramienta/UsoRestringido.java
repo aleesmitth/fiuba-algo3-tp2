@@ -20,6 +20,10 @@ public class UsoRestringido extends AtributosHerramienta{
         this.limiteDeUsos = 10;
     }
 
+    public boolean esUsoFino(){
+        return false;
+    }
+
     @Override
     public void usar(Inventario inventario){
         try {

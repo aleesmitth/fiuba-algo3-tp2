@@ -246,6 +246,9 @@ public class TestPico {
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
         assertEquals(0, picoConstruido.durabilidad());
     }
 

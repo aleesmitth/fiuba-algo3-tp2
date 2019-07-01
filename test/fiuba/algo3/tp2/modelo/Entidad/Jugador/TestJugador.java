@@ -104,10 +104,10 @@ public class TestJugador {
         Movimiento derecha = new Derecha();
 
         assertTrue(juego.jugadorEstaEn(9,9));
-        for(int i=0; i<80; i++){
+        for(int i=0; i<100; i++){
             juego.moverJugador(derecha);
         }
-        assertTrue(juego.jugadorEstaEn(9,59));
+        assertTrue(juego.jugadorEstaEn(9,99));
     }
 
 
@@ -157,22 +157,25 @@ public class TestJugador {
     @Test
     public void test12JugadorNoSeMueveSobreObjeto() {
         Juego juego = new Juego();
-        Movimiento arriba = new Arriba();
-        Movimiento izquierda = new Izquierda();
+        Movimiento abajo = new Abajo();
+        Movimiento izquierda  = new Izquierda();
         //Material//
-        assertTrue(juego.posicionOcupadaEnMapa(7,7));
+        assertTrue(juego.posicionOcupadaEnMapa(15,6));
         //Jugador//
         assertTrue(juego.jugadorEstaEn(9,9));
 
-        juego.moverJugador(arriba);
-        juego.moverJugador(arriba);
-
-        assertTrue(juego.jugadorEstaEn(7,9));
-
+        juego.moverJugador(abajo);
+        juego.moverJugador(abajo);
+        juego.moverJugador(abajo);
+        juego.moverJugador(abajo);
+        juego.moverJugador(abajo);
+        juego.moverJugador(abajo);
         juego.moverJugador(izquierda);
         juego.moverJugador(izquierda);
-
-        assertTrue(juego.jugadorEstaEn(7,8));
+        juego.moverJugador(izquierda);
+        assertTrue(juego.jugadorEstaEn(15,7));
+        juego.moverJugador(izquierda);
+        assertTrue(juego.jugadorEstaEn(15,7));
     }
 
 }

@@ -26,8 +26,8 @@ public class Pico extends Herramienta{
         material.golpeadoPor(this,this.atributos.hechoDe(), inventario);
     }
 
-    public void usarContra(Material material, boolean esPicoFino, Inventario inventario) {
-        material.golpeadoPor(this,this.atributos.hechoDe(),this.atributos.materialSecundario, inventario);
+    public boolean esPicoFino(){
+        return this.atributos.esUsoFino();
     }
 
 }

@@ -19,7 +19,7 @@ public class TestJuego {
     public void SeVerificaMaterialInicializadoEnElJuego(){
         Juego juego = new Juego();
 
-        assertTrue(juego.posicionOcupadaEnMapa(7,7));
+        assertTrue(juego.posicionOcupadaEnMapa(15  ,3));
 
     }
 }

@@ -49,10 +49,14 @@ public class Diamante extends Material{
     }
 
     @Override
-    public void golpeadoPor(Pico pico, Material material, Material materialSecundario, Inventario inventario) {
-        this.durabilidad -= pico.fuerza();
-        pico.usarLaHerramienta(inventario);
-        if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
+    public void golpeadoPor(Pico pico, Material material, Inventario inventario) {
+        if(pico.esPicoFino()) {
+            this.durabilidad -= pico.fuerza();
+            pico.usarLaHerramienta(inventario);
+            if (laHerramientaMeRompio()) {
+                inventario.agregarMaterial(this);
+            }
+        }
     }
 
     @Override
