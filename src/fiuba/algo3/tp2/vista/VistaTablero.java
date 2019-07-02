@@ -79,13 +79,5 @@ public class VistaTablero {
         this.dibujar();
 
     }
-
-    private Rectangle dibujarRectangulo(Color color){
-
-        Rectangle celda = new Rectangle(18,18, color);
-
-        return celda;
-    }
-
 }
 

@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.modelo.Juego.Juego;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.BotonConstruirEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -11,9 +12,11 @@ import javafx.scene.layout.*;
 public class VistaMesaDeCrafteo {
 
     private GridPane matriz;
+    private Juego juego;
 
     public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego){
         this.matriz = new GridPane();
+        this.juego = juego;
         this.dibujar(contenedorMesaDeCrafteo);
     }
 
@@ -23,6 +26,8 @@ public class VistaMesaDeCrafteo {
         this.agregarMatriz();
 
         Button botonConstruir = new Button("Construir");
+        BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego);
+        botonConstruir.setOnAction(botonConstruirEventHandler);
 
         contenedorMesaDeCrafteo.setMaxSize(200, Region.USE_COMPUTED_SIZE);
         contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));

@@ -16,6 +16,6 @@ public class BotonConstruirEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         Herramienta herramienta = this.juego.construirHerramienta();
-        
+
     }
 }

@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.modelo.Juego;
 
+import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Mapa.Mapa;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
@@ -62,4 +63,10 @@ public class Juego {
     public String obtenerCodigoObjetoEnPosicion(int filaEnElMapa, int columnaEnElMapa) {
         return this.mapaDelJuego.obtenerCodigo(filaEnElMapa,columnaEnElMapa);
     }
+
+    public Herramienta construirHerramienta() {
+        Herramienta herramienta = this.jugador.construirHerramienta();
+        return herramienta;
+    }
+
 }
