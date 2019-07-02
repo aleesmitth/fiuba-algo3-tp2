@@ -9,4 +9,6 @@ public interface Movimiento {
 
     public void obtenerEntorno(Mapa mapa);
 
+    public boolean movio();
+
 }
