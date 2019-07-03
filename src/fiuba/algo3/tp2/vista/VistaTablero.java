@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import static fiuba.algo3.tp2.modelo.Juego.Juego.COLUMNAS_DEL_MAPA;
@@ -44,28 +45,27 @@ public class VistaTablero {
 
                 switch(juego.obtenerCodigoObjetoEnPosicion(i,j)){
                     case "J":
-                        contenedorCentral.add(new ImageView(jugador),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(jugador),j,i);
                         break;
                     case "M":
-                        contenedorCentral.add(new ImageView(madera),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(madera),j,i);
                         break;
                     case "P":
-                        contenedorCentral.add(new ImageView(piedra),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(piedra),j,i);
                         break;
                     case "A":
-                        contenedorCentral.add(new ImageView(metal),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(metal),j,i);
                         break;
                     case "D":
-                        contenedorCentral.add(new ImageView(diamante),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(diamante),j,i);
                         break;
                     case "-":
-                        contenedorCentral.add(new ImageView(pasto),j,i);
+                        contenedorCentral.add(this.dibujarRectangulo(pasto),j,i);
                         break;
                 }
             }
         }
 
-        contenedorCentral.setGridLinesVisible(true);
         contenedorCentral.setPadding(new Insets(10, 10, 10, 10));
         contenedorCentral.setVgap(0);
         contenedorCentral.setHgap(0);
@@ -78,6 +78,14 @@ public class VistaTablero {
     public void actualizar() {
         this.dibujar();
 
+    }
+
+    private Rectangle dibujarRectangulo(Image image){
+        Rectangle rectangle = new Rectangle(18, 18);
+        ImagePattern imagePattern = new ImagePattern(image);
+        rectangle.setFill(imagePattern);
+        rectangle.setStroke(Color.BLACK);
+        return rectangle;
     }
 }
 
