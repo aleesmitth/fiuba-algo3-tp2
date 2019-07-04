@@ -56,4 +56,12 @@ public class Celda {
         }
         else return "-";
     }
+
+    public int obtenerFila(){return this.filaDeCelda;}
+    public int obtenerColumna(){return this.columnaDeCelda;}
+
+    public void vaciarCelda(){
+        this.material = null;
+        this.estaOcupado = false;
+    }
 }

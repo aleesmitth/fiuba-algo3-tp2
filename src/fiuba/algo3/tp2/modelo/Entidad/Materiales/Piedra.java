@@ -8,8 +8,11 @@ import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_PIEDR
 
 public class Piedra extends Material {
 
+    private String codigo;
+
     public Piedra() {
         this.durabilidad =30;
+        this.codigo = "P";
     }
 
     @Override
@@ -35,7 +38,10 @@ public class Piedra extends Material {
         if(!pico.esPicoFino()) {
             this.durabilidad -= pico.fuerza();
             pico.usarLaHerramienta(inventario);
-            if (laHerramientaMeRompio()) {inventario.agregarMaterial(this);}
+            if (laHerramientaMeRompio()) {
+                inventario.agregarMaterial(this);
+                this.codigo = "-";
+            }
         }
     }
 
@@ -44,7 +50,7 @@ public class Piedra extends Material {
 
     @Override
     public String obtenerCodigoMaterial(){
-        return "P";
+        return this.codigo;
     }
 
     @Override

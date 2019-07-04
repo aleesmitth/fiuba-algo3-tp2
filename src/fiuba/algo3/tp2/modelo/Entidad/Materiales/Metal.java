@@ -7,8 +7,11 @@ import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_METAL
 
 public class Metal extends Material {
 
+    public String codigo;
+
     public Metal(){
         this.durabilidad = 50;
+        this.codigo = "A";
     }
 
 
@@ -35,7 +38,10 @@ public class Metal extends Material {
         if(material.hechoDePiedra() & !pico.esPicoFino()){
             this.durabilidad -= pico.fuerza();
             pico.usarLaHerramienta(inventario);
-            if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
+            if(laHerramientaMeRompio()) {
+                inventario.agregarMaterial(this);
+                this.codigo = "-";
+            };
         }
     }
 
@@ -44,7 +50,7 @@ public class Metal extends Material {
 
     @Override
     public String obtenerCodigoMaterial(){
-        return "A";
+        return this.codigo;
     }
 
     @Override

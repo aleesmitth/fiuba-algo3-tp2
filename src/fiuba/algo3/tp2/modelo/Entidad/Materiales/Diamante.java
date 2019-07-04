@@ -11,8 +11,11 @@ import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_DIAMA
 
 public class Diamante extends Material{
 
+    private String codigo;
+
     public Diamante(){
         this.durabilidad=100;
+        this.codigo = "D";
     }
 
     @Override
@@ -55,13 +58,14 @@ public class Diamante extends Material{
             pico.usarLaHerramienta(inventario);
             if (laHerramientaMeRompio()) {
                 inventario.agregarMaterial(this);
+                this.codigo = "-";
             }
         }
     }
 
     @Override
     public String obtenerCodigoMaterial(){
-        return "D";
+        return this.codigo;
     }
 
     @Override

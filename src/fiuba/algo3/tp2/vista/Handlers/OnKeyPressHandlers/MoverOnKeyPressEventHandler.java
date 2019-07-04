@@ -42,6 +42,11 @@ public class MoverOnKeyPressEventHandler implements EventHandler<KeyEvent> {
                 System.out.println("Derecha was pressed");
                 this.vistaTablero.actualizar();
                 break;
+            case P:
+                this.juego.jugadorGolpea();
+                System.out.println("Golpear was pressed");
+                this.vistaTablero.actualizar();
+                break;
         }
     }
 

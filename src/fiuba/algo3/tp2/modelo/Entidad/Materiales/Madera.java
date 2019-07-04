@@ -12,7 +12,10 @@ import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_MADER
 
 public class Madera extends Material {
 
+    public String codigo;
+
     public Madera() {
+        this.codigo = "M";
         this.durabilidad = 10;
     }
 
@@ -46,12 +49,15 @@ public class Madera extends Material {
     public void golpeadoPor(Hacha hacha, Material material, Inventario inventario) {
         hacha.usarLaHerramienta(inventario);
         this.durabilidad -= hacha.fuerza();
-        if(laHerramientaMeRompio()) inventario.agregarMaterial(this);
+        if(laHerramientaMeRompio()){
+            inventario.agregarMaterial(this);
+            this.codigo = "-";
+        };
     }
 
     @Override
     public String obtenerCodigoMaterial(){
-        return "M";
+        return this.codigo;
     }
 
     @Override

@@ -9,7 +9,7 @@ import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
 
 public class Juego {
 
-    Mapa mapaDelJuego;
+    public Mapa mapaDelJuego;
     Jugador jugador;
 
     public static int FILAS_DEL_MAPA = 40;
