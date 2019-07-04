@@ -239,15 +239,18 @@ public class TestPico {
         assertEquals(400, picoConstruido.durabilidad());
         jugador.usarHerramientaContra(diamante);
         assertEquals(400, picoConstruido.durabilidad());
-        /*cuenta un solo uso , por la piedra*/
+        jugador.usarHerramientaContra(piedra);
+        jugador.usarHerramientaContra(piedra);
+        /* aca la piedra se rompe, no se le puede seguir pegando*/
+        piedra = new Piedra();
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
+        piedra = new Piedra();
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
-        jugador.usarHerramientaContra(piedra);
-        jugador.usarHerramientaContra(piedra);
+        piedra = new Piedra();
         jugador.usarHerramientaContra(piedra);
         assertEquals(0, picoConstruido.durabilidad());
     }
@@ -294,12 +297,15 @@ public class TestPico {
         assertEquals(400, picoConstruido.durabilidad());
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
+        piedra = new Piedra();
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
+        piedra = new Piedra();
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
         jugador.usarHerramientaContra(piedra);
+        piedra = new Piedra();
         jugador.usarHerramientaContra(piedra);
         assertEquals(0, picoConstruido.durabilidad());
     }
