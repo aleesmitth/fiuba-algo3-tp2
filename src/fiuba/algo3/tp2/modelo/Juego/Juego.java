@@ -92,4 +92,8 @@ public class Juego {
         this.jugador.sacarMaterialDeInventario(material);
     }
 
+    public void agregarHerramientaAlInventario(Herramienta herramienta) {
+        this.jugador.agregarHerramientaAlInventario(herramienta);
+    }
+
 }

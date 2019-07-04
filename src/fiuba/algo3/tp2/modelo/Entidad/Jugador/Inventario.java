@@ -70,4 +70,12 @@ public class Inventario {
         this.equiparHerramienta(this.inventarioHerramientas.get(posicionDeHerramientaEnInventario));
     }
 
+    public void agregarHerramientaAlInventario(Herramienta herramienta) {
+        int size = this.inventarioHerramientas.size();
+        if(size<7) {
+            this.inventarioHerramientas.put(size + 1, herramienta);
+
+        }
+    }
+
 }
