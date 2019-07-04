@@ -24,4 +24,7 @@ public class Pico extends Herramienta{
     @Override
     public boolean esPico() {return true;}
 
+    @Override
+    public Material hechoDe(){return this.atributos.materialPrimario;}
+
 }

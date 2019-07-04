@@ -140,7 +140,7 @@ public class VistaTablero {
     }
 
     private Rectangle dibujarRectangulo(Image image){
-        Rectangle rectangle = new Rectangle(18, 18);
+        Rectangle rectangle = new Rectangle(12, 12);
         ImagePattern imagePattern = new ImagePattern(image);
         rectangle.setFill(imagePattern);
         rectangle.setStroke(Color.BLACK);

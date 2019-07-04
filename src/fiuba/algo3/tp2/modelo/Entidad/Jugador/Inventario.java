@@ -48,8 +48,8 @@ public class Inventario {
         this.inventarioMateriales.replace(material.obtenerCodigoMaterial(), this.inventarioMateriales.get(material.obtenerCodigoMaterial()) - 1);
     }
 
-    public void equiparHerramienta(Herramienta herramienta){
-        this.herramienta = herramienta;
+    public void equiparHerramienta(Herramienta herramientaNueva){
+        this.herramienta = herramientaNueva;
     }
 
     public void romperHerramienta(){
@@ -77,7 +77,7 @@ public class Inventario {
         if (herramienta.esHacha()) {
             switch (materialDeLaHerramienta.obtenerCodigoMaterial()) {
                 case "M":
-                    this.inventarioHerramientas.put(1, herramienta);
+                    this.inventarioHerramientas.replace(1, herramienta);
                     break;
                 case "P":
                     this.inventarioHerramientas.put(2, herramienta);

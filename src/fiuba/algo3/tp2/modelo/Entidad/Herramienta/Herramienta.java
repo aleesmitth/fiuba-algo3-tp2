@@ -15,7 +15,7 @@ public abstract class Herramienta {
 
     public abstract void usarContra(Material material, Inventario inventario);
 
-    public Material hechoDe(){ return this.atributos.hechoDe(); }
+    public abstract Material hechoDe();
 
     protected void usarLaHerramienta(Inventario inventario){}
 

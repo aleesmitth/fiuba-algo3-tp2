@@ -34,6 +34,7 @@ public class TableroConstructor {
     }
 
     private void limpiarTablero(){
+        inicializarIndiceParaRecetas();
         inicializarMatrizCasillerosVacios();
     }
 
@@ -41,7 +42,7 @@ public class TableroConstructor {
         recetas.put("M--MMMM--",constructor.construirPico(new Madera()));
         recetas.put("MM-MMM---",constructor.construirHacha(new Madera()));
         recetas.put("P--PMMP--",constructor.construirPico(new Piedra()));
-        recetas.put("PP-MMM---",constructor.construirHacha(new Piedra()));
+        recetas.put("PP-PMM---",constructor.construirHacha(new Piedra()));
         recetas.put("A--AMMA--",constructor.construirPico(new Metal()));
         recetas.put("AA-MMM---",constructor.construirHacha(new Metal()));
         recetas.put("AP-AMMA--",constructor.construirPico(new Metal(),new Piedra()));
@@ -67,7 +68,7 @@ public class TableroConstructor {
     }
 
     public Herramienta construirHerramienta(String codigoReceta){
-
+        inicializarIndiceParaRecetas();
         Herramienta herramienta = recetas.get(codigoReceta);
         try {
             if(herramienta==null){
