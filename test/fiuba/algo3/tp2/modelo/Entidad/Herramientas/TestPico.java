@@ -214,10 +214,6 @@ public class TestPico {
         assertEquals(200, picoConstruido.durabilidad());
     }
 
-    /**
-     * Bug guarda cantidad de usos del pico por cada material. ej golpeas 9 veces piedra y 9 veces madera y no se rompe
-     * pero si golpeas 10 veces madera si se rompe.
-     */
 
     @Test
     public void test15PicoDeMetalSeUsaContraCadaMaterialYNoReduceSuDurabilidadSoloSeRompeAlDecimoUsoContraPiedra() {
