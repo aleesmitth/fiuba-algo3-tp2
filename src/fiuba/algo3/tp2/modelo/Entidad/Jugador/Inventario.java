@@ -4,12 +4,10 @@ import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
-import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static fiuba.algo3.tp2.modelo.Juego.Juego.TOTAL_DE_MATERIALES;
 
 public class Inventario {
 

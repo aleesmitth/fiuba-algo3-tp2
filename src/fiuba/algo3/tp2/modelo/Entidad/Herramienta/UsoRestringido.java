@@ -4,10 +4,12 @@ import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Excepciones.UsarHerramientaRotaException;
 
+import static fiuba.algo3.tp2.modelo.Juego.Juego.USOS_MAXIMOS_PARA_PICO_DE_METAL;
+
 public class UsoRestringido extends AtributosHerramienta{
 
-    int usos;
-    int limiteDeUsos;
+    private int usos;
+    private int limiteDeUsos;
 
 
 
@@ -15,9 +17,8 @@ public class UsoRestringido extends AtributosHerramienta{
         this.fuerza=fuerzaInicial;
         this.durabilidad=durabilidad;
         this.materialPrimario=material;
-        this.desgaste = 0;
         this.usos =0;
-        this.limiteDeUsos = 10;
+        this.limiteDeUsos = USOS_MAXIMOS_PARA_PICO_DE_METAL;
     }
 
     public boolean esUsoFino(){

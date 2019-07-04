@@ -18,11 +18,7 @@ public class Juego {
     public static int POSICION_Y_INICIAL_JUGADOR = 2;
     public static int FILAS_TABLERO_CONSTRUCTOR = 3;
     public static int COLUMNAS_TABLERO_CONSTRUCTOR = 3;
-    public static int TOTAL_DE_MATERIALES = 4;
-    public static int CASILLERO_INVENTARIO_PARA_MADERA = 0;
-    public static int CASILLERO_INVENTARIO_PARA_PIEDRA = 1;
-    public static int CASILLERO_INVENTARIO_PARA_METAL = 2;
-    public static int CASILLERO_INVENTARIO_PARA_DIAMANTE = 3;
+    public static int USOS_MAXIMOS_PARA_PICO_DE_METAL = 10;
 
 
     public Juego(){
