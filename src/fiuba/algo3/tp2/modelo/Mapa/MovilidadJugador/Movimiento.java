@@ -7,6 +7,8 @@ public interface Movimiento {
 
     public Celda movible(Celda celdaDeJugador);
 
+    public Celda obtenerCeldaSiguiente(Celda celdaActual);
+
     public void obtenerEntorno(Mapa mapa);
 
     public boolean movio();

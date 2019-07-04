@@ -43,11 +43,6 @@ public class Mapa {
         return posicionSolicitada;
     }
 
-    public void moverJugador(Movimiento movimiento){
-        movimiento.obtenerEntorno(this);
-        this.celdaConJugador = movimiento.movible(this.celdaConJugador);
-    }
-
     public void ocuparCelda(int posicionDeFila,int posicionDeColumna,Celda celdaQueEnvia){
         Celda nuevaCeldaDeJugador = this.tableroDeElementos[posicionDeFila][posicionDeColumna];
         celdaQueEnvia.enviarJugador(nuevaCeldaDeJugador);
@@ -104,4 +99,14 @@ public class Mapa {
     public String obtenerCodigo(int fila, int columna) { return this.tableroDeElementos[fila][columna].obtenerCodigo(); }
 
     public Celda obtenerCelda(int fila,int columna) {return this.tableroDeElementos[fila][columna];}
+
+    public void moverJugador(Movimiento movimiento){
+        movimiento.obtenerEntorno(this);
+        this.celdaConJugador = movimiento.movible(this.celdaConJugador);
+        this.celdaConJugador.jugador.nuevaPosicionFrontal(movimiento);
+    }
+
+    public void jugadorGolpeaFrente(){
+        this.celdaConJugador.jugador.golpearFrente(this.celdaConJugador);
+    }
 }

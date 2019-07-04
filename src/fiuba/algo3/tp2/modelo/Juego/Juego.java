@@ -2,6 +2,8 @@ package fiuba.algo3.tp2.modelo.Juego;
 
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.modelo.Mapa.Celda;
 import fiuba.algo3.tp2.modelo.Mapa.Mapa;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
 
@@ -67,6 +69,15 @@ public class Juego {
     public Herramienta construirHerramienta() {
         Herramienta herramienta = this.jugador.construirHerramienta();
         return herramienta;
+    }
+
+    public void jugadorGolpea(){
+        this.mapaDelJuego.jugadorGolpeaFrente();
+    }
+
+    public Material obtenerMaterialEnCelda(int posicionFila,int posicionColumna){
+        Celda celdaSiguiente = this.mapaDelJuego.obtenerCelda(posicionFila,posicionColumna);
+        return celdaSiguiente.material;
     }
 
 }

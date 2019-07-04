@@ -2,12 +2,11 @@ package fiuba.algo3.tp2.modelo.Mapa;
 
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Jugador;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
-import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
 
 public class Celda {
 
-    private Jugador jugador;
-    private Material material;
+    public Jugador jugador;
+    public Material material;
     private boolean estaOcupado;
     private int filaDeCelda;
     private int columnaDeCelda;

@@ -4,14 +4,22 @@ import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.TableroConstructor;
+import fiuba.algo3.tp2.modelo.Mapa.Celda;
+import fiuba.algo3.tp2.modelo.Mapa.Mapa;
+import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Abajo;
+import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.Movimiento;
 
 public class Jugador {
+
+    private Movimiento posicionFrontal;
     private TableroConstructor mesaDeCrafteo;
     private Inventario inventario;
 
     public Jugador(){
         this.mesaDeCrafteo = new TableroConstructor();
         this.inventario = new Inventario();
+        this.posicionFrontal = new Abajo();
+        this.posicionFrontal.obtenerEntorno(Mapa.getMapa());
 
         /*
          * aca no estoy seguro si convendria hacer solamente new Hacha(new Madera());
@@ -36,5 +44,16 @@ public class Jugador {
     public void usarHerramientaContra(Material material){ this.inventario.getHerramienta().usarContra(material, this.inventario); }
 
     public void agregarMaterialEnCasilleroMesaDeCrafteo(Material material, int fila, int columna){ this.mesaDeCrafteo.agregarMaterialEnCasillero(material,fila,columna); }
+
+    public void golpearFrente(Celda celdaJugador){
+        Celda celdaConMaterialGolpeable = celdaJugador.jugador.posicionFrontal.obtenerCeldaSiguiente(celdaJugador);
+        if(celdaConMaterialGolpeable.celdaEstaOcupada()){
+            this.usarHerramientaContra(celdaConMaterialGolpeable.material);
+        }
+    }
+
+    public void nuevaPosicionFrontal(Movimiento nuevaPosicionFrontal){
+        this.posicionFrontal = nuevaPosicionFrontal;
+    }
 
 }

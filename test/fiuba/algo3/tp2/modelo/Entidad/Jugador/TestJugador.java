@@ -158,24 +158,42 @@ public class TestJugador {
     public void test12JugadorNoSeMueveSobreObjeto() {
         Juego juego = new Juego();
         Movimiento abajo = new Abajo();
-        Movimiento izquierda  = new Izquierda();
+        Movimiento derecha  = new Derecha();
         //Material//
-        assertTrue(juego.posicionOcupadaEnMapa(15,6));
+        assertTrue(juego.posicionOcupadaEnMapa(5,3));
         //Jugador//
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
 
         juego.moverJugador(abajo);
         juego.moverJugador(abajo);
         juego.moverJugador(abajo);
+        juego.moverJugador(derecha);
+        assertTrue(juego.jugadorEstaEn(5,2));
+        juego.moverJugador(derecha);
+        assertTrue(juego.jugadorEstaEn(5,2));
+    }
+
+    @Test
+    public void test13JugadorGolpeaObjeto() {
+        Juego juego = new Juego();
+        Movimiento abajo = new Abajo();
+        Movimiento derecha  = new Derecha();
+        //Material//
+        assertTrue(juego.posicionOcupadaEnMapa(5,3));
+        //Jugador//
+        assertTrue(juego.jugadorEstaEn(2,2));
+
         juego.moverJugador(abajo);
         juego.moverJugador(abajo);
         juego.moverJugador(abajo);
-        juego.moverJugador(izquierda);
-        juego.moverJugador(izquierda);
-        juego.moverJugador(izquierda);
-        assertTrue(juego.jugadorEstaEn(15,7));
-        juego.moverJugador(izquierda);
-        assertTrue(juego.jugadorEstaEn(15,7));
+        juego.moverJugador(derecha);
+        assertTrue(juego.jugadorEstaEn(5,2));
+        juego.moverJugador(derecha);
+        assertTrue(juego.jugadorEstaEn(5,2));
+        juego.jugadorGolpea();
+        Material golpeado = juego.obtenerMaterialEnCelda(5,3);
+
+        assertEquals(8,golpeado.durabilidad());
     }
 
 }

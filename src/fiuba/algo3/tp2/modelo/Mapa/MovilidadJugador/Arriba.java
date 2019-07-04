@@ -32,4 +32,13 @@ public class Arriba implements Movimiento {
 
     @Override
     public boolean movio(){return this.movio;}
+
+    public Celda obtenerCeldaSiguiente(Celda celda){
+        int nuevaFila = celda.obtenerSiguienteFila(-1);
+        int nuevaColumna = celda.obtenerSiguienteColumna(0);
+        nuevaFila = this.entornoMovimiento.filaValida(nuevaFila);
+        nuevaColumna = this.entornoMovimiento.columnaValida(nuevaColumna);
+        celda = this.entornoMovimiento.obtenerCelda(nuevaFila-1,nuevaColumna-1);
+        return celda;
+    }
 }
