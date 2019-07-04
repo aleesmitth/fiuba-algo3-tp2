@@ -9,6 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.Node;
+import javafx.event.EventHandler;
 
 public class VistaMesaDeCrafteo {
 
@@ -37,6 +41,7 @@ public class VistaMesaDeCrafteo {
         contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
 
         contenedorMesaDeCrafteo.getChildren().addAll(this.matriz,botonConstruir);
+        this.setearRecibirMaterial();
     }
 
     private void agregarMatriz(Image slotVacio){
@@ -52,5 +57,26 @@ public class VistaMesaDeCrafteo {
         Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/Madera.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         contenedorMesaDeCrafteo.setBackground(new Background(imagenDeFondo));
+    }
+
+    private void setearRecibirMaterial(){
+        for(Node a:this.matriz.getChildren()){
+            a.setOnDragOver(new EventHandler<DragEvent>() {
+                @Override
+                public void handle(DragEvent event) {
+                    if(event.getDragboard().hasImage()){
+                        event.acceptTransferModes(TransferMode.ANY);
+                    }
+                }
+            });
+            a.setOnDragDropped(new EventHandler<DragEvent>() {
+                @Override
+                public void handle(DragEvent event) {
+                    Image casilleroOcupado = event.getDragboard().getImage();
+                    ImageView imagen = (ImageView)a;
+                    imagen.setImage(casilleroOcupado);
+                }
+            });
+        }
     }
 }

@@ -11,6 +11,12 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
 
 public class VistaInventarioMateriales {
 
@@ -53,6 +59,7 @@ public class VistaInventarioMateriales {
         contenedorInventario.setVgap(5);
         contenedorInventario.setHgap(5);
         contenedorInventario.setAlignment(Pos.CENTER);
+        this.setearMoverMaterialAMesa(contenedorInventario);
     }
 
     private void agregarFondo(){
@@ -68,5 +75,44 @@ public class VistaInventarioMateriales {
 
     private void clear(){
         this.contenedorInventario.getChildren().clear();
+    }
+
+    private void setearMoverMaterialAMesa(GridPane contenedorInventario){
+        Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
+        Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
+        Image acero = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
+        contenedorInventario.getChildren().get(1).setOnDragDetected(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event) {
+                Dragboard db = contenedorInventario.getChildren().get(1).startDragAndDrop(TransferMode.COPY);
+                ClipboardContent cb = new ClipboardContent();
+                cb.putImage(madera);
+
+                db.setContent(cb);
+                event.consume();
+            }
+        });
+        contenedorInventario.getChildren().get(3).setOnDragDetected(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event) {
+                Dragboard db = contenedorInventario.getChildren().get(3).startDragAndDrop(TransferMode.COPY);
+                ClipboardContent cb = new ClipboardContent();
+                cb.putImage(piedra);
+
+                db.setContent(cb);
+                event.consume();
+            }
+        });
+        contenedorInventario.getChildren().get(5).setOnDragDetected(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event) {
+                Dragboard db = contenedorInventario.getChildren().get(5).startDragAndDrop(TransferMode.COPY);
+                ClipboardContent cb = new ClipboardContent();
+                cb.putImage(acero);
+
+                db.setContent(cb);
+                event.consume();
+            }
+        });
     }
 }
