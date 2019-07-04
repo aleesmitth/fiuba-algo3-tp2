@@ -19,7 +19,7 @@ public class VistaMesaDeCrafteo {
     private Juego juego;
     private Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
     private Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
-    private Image hierro = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
+    private Image metal = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
     private VBox contenedorMesaDeCrafteo;
 
     public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego){
@@ -69,7 +69,7 @@ public class VistaMesaDeCrafteo {
             else if(this.compararImagenes(imagenDeCelda, piedra)){
                 codigo = codigo + "P";
             }
-            else if(this.compararImagenes(imagenDeCelda, madera)){
+            else if(this.compararImagenes(imagenDeCelda, metal)){
                 codigo = codigo + "A";
             }
             else {
@@ -107,10 +107,8 @@ public class VistaMesaDeCrafteo {
     }
 
     private boolean compararImagenes(Image imagen1, Image imagen2) {
-        for (int i = 0; i < imagen1.getWidth(); i++)
-        {
-            for (int j = 0; j < imagen1.getHeight(); j++)
-            {
+        for (int i = 0; i < imagen1.getWidth(); i++) {
+            for (int j = 0; j < imagen1.getHeight(); j++) {
                 if (!imagen1.getPixelReader().getColor(i, j).equals(imagen2.getPixelReader().getColor(i, j))) return false;
             }
         }

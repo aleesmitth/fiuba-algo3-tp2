@@ -40,9 +40,9 @@ public class TableroConstructor {
     private void inicializarIndiceParaRecetas(){
         recetas.put("M--MMMM--",constructor.construirPico(new Madera()));
         recetas.put("MM-MMM---",constructor.construirHacha(new Madera()));
-        recetas.put("P--PPPP--",constructor.construirPico(new Piedra()));
-        recetas.put("PP-PPP---",constructor.construirHacha(new Piedra()));
-        recetas.put("A--AAAA--",constructor.construirPico(new Metal()));
+        recetas.put("P--PMMP--",constructor.construirPico(new Piedra()));
+        recetas.put("PP-MMM---",constructor.construirHacha(new Piedra()));
+        recetas.put("A--AMMA--",constructor.construirPico(new Metal()));
         recetas.put("AA-AAA---",constructor.construirHacha(new Metal()));
         recetas.put("AP-AMMA--",constructor.construirPico(new Metal(),new Piedra()));
     }
