@@ -24,6 +24,8 @@ public class VistaTablero {
         this.contenedorCentral = contenedorCentral;
         this.juego = juego;
         this.dibujar();
+
+
     }
 
     public void dibujar() {
