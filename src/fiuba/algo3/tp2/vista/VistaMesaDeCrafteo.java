@@ -76,6 +76,8 @@ public class VistaMesaDeCrafteo {
                 codigo = codigo + "-";
             }
         }
+        this.matriz.getChildren().clear();
+
         return codigo;
     }
 
@@ -116,20 +118,7 @@ public class VistaMesaDeCrafteo {
     }
 
     public void actualizar(){
-        Image slotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
-
-        this.agregarFondo(this.contenedorMesaDeCrafteo);
-        this.agregarMatriz(slotVacio);
-
-        Button botonConstruir = new Button("Construir");
-        BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego, this);
-        botonConstruir.setOnAction(botonConstruirEventHandler);
-
-        this.contenedorMesaDeCrafteo.setMaxSize(300, Region.USE_COMPUTED_SIZE);
-        this.contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
-        this.contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
-
-
-        this.setearRecibirMaterial();
+        this.contenedorMesaDeCrafteo.getChildren().clear();
+        this.dibujar();
     }
 }

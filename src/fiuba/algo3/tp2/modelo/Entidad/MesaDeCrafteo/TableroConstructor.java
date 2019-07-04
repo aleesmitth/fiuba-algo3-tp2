@@ -43,7 +43,7 @@ public class TableroConstructor {
         recetas.put("P--PMMP--",constructor.construirPico(new Piedra()));
         recetas.put("PP-MMM---",constructor.construirHacha(new Piedra()));
         recetas.put("A--AMMA--",constructor.construirPico(new Metal()));
-        recetas.put("AA-AAA---",constructor.construirHacha(new Metal()));
+        recetas.put("AA-MMM---",constructor.construirHacha(new Metal()));
         recetas.put("AP-AMMA--",constructor.construirPico(new Metal(),new Piedra()));
     }
 
