@@ -23,7 +23,7 @@ public class Derecha implements Movimiento {
         nuevaColumna = this.entornoMovimiento.columnaValida(nuevaColumna);
         if(!this.entornoMovimiento.posicionOcupada(nuevaFila-1,nuevaColumna-1)){
             this.entornoMovimiento.ocuparCelda(nuevaFila-1,nuevaColumna-1,celdaDeJugador);
-            this.movio = false;
+            this.movio = true;
             celdaDeJugador = this.entornoMovimiento.obtenerCelda(nuevaFila-1,nuevaColumna-1);
         }
         return celdaDeJugador;
