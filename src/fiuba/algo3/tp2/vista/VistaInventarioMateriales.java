@@ -22,6 +22,7 @@ public class VistaInventarioMateriales {
 
     protected Juego juego;
     private GridPane contenedorInventario;
+    protected VistaInventarioMateriales vistaInventarioMateriales = this;
 
 
     public VistaInventarioMateriales(GridPane contenedorInventario, Juego juego) {
@@ -87,6 +88,7 @@ public class VistaInventarioMateriales {
             public void handle(MouseEvent event) {
                 if (!juego.getCantidadDeMaterial(new Madera()).equals("0")) {
                     juego.sacarMaterialDeInventario(new Madera());
+                    vistaInventarioMateriales.actualizar();
                     Dragboard db = contenedorInventario.getChildren().get(1).startDragAndDrop(TransferMode.COPY);
                     ClipboardContent cb = new ClipboardContent();
                     cb.putImage(madera);
@@ -101,6 +103,7 @@ public class VistaInventarioMateriales {
             public void handle(MouseEvent event) {
                 if (!juego.getCantidadDeMaterial(new Piedra()).equals("0")) {
                     juego.sacarMaterialDeInventario(new Piedra());
+                    vistaInventarioMateriales.actualizar();
                     Dragboard db = contenedorInventario.getChildren().get(3).startDragAndDrop(TransferMode.COPY);
                     ClipboardContent cb = new ClipboardContent();
                     cb.putImage(piedra);
@@ -115,7 +118,7 @@ public class VistaInventarioMateriales {
             public void handle(MouseEvent event) {
                 if (!juego.getCantidadDeMaterial(new Piedra()).equals("0")) {
                     juego.sacarMaterialDeInventario(new Metal());
-
+                    vistaInventarioMateriales.actualizar();
                     Dragboard db = contenedorInventario.getChildren().get(5).startDragAndDrop(TransferMode.COPY);
                     ClipboardContent cb = new ClipboardContent();
                     cb.putImage(acero);
