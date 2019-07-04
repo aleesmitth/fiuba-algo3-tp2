@@ -1,9 +1,12 @@
 package fiuba.algo3.tp2.vista.Handlers.OnKeyPressHandlers;
 
+import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.*;
 import fiuba.algo3.tp2.vista.BarraDeMenu;
-import fiuba.algo3.tp2.vista.VistaInventario;
+import fiuba.algo3.tp2.vista.VistaInventarioHerramientas;
+import fiuba.algo3.tp2.vista.VistaInventarioMateriales;
 import fiuba.algo3.tp2.vista.VistaTablero;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
@@ -14,15 +17,17 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
     private Stage stage;
     private BarraDeMenu menuBar;
     private VistaTablero vistaTablero;
-    private VistaInventario vistaInventario;
+    private VistaInventarioMateriales vistaInventarioMateriales;
     private Juego juego;
+    private VistaInventarioHerramientas vistaInventarioHerramientas;
 
-    public AplicacionOnKeyPressEventHandler(Stage stage, BarraDeMenu menuBar, Juego juego, VistaTablero vistaTablero, VistaInventario vistaInventario) {
+    public AplicacionOnKeyPressEventHandler(Stage stage, BarraDeMenu menuBar, Juego juego, VistaTablero vistaTablero, VistaInventarioMateriales vistaInventarioMateriales, VistaInventarioHerramientas vistaInventarioHerramientas) {
         this.stage = stage;
         this.menuBar = menuBar;
         this.juego = juego;
         this.vistaTablero = vistaTablero;
-        this.vistaInventario = vistaInventario;
+        this.vistaInventarioMateriales = vistaInventarioMateriales;
+        this.vistaInventarioHerramientas = vistaInventarioHerramientas;
     }
 
     @Override
@@ -72,10 +77,45 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case P:
                 this.juego.jugadorGolpea();
                 System.out.println("Golpear was pressed");
-                this.vistaInventario.actualizar();
+                this.vistaInventarioMateriales.actualizar();
                 this.vistaTablero.actualizar();
-
                 break;
+            case DIGIT1:
+                this.vistaInventarioHerramientas.actualizar(1);
+                this.juego.cambiarHerramientaEquipada(1);
+                System.out.print("Herramienta 1");
+                break;
+            case DIGIT2:
+                this.vistaInventarioHerramientas.actualizar(2);
+                this.juego.cambiarHerramientaEquipada(2);
+                System.out.print("Herramienta 2");
+                break;
+            case DIGIT3:
+                this.vistaInventarioHerramientas.actualizar(3);
+                this.juego.cambiarHerramientaEquipada(3);
+                System.out.print("Herramienta 3");
+                break;
+            case DIGIT4:
+                this.vistaInventarioHerramientas.actualizar(4);
+                this.juego.cambiarHerramientaEquipada(4);
+                System.out.print("Herramienta 4");
+                break;
+            case DIGIT5:
+                this.vistaInventarioHerramientas.actualizar(5);
+                this.juego.cambiarHerramientaEquipada(5);
+                System.out.print("Herramienta 5");
+                break;
+            case DIGIT6:
+                this.vistaInventarioHerramientas.actualizar(6);
+                this.juego.cambiarHerramientaEquipada(6);
+                System.out.print("Herramienta 6");
+                break;
+            case DIGIT7:
+                this.vistaInventarioHerramientas.actualizar(7);
+                this.juego.cambiarHerramientaEquipada(7);
+                System.out.print("Herramienta 7");
+                break;
+
         }
     }
 }

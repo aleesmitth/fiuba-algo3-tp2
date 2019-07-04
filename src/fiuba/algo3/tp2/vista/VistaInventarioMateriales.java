@@ -12,13 +12,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
-public class VistaInventario {
+public class VistaInventarioMateriales {
 
     private Juego juego;
     private GridPane contenedorInventario;
 
 
-    public VistaInventario(GridPane contenedorInventario, Juego juego) {
+    public VistaInventarioMateriales(GridPane contenedorInventario, Juego juego) {
         this.juego = juego;
         this.contenedorInventario = contenedorInventario;
         this.dibujar();
@@ -58,7 +58,7 @@ public class VistaInventario {
     private void agregarFondo(){
         Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/Madera.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        contenedorInventario.setBackground(new Background(imagenDeFondo));
+        this.contenedorInventario.setBackground(new Background(imagenDeFondo));
     }
 
     public void actualizar(){
@@ -67,6 +67,6 @@ public class VistaInventario {
     }
 
     private void clear(){
-        contenedorInventario.getChildren().clear();
+        this.contenedorInventario.getChildren().clear();
     }
 }

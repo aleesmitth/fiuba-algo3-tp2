@@ -84,4 +84,8 @@ public class Juego {
         return this.jugador.getCantidadDeMaterial(material);
     }
 
+    public void cambiarHerramientaEquipada(int posicion) {
+        this.jugador.cambiarHerramientaEquipada(posicion);
+    }
+
 }

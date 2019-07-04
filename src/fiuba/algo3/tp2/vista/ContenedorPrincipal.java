@@ -4,6 +4,7 @@ package fiuba.algo3.tp2.vista;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -15,29 +16,32 @@ public class ContenedorPrincipal extends BorderPane {
 
     private BarraDeMenu menuBar;
     private GridPane contenedorCentral;
-    private GridPane contenedorInventario;
+    private GridPane contenedorInventarioMateriales;
+    private HBox contenedorInventarioHerramientas;
     private VBox contenedorMesaDeCrafteo;
     private VistaTablero vistaTablero;
     private VistaMesaDeCrafteo vistaMesaDeCrafteo;
-    private VistaInventario vistaInventario;
+    private VistaInventarioMateriales vistaInventarioMateriales;
+    private VistaInventarioHerramientas vistaInventarioHerramientas;
+
 
     public ContenedorPrincipal(Stage stage, Juego juego) {
         this.stage = stage;
         this.juego = juego;
-        this.setMenu(this.stage);
-        this.setCentro(this.juego);
-        this.setInventario(juego);
-        this.setMesaDeCrafteo(juego);
+        this.setMenu();
+        this.setCentro();
+        this.setInventarioMateriales();
+        this.setMesaDeCrafteo();
 
-
+        this.setInventarioHerramientas();
     }
 
-    private void setMenu(Stage stage) {
+    private void setMenu() {
         this.menuBar = new BarraDeMenu(stage);
         this.setTop(menuBar);
     }
 
-    private void setCentro(Juego juego) {
+    private void setCentro() {
 
         contenedorCentral = new GridPane();
 
@@ -46,22 +50,31 @@ public class ContenedorPrincipal extends BorderPane {
         this.setCenter(contenedorCentral);
     }
 
-    private void setInventario(Juego juego) {
+    private void setInventarioMateriales() {
 
-        contenedorInventario = new GridPane();
+        contenedorInventarioMateriales = new GridPane();
 
-        vistaInventario = new VistaInventario(contenedorInventario, juego);
+        vistaInventarioMateriales = new VistaInventarioMateriales(contenedorInventarioMateriales, juego);
 
-        this.setRight(contenedorInventario);
+        this.setRight(contenedorInventarioMateriales);
     }
 
-    private void setMesaDeCrafteo(Juego juego) {
+    private void setMesaDeCrafteo() {
 
         contenedorMesaDeCrafteo = new VBox();
 
         vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesaDeCrafteo, juego);
 
         this.setLeft(contenedorMesaDeCrafteo);
+    }
+
+    private void setInventarioHerramientas() {
+
+        contenedorInventarioHerramientas = new HBox();
+
+        vistaInventarioHerramientas = new VistaInventarioHerramientas(contenedorInventarioHerramientas, juego);
+
+        this.setBottom(contenedorInventarioHerramientas);
     }
 
     public BarraDeMenu getBarraDeMenu() {
@@ -72,8 +85,12 @@ public class ContenedorPrincipal extends BorderPane {
         return vistaTablero;
     }
 
-    public VistaInventario getVistaInventario(){
-        return vistaInventario;
+    public VistaInventarioMateriales getVistaInventarioMateriales(){
+        return vistaInventarioMateriales;
+    }
+
+    public VistaInventarioHerramientas getVistaInventarioHerramientas() {
+        return vistaInventarioHerramientas;
     }
 
 

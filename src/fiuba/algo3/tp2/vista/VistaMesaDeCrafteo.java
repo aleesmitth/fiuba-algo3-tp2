@@ -32,7 +32,7 @@ public class VistaMesaDeCrafteo {
         BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego);
         botonConstruir.setOnAction(botonConstruirEventHandler);
 
-        contenedorMesaDeCrafteo.setMaxSize(200, Region.USE_COMPUTED_SIZE);
+        contenedorMesaDeCrafteo.setMaxSize(300, Region.USE_COMPUTED_SIZE);
         contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
         contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
 

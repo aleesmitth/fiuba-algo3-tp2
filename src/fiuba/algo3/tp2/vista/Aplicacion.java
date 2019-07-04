@@ -22,7 +22,7 @@ public class Aplicacion extends Application {
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, juego);
         Scene escenaJuego = new Scene(contenedorPrincipal, 1280,720);
 
-        AplicacionOnKeyPressEventHandler aplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(stage, contenedorPrincipal.getBarraDeMenu(), juego, contenedorPrincipal.getVistaTablero(), contenedorPrincipal.getVistaInventario());
+        AplicacionOnKeyPressEventHandler aplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(stage, contenedorPrincipal.getBarraDeMenu(), juego, contenedorPrincipal.getVistaTablero(), contenedorPrincipal.getVistaInventarioMateriales(), contenedorPrincipal.getVistaInventarioHerramientas());
         escenaJuego.setOnKeyPressed(aplicacionOnKeyPressEventHandler);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
