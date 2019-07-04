@@ -18,6 +18,9 @@ public class VistaMesaDeCrafteo {
 
     private GridPane matriz;
     private Juego juego;
+    private Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
+    private Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
+    private Image hierro = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
 
     public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego){
         this.matriz = new GridPane();
@@ -51,6 +54,27 @@ public class VistaMesaDeCrafteo {
                 this.matriz.add(new ImageView(slotVacio),i,j);
             }
         }
+    }
+
+    private String obtenerCodigoMesaDeCrafteoGrafica(){
+        String codigo = "";
+        for(int i = 0; i< 9; i++) {
+            ImageView imageViewDeCelda = (ImageView) this.matriz.getChildren().get(i);
+            Image imagenDeCelda = imageViewDeCelda.getImage();
+            if(imagenDeCelda == madera){
+                codigo = codigo + "M";
+            }
+            else if(imagenDeCelda == piedra){
+                codigo = codigo + "P";
+            }
+            else if(imagenDeCelda == hierro){
+                codigo = codigo + "A";
+            }
+            else {
+                codigo = codigo + "-";
+            }
+        }
+        return codigo;
     }
 
     private void agregarFondo(VBox contenedorMesaDeCrafteo){
