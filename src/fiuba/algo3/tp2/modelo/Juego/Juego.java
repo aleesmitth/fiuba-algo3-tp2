@@ -88,4 +88,8 @@ public class Juego {
         this.jugador.cambiarHerramientaEquipada(posicion);
     }
 
+    public void sacarMaterialDeInventario(Material material) {
+        this.jugador.sacarMaterialDeInventario(material);
+    }
+
 }

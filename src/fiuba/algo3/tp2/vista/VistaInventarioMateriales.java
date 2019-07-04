@@ -20,7 +20,7 @@ import javafx.scene.Node;
 
 public class VistaInventarioMateriales {
 
-    private Juego juego;
+    protected Juego juego;
     private GridPane contenedorInventario;
 
 
@@ -81,37 +81,48 @@ public class VistaInventarioMateriales {
         Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
         Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
         Image acero = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
+
         contenedorInventario.getChildren().get(1).setOnDragDetected(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent event) {
-                Dragboard db = contenedorInventario.getChildren().get(1).startDragAndDrop(TransferMode.COPY);
-                ClipboardContent cb = new ClipboardContent();
-                cb.putImage(madera);
+                if (!juego.getCantidadDeMaterial(new Madera()).equals("0")) {
+                    juego.sacarMaterialDeInventario(new Madera());
+                    Dragboard db = contenedorInventario.getChildren().get(1).startDragAndDrop(TransferMode.COPY);
+                    ClipboardContent cb = new ClipboardContent();
+                    cb.putImage(madera);
 
-                db.setContent(cb);
-                event.consume();
+                    db.setContent(cb);
+                    event.consume();
+                }
             }
         });
         contenedorInventario.getChildren().get(3).setOnDragDetected(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent event) {
-                Dragboard db = contenedorInventario.getChildren().get(3).startDragAndDrop(TransferMode.COPY);
-                ClipboardContent cb = new ClipboardContent();
-                cb.putImage(piedra);
+                if (!juego.getCantidadDeMaterial(new Piedra()).equals("0")) {
+                    juego.sacarMaterialDeInventario(new Piedra());
+                    Dragboard db = contenedorInventario.getChildren().get(3).startDragAndDrop(TransferMode.COPY);
+                    ClipboardContent cb = new ClipboardContent();
+                    cb.putImage(piedra);
 
-                db.setContent(cb);
-                event.consume();
+                    db.setContent(cb);
+                    event.consume();
+                }
             }
         });
         contenedorInventario.getChildren().get(5).setOnDragDetected(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent event) {
-                Dragboard db = contenedorInventario.getChildren().get(5).startDragAndDrop(TransferMode.COPY);
-                ClipboardContent cb = new ClipboardContent();
-                cb.putImage(acero);
+                if (!juego.getCantidadDeMaterial(new Piedra()).equals("0")) {
+                    juego.sacarMaterialDeInventario(new Metal());
 
-                db.setContent(cb);
-                event.consume();
+                    Dragboard db = contenedorInventario.getChildren().get(5).startDragAndDrop(TransferMode.COPY);
+                    ClipboardContent cb = new ClipboardContent();
+                    cb.putImage(acero);
+
+                    db.setContent(cb);
+                    event.consume();
+                }
             }
         });
     }

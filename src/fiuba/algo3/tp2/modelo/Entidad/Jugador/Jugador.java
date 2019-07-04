@@ -74,4 +74,8 @@ public class Jugador {
         this.inventario.cambiarHerramientaEquipada(posicion);
     }
 
+    public void sacarMaterialDeInventario(Material material) {
+        this.inventario.sacarMaterial(material);
+    }
+
 }
