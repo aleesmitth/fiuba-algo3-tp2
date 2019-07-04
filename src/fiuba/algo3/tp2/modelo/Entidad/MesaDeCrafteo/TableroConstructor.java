@@ -38,20 +38,20 @@ public class TableroConstructor {
     }
 
     private void inicializarIndiceParaRecetas(){
-        recetas.put("MMM-M--M-",constructor.construirPico(new Madera()));
-        recetas.put("MM-MM--M-",constructor.construirHacha(new Madera()));
-        recetas.put("PPP-M--M-",constructor.construirPico(new Piedra()));
-        recetas.put("PP-PM--M-",constructor.construirHacha(new Piedra()));
-        recetas.put("AAA-M--M-",constructor.construirPico(new Metal()));
-        recetas.put("AA-AM--M-",constructor.construirHacha(new Metal()));
-        recetas.put("AAAPM--M-",constructor.construirPico(new Metal(),new Piedra()));
+        recetas.put("M--MMMM--",constructor.construirPico(new Madera()));
+        recetas.put("MM-MMM---",constructor.construirHacha(new Madera()));
+        recetas.put("P--PPPP--",constructor.construirPico(new Piedra()));
+        recetas.put("PP-PPP---",constructor.construirHacha(new Piedra()));
+        recetas.put("A--AAAA--",constructor.construirPico(new Metal()));
+        recetas.put("AA-AAA---",constructor.construirHacha(new Metal()));
+        recetas.put("AP-AMMA--",constructor.construirPico(new Metal(),new Piedra()));
     }
 
     private String obtenerCodigoHerramienta() {
         String codigo = "";
         for (int i = 0; i < FILAS_TABLERO_CONSTRUCTOR; i++){
             for(int j = 0; j< COLUMNAS_TABLERO_CONSTRUCTOR; j++) {
-                codigo = codigo + this.casilleros[i][j].obtenerCodigoMaterial();
+                codigo = codigo + this.casilleros[j][i].obtenerCodigoMaterial();
             }
         }
         return codigo;

@@ -5,7 +5,6 @@ import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.BotonConstruirEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -21,29 +20,31 @@ public class VistaMesaDeCrafteo {
     private Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
     private Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
     private Image hierro = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
+    private VBox contenedorMesaDeCrafteo;
 
     public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego){
         this.matriz = new GridPane();
         this.juego = juego;
-        this.dibujar(contenedorMesaDeCrafteo);
+        this.contenedorMesaDeCrafteo = contenedorMesaDeCrafteo;
+        this.dibujar();
     }
 
-    private void dibujar(VBox contenedorMesaDeCrafteo) {
+    private void dibujar() {
 
         Image slotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
 
-        this.agregarFondo(contenedorMesaDeCrafteo);
+        this.agregarFondo(this.contenedorMesaDeCrafteo);
         this.agregarMatriz(slotVacio);
 
         Button botonConstruir = new Button("Construir");
-        BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego);
+        BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego, this);
         botonConstruir.setOnAction(botonConstruirEventHandler);
 
-        contenedorMesaDeCrafteo.setMaxSize(300, Region.USE_COMPUTED_SIZE);
-        contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
-        contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
+        this.contenedorMesaDeCrafteo.setMaxSize(300, Region.USE_COMPUTED_SIZE);
+        this.contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
+        this.contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
 
-        contenedorMesaDeCrafteo.getChildren().addAll(this.matriz,botonConstruir);
+        this.contenedorMesaDeCrafteo.getChildren().addAll(this.matriz,botonConstruir);
         this.setearRecibirMaterial();
     }
 
@@ -56,18 +57,19 @@ public class VistaMesaDeCrafteo {
         }
     }
 
-    private String obtenerCodigoMesaDeCrafteoGrafica(){
+    public String obtenerCodigoMesaDeCrafteoGrafica(){
         String codigo = "";
         for(int i = 0; i< 9; i++) {
             ImageView imageViewDeCelda = (ImageView) this.matriz.getChildren().get(i);
             Image imagenDeCelda = imageViewDeCelda.getImage();
-            if(imagenDeCelda == madera){
+
+            if(this.compararImagenes(imagenDeCelda, madera)){
                 codigo = codigo + "M";
             }
-            else if(imagenDeCelda == piedra){
+            else if(this.compararImagenes(imagenDeCelda, piedra)){
                 codigo = codigo + "P";
             }
-            else if(imagenDeCelda == hierro){
+            else if(this.compararImagenes(imagenDeCelda, madera)){
                 codigo = codigo + "A";
             }
             else {
@@ -102,5 +104,21 @@ public class VistaMesaDeCrafteo {
                 }
             });
         }
+    }
+
+    private boolean compararImagenes(Image imagen1, Image imagen2) {
+        for (int i = 0; i < imagen1.getWidth(); i++)
+        {
+            for (int j = 0; j < imagen1.getHeight(); j++)
+            {
+                if (!imagen1.getPixelReader().getColor(i, j).equals(imagen2.getPixelReader().getColor(i, j))) return false;
+            }
+        }
+        return true;
+    }
+
+    public void vaciar(){
+        this.contenedorMesaDeCrafteo.getChildren().removeAll();
+        this.dibujar();
     }
 }

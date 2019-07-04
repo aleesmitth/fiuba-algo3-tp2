@@ -74,7 +74,7 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
                     this.vistaTablero.actualizar();
                 }
                 break;
-            case P:
+            case CONTROL:
                 this.juego.jugadorGolpea();
                 System.out.println("Golpear was pressed");
                 this.vistaInventarioMateriales.actualizar();
