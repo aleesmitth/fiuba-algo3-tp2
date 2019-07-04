@@ -82,4 +82,8 @@ public class Jugador {
         this.inventario.agregarHerramientaAlInventario(herramienta);
     }
 
+    public Herramienta construirHerramienta(String string) {
+        return this.mesaDeCrafteo.construirHerramienta(string);
+    }
+
 }

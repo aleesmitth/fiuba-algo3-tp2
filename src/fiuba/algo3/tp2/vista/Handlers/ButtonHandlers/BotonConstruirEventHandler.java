@@ -20,10 +20,13 @@ public class BotonConstruirEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent){
         String string = vistaMesaDeCrafteo.obtenerCodigoMesaDeCrafteoGrafica();
         System.out.println(string);
-        this.vistaMesaDeCrafteo.vaciar();
+
+        Herramienta herramienta = this.juego.construirHerramienta(string);
+        this.juego.agregarHerramientaAlInventario(herramienta);
+
+        this.vistaMesaDeCrafteo.actualizar();
         System.out.println("Se vacio mesa de crafteo");
-        //Herramienta herramienta = this.juego.construirHerramienta();
-        //this.juego.agregarHerramientaAlInventario(herramienta);
+
 
     }
 }

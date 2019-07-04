@@ -63,8 +63,12 @@ public class TableroConstructor {
     }
 
     public Herramienta construirHerramienta(){
+        return construirHerramienta(this.obtenerCodigoHerramienta());
+    }
 
-        Herramienta herramienta = recetas.get(this.obtenerCodigoHerramienta());
+    public Herramienta construirHerramienta(String codigoReceta){
+
+        Herramienta herramienta = recetas.get(codigoReceta);
         try {
             if(herramienta==null){
                 throw new RecetaIntroducidaNoExisteEnElJuegoException("Ese patron no crea ningun objeto en AlgoCraft... por ahora");

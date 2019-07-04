@@ -92,4 +92,8 @@ public class Juego {
         this.jugador.agregarHerramientaAlInventario(herramienta);
     }
 
+    public Herramienta construirHerramienta(String string) {
+        return this.jugador.construirHerramienta(string);
+    }
+
 }
