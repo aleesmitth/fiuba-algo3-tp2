@@ -39,7 +39,7 @@ public class TestJugador {
         Juego juego = new Juego();
         juego.crearUnMapaParaTestSinMateriales();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
 
     }
 
@@ -49,10 +49,10 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento derecha = new Derecha();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
         juego.moverJugador(derecha);
-        assertFalse(juego.jugadorEstaEn(9,9));
-        assertTrue(juego.jugadorEstaEn(9,10));
+        assertFalse(juego.jugadorEstaEn(2,2));
+        assertTrue(juego.jugadorEstaEn(2,3));
 
     }
 
@@ -63,10 +63,10 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento izquierda = new Izquierda();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
         juego.moverJugador(izquierda);
-        assertFalse(juego.jugadorEstaEn(9,9));
-        assertTrue(juego.jugadorEstaEn(9,8));
+        assertFalse(juego.jugadorEstaEn(2,2));
+        assertTrue(juego.jugadorEstaEn(2,1));
 
     }
 
@@ -77,10 +77,10 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento arriba = new Arriba();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
         juego.moverJugador(arriba);
-        assertFalse(juego.jugadorEstaEn(9,9));
-        assertTrue(juego.jugadorEstaEn(8,9));
+        assertFalse(juego.jugadorEstaEn(2,2));
+        assertTrue(juego.jugadorEstaEn(1,2));
 
     }
 
@@ -91,10 +91,10 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento abajo = new Abajo();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
         juego.moverJugador(abajo);
-        assertFalse(juego.jugadorEstaEn(9,9));
-        assertTrue(juego.jugadorEstaEn(10,9));
+        assertFalse(juego.jugadorEstaEn(2,2));
+        assertTrue(juego.jugadorEstaEn(3,2));
     }
 
     @Test
@@ -103,11 +103,11 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento derecha = new Derecha();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
-        for(int i=0; i<100; i++){
+        assertTrue(juego.jugadorEstaEn(2,2));
+        for(int i=0; i<49; i++){
             juego.moverJugador(derecha);
         }
-        assertTrue(juego.jugadorEstaEn(9,99));
+        assertTrue(juego.jugadorEstaEn(2,49));
     }
 
 
@@ -117,11 +117,11 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento izquierda = new Izquierda();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
         for(int i=0; i<10; i++){
             juego.moverJugador(izquierda);
         }
-        assertTrue(juego.jugadorEstaEn(9,0));
+        assertTrue(juego.jugadorEstaEn(2,0));
 
     }
 
@@ -132,11 +132,11 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento arriba = new Arriba();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
         for(int i=0; i<10; i++){
             juego.moverJugador(arriba);
         }
-        assertTrue(juego.jugadorEstaEn(0,9));
+        assertTrue(juego.jugadorEstaEn(0,2));
     }
 
 
@@ -146,11 +146,11 @@ public class TestJugador {
         juego.crearUnMapaParaTestSinMateriales();
         Movimiento abajo = new Abajo();
 
-        assertTrue(juego.jugadorEstaEn(9,9));
+        assertTrue(juego.jugadorEstaEn(2,2));
        for(int i=10; i<80; i++){
             juego.moverJugador(abajo);
         }
-        assertTrue(juego.jugadorEstaEn(79,9));
+        assertTrue(juego.jugadorEstaEn(39,2));
     }
 
 
