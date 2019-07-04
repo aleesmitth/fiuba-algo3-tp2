@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 public class VistaInventario {
@@ -15,13 +16,23 @@ public class VistaInventario {
 
     private void dibujar(GridPane contenedorInventario) {
 
+        Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
+        Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
+        Image acero = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
+        Image diamante = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/diamanteInventario.jpg");
+
+
         this.agregarFondo(contenedorInventario);
 
         contenedorInventario.add(new Label("Inventario:"),0,0);
-        contenedorInventario.add(new Label("Madera"),0,1);
+        contenedorInventario.add(new ImageView(madera),0,1);
         contenedorInventario.add(new Label("1"),1,1);
-        contenedorInventario.add(new Label("Piedra"),0,2);
+        contenedorInventario.add(new ImageView(piedra),0,2);
         contenedorInventario.add(new Label("0"),1,2);
+        contenedorInventario.add(new ImageView(acero),0,3);
+        contenedorInventario.add(new Label("0"),1,3);
+        contenedorInventario.add(new ImageView(diamante),0,4);
+        contenedorInventario.add(new Label("0"),1,4);
 
         contenedorInventario.setMinSize(200, Region.USE_COMPUTED_SIZE);
         contenedorInventario.setPadding(new Insets(10, 10, 10, 10));

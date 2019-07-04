@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 public class VistaMesaDeCrafteo {
@@ -22,8 +23,10 @@ public class VistaMesaDeCrafteo {
 
     private void dibujar(VBox contenedorMesaDeCrafteo) {
 
+        Image slotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
+
         this.agregarFondo(contenedorMesaDeCrafteo);
-        this.agregarMatriz();
+        this.agregarMatriz(slotVacio);
 
         Button botonConstruir = new Button("Construir");
         BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego);
@@ -36,20 +39,13 @@ public class VistaMesaDeCrafteo {
         contenedorMesaDeCrafteo.getChildren().addAll(this.matriz,botonConstruir);
     }
 
-    private void agregarMatriz(){
+    private void agregarMatriz(Image slotVacio){
 
         for(int i = 0; i< 3; i++) {
             for(int j = 0; j<3; j++) {
-                this.agregarTextFeild(i,j);
+                this.matriz.add(new ImageView(slotVacio),i,j);
             }
         }
-    }
-
-    private void agregarTextFeild(int fila, int columna){
-        TextField textField = new TextField();
-        textField.setMaxSize(Region.USE_COMPUTED_SIZE,Region.USE_COMPUTED_SIZE);
-        textField.setAlignment(Pos.CENTER);
-        matriz.add(textField, columna, fila);
     }
 
     private void agregarFondo(VBox contenedorMesaDeCrafteo){
