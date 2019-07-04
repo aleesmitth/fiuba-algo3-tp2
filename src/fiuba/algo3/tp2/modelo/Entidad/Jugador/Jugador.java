@@ -35,15 +35,25 @@ public class Jugador {
         this.equiparHerramienta(mesaDeCrafteo.construirHerramienta());
     }
 
-    public Herramienta construirHerramienta(){ return this.mesaDeCrafteo.construirHerramienta(); }
+    public Herramienta construirHerramienta(){
+        return this.mesaDeCrafteo.construirHerramienta();
+    }
 
-    public void equiparHerramienta(Herramienta herramienta){ this.inventario.equiparHerramienta(herramienta); }
+    public void equiparHerramienta(Herramienta herramienta){
+        this.inventario.equiparHerramienta(herramienta);
+    }
 
-    public Herramienta obtenerHerramientaEquipada(){ return this.inventario.getHerramienta(); }
+    public Herramienta obtenerHerramientaEquipada(){
+        return this.inventario.getHerramienta();
+    }
 
-    public void usarHerramientaContra(Material material){ this.inventario.getHerramienta().usarContra(material, this.inventario); }
+    public void usarHerramientaContra(Material material){
+        this.inventario.getHerramienta().usarContra(material, this.inventario);
+    }
 
-    public void agregarMaterialEnCasilleroMesaDeCrafteo(Material material, int fila, int columna){ this.mesaDeCrafteo.agregarMaterialEnCasillero(material,fila,columna); }
+    public void agregarMaterialEnCasilleroMesaDeCrafteo(Material material, int fila, int columna){
+        this.mesaDeCrafteo.agregarMaterialEnCasillero(material,fila,columna);
+    }
 
     public void golpearFrente(Celda celdaJugador){
         Celda celdaConMaterialGolpeable = celdaJugador.jugador.posicionFrontal.obtenerCeldaSiguiente(celdaJugador);

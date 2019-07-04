@@ -21,10 +21,14 @@ public class Hacha extends Herramienta{
     }
 
     @Override
-    public void usarLaHerramienta(Inventario inventario){this.atributos.usar(inventario);}
+    public void usarLaHerramienta(Inventario inventario){
+        this.atributos.usar(inventario);
+    }
 
     @Override
-    public void usarContra(Material material, Inventario inventario) { material.golpeadoPor(this,this.atributos.hechoDe(), inventario); }
+    public void usarContra(Material material, Inventario inventario) {
+        material.golpeadoPor(this,this.atributos.hechoDe(), inventario);
+    }
 
 
 }

@@ -4,7 +4,6 @@ import fiuba.algo3.tp2.modelo.Entidad.Herramienta.AtributosHerramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
-import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
 
 
 public abstract class Material {

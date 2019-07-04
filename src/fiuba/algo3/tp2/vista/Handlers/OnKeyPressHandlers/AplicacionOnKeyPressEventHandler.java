@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.vista.Handlers.OnKeyPressHandlers;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.*;
 import fiuba.algo3.tp2.vista.BarraDeMenu;
+import fiuba.algo3.tp2.vista.VistaInventario;
 import fiuba.algo3.tp2.vista.VistaTablero;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
@@ -13,13 +14,15 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
     private Stage stage;
     private BarraDeMenu menuBar;
     private VistaTablero vistaTablero;
+    private VistaInventario vistaInventario;
     private Juego juego;
 
-    public AplicacionOnKeyPressEventHandler(Stage stage, BarraDeMenu menuBar, Juego juego, VistaTablero vistaTablero) {
+    public AplicacionOnKeyPressEventHandler(Stage stage, BarraDeMenu menuBar, Juego juego, VistaTablero vistaTablero, VistaInventario vistaInventario) {
         this.stage = stage;
         this.menuBar = menuBar;
         this.juego = juego;
         this.vistaTablero = vistaTablero;
+        this.vistaInventario = vistaInventario;
     }
 
     @Override
@@ -69,7 +72,9 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case P:
                 this.juego.jugadorGolpea();
                 System.out.println("Golpear was pressed");
+                this.vistaInventario.actualizar();
                 this.vistaTablero.actualizar();
+
                 break;
         }
     }

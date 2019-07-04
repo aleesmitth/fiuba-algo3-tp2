@@ -1,14 +1,8 @@
 package fiuba.algo3.tp2.modelo.Entidad.Materiales;
 
-import fiuba.algo3.tp2.modelo.Entidad.Herramienta.AtributosHerramienta;
-import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
-import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Pico;
-import fiuba.algo3.tp2.modelo.Entidad.Herramienta.UsoLineal;
+import fiuba.algo3.tp2.modelo.Entidad.Herramienta.*;
 import fiuba.algo3.tp2.modelo.Entidad.Jugador.Inventario;
-import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
 import fiuba.algo3.tp2.modelo.Excepciones.CrearPicoFinoDeMaderaException;
-
-import static fiuba.algo3.tp2.modelo.Juego.Juego.CASILLERO_INVENTARIO_PARA_MADERA;
 
 public class Madera extends Material {
 
@@ -18,7 +12,6 @@ public class Madera extends Material {
         this.codigo = "M";
         this.durabilidad = 10;
     }
-
 
     @Override
     public AtributosHerramienta crear(Hacha hacha) {
@@ -43,7 +36,9 @@ public class Madera extends Material {
     }
 
     @Override
-    public boolean hechoDeMadera(){ return true; }
+    public boolean hechoDeMadera(){
+        return true;
+    }
 
     @Override
     public void golpeadoPor(Hacha hacha, Material material, Inventario inventario) {
@@ -52,7 +47,7 @@ public class Madera extends Material {
         if(laHerramientaMeRompio()){
             inventario.agregarMaterial(this);
             this.codigo = "-";
-        };
+        }
     }
 
     @Override

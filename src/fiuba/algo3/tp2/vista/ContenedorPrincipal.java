@@ -72,5 +72,9 @@ public class ContenedorPrincipal extends BorderPane {
         return vistaTablero;
     }
 
+    public VistaInventario getVistaInventario(){
+        return vistaInventario;
+    }
+
 
 }

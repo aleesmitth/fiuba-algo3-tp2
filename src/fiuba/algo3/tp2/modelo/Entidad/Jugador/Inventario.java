@@ -9,14 +9,6 @@ import java.util.Map;
 
 import static fiuba.algo3.tp2.modelo.Juego.Juego.TOTAL_DE_MATERIALES;
 
-/**
- * Index de Casillero[]: 0 = Madera
- *                       1 = Piedra
- *                       2 = Metal
- *                       3 = Diamante
- */
-
-
 public class Inventario {
 
     private Map<String, Integer> inventario;
@@ -41,15 +33,11 @@ public class Inventario {
     }
 
     public void agregarMaterial(Material material){
-        int cantidadVieja = inventario.get(material.obtenerCodigoMaterial());
-
-        inventario.replace(material.obtenerCodigoMaterial(),cantidadVieja++);
+        inventario.replace(material.obtenerCodigoMaterial(), inventario.get(material.obtenerCodigoMaterial()) + 1);
     }
 
     public void sacarMaterial(Material material){
-        int cantidadVieja = inventario.get(material.obtenerCodigoMaterial());
-
-        inventario.replace(material.obtenerCodigoMaterial(),cantidadVieja--);
+        inventario.replace(material.obtenerCodigoMaterial(), inventario.get(material.obtenerCodigoMaterial()) - 1);
     }
 
     public void equiparHerramienta(Herramienta herramienta){
@@ -63,8 +51,6 @@ public class Inventario {
     public Herramienta getHerramienta() {
         return this.herramienta;
     }
-
-
 
     public String getCantidadDeMaterial(Material material){
         return this.inventario.get(material.obtenerCodigoMaterial()).toString();

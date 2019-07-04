@@ -131,7 +131,12 @@ public class VistaTablero {
 
 
     public void actualizar() {
+        this.clear();
         this.dibujar();
+    }
+
+    private void clear(){
+        this.contenedorCentral.getChildren().clear();
     }
 
     private Rectangle dibujarRectangulo(Image image){
