@@ -33,10 +33,6 @@ public abstract class Material {
 
     public abstract String obtenerCodigoMaterial();
 
-    public abstract void agregarAlInventario(Casillero[] casilleroConMateriales);
-
-    public abstract void sacarDelInventario(Casillero[] casilleroConMateriales);
-
     public boolean laHerramientaMeRompio(){
         if(this.durabilidad <= 0) return true;
         return false;

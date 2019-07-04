@@ -4,6 +4,9 @@ import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 import fiuba.algo3.tp2.modelo.Entidad.MesaDeCrafteo.Casillero;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static fiuba.algo3.tp2.modelo.Juego.Juego.TOTAL_DE_MATERIALES;
 
 /**
@@ -15,18 +18,55 @@ import static fiuba.algo3.tp2.modelo.Juego.Juego.TOTAL_DE_MATERIALES;
 
 
 public class Inventario {
-    private Casillero[] casilleroConMateriales = new Casillero[TOTAL_DE_MATERIALES];
+
+    private Map<String, Integer> inventario;
     private Herramienta herramienta;
 
-    public Inventario(){ inicializarArrayCasillerosVacios(); }
-    private void inicializarArrayCasillerosVacios(){
-        for (int i = 0; i < TOTAL_DE_MATERIALES; i++) {
-            casilleroConMateriales[i] = new Casillero();
-        }
+    public Inventario(){
+        inicializarHashmap();
     }
-    public void agregarMaterial(Material material){ material.agregarAlInventario(this.casilleroConMateriales); }
-    public void sacarMaterial(Material material){ material.sacarDelInventario(this.casilleroConMateriales); }
-    public void equiparHerramienta(Herramienta herramienta){ this.herramienta = herramienta; }
-    public void romperHerramienta(){ this.herramienta = null; }
-    public Herramienta getHerramienta() { return this.herramienta; }
+
+    public void inicializarHashmap(){
+        this.inventario = new HashMap<String, Integer>();
+
+        /**
+         * madera:M piedra:P metal:A diamante:D
+         */
+
+        this.inventario.put("M", 0);
+        this.inventario.put("P", 0);
+        this.inventario.put("A", 0);
+        this.inventario.put("D", 0);
+
+    }
+
+    public void agregarMaterial(Material material){
+        int cantidadVieja = inventario.get(material.obtenerCodigoMaterial());
+
+        inventario.replace(material.obtenerCodigoMaterial(),cantidadVieja++);
+    }
+
+    public void sacarMaterial(Material material){
+        int cantidadVieja = inventario.get(material.obtenerCodigoMaterial());
+
+        inventario.replace(material.obtenerCodigoMaterial(),cantidadVieja--);
+    }
+
+    public void equiparHerramienta(Herramienta herramienta){
+        this.herramienta = herramienta;
+    }
+
+    public void romperHerramienta(){
+        this.herramienta = null;
+    }
+
+    public Herramienta getHerramienta() {
+        return this.herramienta;
+    }
+
+
+
+    public String getCantidadDeMaterial(Material material){
+        return this.inventario.get(material.obtenerCodigoMaterial()).toString();
+    }
 }

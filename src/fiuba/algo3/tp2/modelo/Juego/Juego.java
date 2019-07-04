@@ -80,4 +80,8 @@ public class Juego {
         return celdaSiguiente.material;
     }
 
+    public String getCantidadDeMaterial(Material material){
+        return this.jugador.getCantidadDeMaterial(material);
+    }
+
 }

@@ -52,14 +52,4 @@ public class Piedra extends Material {
     public String obtenerCodigoMaterial(){
         return this.codigo;
     }
-
-    @Override
-    public void agregarAlInventario(Casillero[] casilleroConMateriales) {
-        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_PIEDRA].agregarMaterial(this);
-    }
-
-    @Override
-    public void sacarDelInventario(Casillero[] casilleroConMateriales) {
-        casilleroConMateriales[CASILLERO_INVENTARIO_PARA_PIEDRA].sacarMaterial();
-    }
 }

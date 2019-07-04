@@ -56,4 +56,8 @@ public class Jugador {
         this.posicionFrontal = nuevaPosicionFrontal;
     }
 
+    public String getCantidadDeMaterial(Material material){
+        return this.inventario.getCantidadDeMaterial(material);
+    }
+
 }

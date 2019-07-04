@@ -1,5 +1,9 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Diamante;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Metal;
+import fiuba.algo3.tp2.modelo.Entidad.Materiales.Piedra;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -10,7 +14,10 @@ import javafx.scene.layout.*;
 
 public class VistaInventario {
 
+    private Juego juego;
+
     public VistaInventario(GridPane contenedorInventario, Juego juego) {
+        this.juego = juego;
         this.dibujar(contenedorInventario);
     }
 
@@ -21,18 +28,23 @@ public class VistaInventario {
         Image acero = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
         Image diamante = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/diamanteInventario.jpg");
 
+        Label labelCantidadDeMadera = new Label(this.juego.getCantidadDeMaterial(new Madera()));
+        Label labelCantidadDePiedra = new Label(this.juego.getCantidadDeMaterial(new Piedra()));
+        Label labelCantidadDeMetal = new Label(this.juego.getCantidadDeMaterial(new Metal()));
+        Label labelCantidadDeDiamante = new Label(this.juego.getCantidadDeMaterial(new Diamante()));
+
 
         this.agregarFondo(contenedorInventario);
 
         contenedorInventario.add(new Label("Inventario:"),0,0);
         contenedorInventario.add(new ImageView(madera),0,1);
-        contenedorInventario.add(new Label("1"),1,1);
+        contenedorInventario.add(labelCantidadDeMadera,1,1);
         contenedorInventario.add(new ImageView(piedra),0,2);
-        contenedorInventario.add(new Label("0"),1,2);
+        contenedorInventario.add(labelCantidadDePiedra,1,2);
         contenedorInventario.add(new ImageView(acero),0,3);
-        contenedorInventario.add(new Label("0"),1,3);
+        contenedorInventario.add(labelCantidadDeMetal,1,3);
         contenedorInventario.add(new ImageView(diamante),0,4);
-        contenedorInventario.add(new Label("0"),1,4);
+        contenedorInventario.add(labelCantidadDeDiamante,1,4);
 
         contenedorInventario.setMinSize(200, Region.USE_COMPUTED_SIZE);
         contenedorInventario.setPadding(new Insets(10, 10, 10, 10));
