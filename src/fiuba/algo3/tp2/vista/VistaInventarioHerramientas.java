@@ -22,13 +22,13 @@ public class VistaInventarioHerramientas {
     private void dibujar() {
         this.agregarFondo();
 
-        ImageView posicion1 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
-        ImageView posicion2 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
-        ImageView posicion3 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
-        ImageView posicion4 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
-        ImageView posicion5 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
-        ImageView posicion6 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
-        ImageView posicion7 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg"));
+        ImageView posicion1 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/hachaDeMadera.jpg"));
+        ImageView posicion2 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/hachaDePiedra.jpg"));
+        ImageView posicion3 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/hachaDeHierro.jpg"));
+        ImageView posicion4 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/picoDeMadera.jpg"));
+        ImageView posicion5 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/picoDePiedra.jpg"));
+        ImageView posicion6 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/picoDeHierro.jpg"));
+        ImageView posicion7 = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/picoFino.jpg"));
 
         this.contenedorInventario.setMaxSize(Region.USE_COMPUTED_SIZE, 200);
         this.contenedorInventario.setPadding(new Insets(10, 10, 10, 10));

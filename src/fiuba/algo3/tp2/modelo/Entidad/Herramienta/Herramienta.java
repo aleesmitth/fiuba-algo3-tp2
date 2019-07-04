@@ -19,4 +19,10 @@ public abstract class Herramienta {
 
     protected void usarLaHerramienta(Inventario inventario){}
 
+    public boolean esPico(){return false;}
+
+    public boolean esHacha(){return false;}
+
+    public boolean esPicoFino(){return false;}
+
 }

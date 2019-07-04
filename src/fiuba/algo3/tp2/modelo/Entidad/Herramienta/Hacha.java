@@ -30,5 +30,8 @@ public class Hacha extends Herramienta{
         material.golpeadoPor(this,this.atributos.hechoDe(), inventario);
     }
 
+    @Override
+    public boolean esHacha(){return true;}
+
 
 }

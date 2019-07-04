@@ -73,9 +73,36 @@ public class Inventario {
     }
 
     public void agregarHerramientaAlInventario(Herramienta herramienta) {
-        int size = this.inventarioHerramientas.size();
-        if(size<7) {
-            this.inventarioHerramientas.put(size + 1, herramienta);
+        Material materialDeLaHerramienta = herramienta.hechoDe();
+        if (herramienta.esHacha()) {
+            switch (materialDeLaHerramienta.obtenerCodigoMaterial()) {
+                case "M":
+                    this.inventarioHerramientas.put(1, herramienta);
+                    break;
+                case "P":
+                    this.inventarioHerramientas.put(2, herramienta);
+                    break;
+                case "A":
+                    this.inventarioHerramientas.put(3, herramienta);
+                    break;
+            }
+        }else if (herramienta.esPicoFino()) {
+            this.inventarioHerramientas.put(7, herramienta);
+        }else {
+            switch (materialDeLaHerramienta.obtenerCodigoMaterial()) {
+                case "M":
+                    this.inventarioHerramientas.put(4,herramienta);
+                    break;
+                case "P":
+                    this.inventarioHerramientas.put(5, herramienta);
+                    break;
+                case "A":
+                    this.inventarioHerramientas.put(6, herramienta);
+                    break;
+            }
+
+
+
         }
     }
 
