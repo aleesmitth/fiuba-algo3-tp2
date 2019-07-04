@@ -80,7 +80,7 @@ public class VistaMesaDeCrafteo {
     }
 
     private void agregarFondo(VBox contenedorMesaDeCrafteo){
-        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/Madera.jpg");
+        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/texturaFondo.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         contenedorMesaDeCrafteo.setBackground(new Background(imagenDeFondo));
     }

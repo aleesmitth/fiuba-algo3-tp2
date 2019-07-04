@@ -80,8 +80,8 @@ public class Juego {
         return this.jugador.getCantidadDeMaterial(material);
     }
 
-    public void cambiarHerramientaEquipada(int posicion) {
-        this.jugador.cambiarHerramientaEquipada(posicion);
+    public boolean cambiarHerramientaEquipada(int posicion) {
+        return this.jugador.cambiarHerramientaEquipada(posicion);
     }
 
     public void sacarMaterialDeInventario(Material material) {

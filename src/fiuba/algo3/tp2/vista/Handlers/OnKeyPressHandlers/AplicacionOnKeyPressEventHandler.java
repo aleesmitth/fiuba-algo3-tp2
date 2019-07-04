@@ -81,41 +81,47 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
                 this.vistaTablero.actualizar();
                 break;
             case DIGIT1:
-                this.vistaInventarioHerramientas.actualizar(1);
-                this.juego.cambiarHerramientaEquipada(1);
-                System.out.print("Herramienta 1");
+                if (this.juego.cambiarHerramientaEquipada(1)) {
+                    this.vistaInventarioHerramientas.actualizar(1);
+                    System.out.print("Herramienta 1");
+                }
                 break;
             case DIGIT2:
-                this.vistaInventarioHerramientas.actualizar(2);
-                this.juego.cambiarHerramientaEquipada(2);
-                System.out.print("Herramienta 2");
+                if (this.juego.cambiarHerramientaEquipada(2)) {
+                    this.vistaInventarioHerramientas.actualizar(2);
+                    System.out.print("Herramienta 2");
+                }
                 break;
             case DIGIT3:
-                this.vistaInventarioHerramientas.actualizar(3);
-                this.juego.cambiarHerramientaEquipada(3);
-                System.out.print("Herramienta 3");
+                if (this.juego.cambiarHerramientaEquipada(3)) {
+                    this.vistaInventarioHerramientas.actualizar(3);
+                    System.out.print("Herramienta 3");
+                }
                 break;
             case DIGIT4:
-                this.vistaInventarioHerramientas.actualizar(4);
-                this.juego.cambiarHerramientaEquipada(4);
-                System.out.print("Herramienta 4");
+                if (this.juego.cambiarHerramientaEquipada(4)) {
+                    this.vistaInventarioHerramientas.actualizar(4);
+                    System.out.print("Herramienta 4");
+                }
                 break;
             case DIGIT5:
-                this.vistaInventarioHerramientas.actualizar(5);
-                this.juego.cambiarHerramientaEquipada(5);
-                System.out.print("Herramienta 5");
+                if (this.juego.cambiarHerramientaEquipada(5)) {
+                    this.vistaInventarioHerramientas.actualizar(5);
+                    System.out.print("Herramienta 5");
+                }
                 break;
             case DIGIT6:
-                this.vistaInventarioHerramientas.actualizar(6);
-                this.juego.cambiarHerramientaEquipada(6);
-                System.out.print("Herramienta 6");
+                if (this.juego.cambiarHerramientaEquipada(6)) {
+                    this.vistaInventarioHerramientas.actualizar(6);
+                    System.out.print("Herramienta 6");
+                }
                 break;
             case DIGIT7:
-                this.vistaInventarioHerramientas.actualizar(7);
-                this.juego.cambiarHerramientaEquipada(7);
-                System.out.print("Herramienta 7");
+                if (this.juego.cambiarHerramientaEquipada(7)) {
+                    this.vistaInventarioHerramientas.actualizar(7);
+                    System.out.print("Herramienta 7");
+                }
                 break;
-
         }
     }
 }

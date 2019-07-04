@@ -64,15 +64,18 @@ public class Inventario {
         return this.inventarioMateriales.get(material.obtenerCodigoMaterial()).toString();
     }
 
-    public void cambiarHerramientaEquipada(int posicionDeHerramientaEnInventario){
-        this.equiparHerramienta(this.inventarioHerramientas.get(posicionDeHerramientaEnInventario));
+    public boolean cambiarHerramientaEquipada(int posicionDeHerramientaEnInventario){
+        if (this.inventarioHerramientas.get(posicionDeHerramientaEnInventario) != null) {
+            this.equiparHerramienta(this.inventarioHerramientas.get(posicionDeHerramientaEnInventario));
+            return true;
+        }
+        return false;
     }
 
     public void agregarHerramientaAlInventario(Herramienta herramienta) {
         int size = this.inventarioHerramientas.size();
         if(size<7) {
             this.inventarioHerramientas.put(size + 1, herramienta);
-
         }
     }
 

@@ -16,6 +16,7 @@ public class VistaInventarioHerramientas {
         this.juego = juego;
         this.contenedorInventario = contenedorInventario;
         this.dibujar();
+        this.actualizar(1);
     }
 
     private void dibujar() {
@@ -37,7 +38,7 @@ public class VistaInventarioHerramientas {
     }
 
     private void agregarFondo(){
-        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/Madera.jpg");
+        Image imagenFondo = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/texturaFondo.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagenFondo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         contenedorInventario.setBackground(new Background(imagenDeFondo));
     }
@@ -47,6 +48,7 @@ public class VistaInventarioHerramientas {
         this.dibujar();
 
         ImageView madera = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg"));
+
         this.contenedorInventario.getChildren().remove(posicion - 1);
         this.contenedorInventario.getChildren().add(posicion - 1,madera);
 
