@@ -11,6 +11,9 @@ import fiuba.algo3.tp2.vista.VistaTablero;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
 
 public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> {
 
@@ -32,6 +35,9 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
 
     @Override
     public void handle(KeyEvent event) {
+
+        Media sound = new Media(new File("src/fiuba/algo3/tp2/vista/sounds/golpearMadera.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
 
         switch (event.getCode()) {
             case ESCAPE:
@@ -77,6 +83,7 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case CONTROL:
                 this.juego.jugadorGolpea();
                 System.out.println("Golpear was pressed");
+                mediaPlayer.play();
                 this.vistaInventarioMateriales.actualizar();
                 this.vistaTablero.actualizar();
                 break;
