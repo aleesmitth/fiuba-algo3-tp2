@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
 import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Herramienta;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
+import fiuba.algo3.tp2.modelo.Excepciones.UsarHerramientaRotaException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +58,12 @@ public class Inventario {
     }
 
     public Herramienta getHerramienta() {
+        try {
+            if(this.herramienta == null) throw new UsarHerramientaRotaException("Se intento realizar una accion con una herramienta rota.");
+        }catch(UsarHerramientaRotaException exception){
+            System.out.println(exception.getMessage());
+            System.exit(1);
+        }
         return this.herramienta;
     }
 
