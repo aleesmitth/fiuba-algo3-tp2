@@ -48,14 +48,17 @@ public class VistaMesaDeCrafteo {
         Button botonVaciar = new Button("Vaciar");
         BotonVaciarEventHandler botonVaciarEventHandler = new BotonVaciarEventHandler(juego, vistaInventarioMateriales, this);
         botonVaciar.setOnAction(botonVaciarEventHandler);
+        botonVaciar.setMinSize(150,50);
 
         Button botonConstruir = new Button("Construir");
         BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego, this);
         botonConstruir.setOnAction(botonConstruirEventHandler);
+        botonConstruir.setMinSize(150,50);
 
         Button botonMostrarRecetas = new Button("Mostrar recetas");
         BotonMostrarRecetasEventHandler botonMostrarRecetasEventHandler = new BotonMostrarRecetasEventHandler(this.stage);
         botonMostrarRecetas.setOnAction(botonMostrarRecetasEventHandler);
+        botonMostrarRecetas.setMinSize(150,50);
 
         this.contenedorMesaDeCrafteo.setMaxSize(300, Region.USE_COMPUTED_SIZE);
         this.contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
