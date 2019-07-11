@@ -104,7 +104,8 @@ public class VistaMesaDeCrafteo {
             a.setOnDragOver(new EventHandler<DragEvent>() {
                 @Override
                 public void handle(DragEvent event) {
-                    if(event.getDragboard().hasImage()){
+                    ImageView imagen = (ImageView)a;
+                    if(event.getDragboard().hasImage() && !(compararImagenes(imagen.getImage(), imagenMadera)) && !(compararImagenes(imagen.getImage(), imagenPiedra)) && !(compararImagenes(imagen.getImage(), imagenMetal))){
                         event.acceptTransferModes(TransferMode.ANY);
                     }
                 }
