@@ -133,6 +133,9 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
                     System.out.print("Herramienta 7");
                 }
                 break;
+            case M:
+                mediaPlayer.setVolume(0);
+                break;
         }
     }
 }
