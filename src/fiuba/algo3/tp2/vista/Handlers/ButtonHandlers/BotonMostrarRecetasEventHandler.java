@@ -17,7 +17,7 @@ public class BotonMostrarRecetasEventHandler implements EventHandler<ActionEvent
     @Override
     public void handle(ActionEvent actionEvent){
         Popup popup = new Popup();
-        popup.getContent().add(new ImageView("fiuba/algo3/tp2/vista/Imagenes/armaEquipada.jpg"));
+        popup.getContent().add(new ImageView("fiuba/algo3/tp2/vista/Imagenes/recetas.png"));
         popup.hideOnEscapeProperty();
         popup.show(stage);
     }
