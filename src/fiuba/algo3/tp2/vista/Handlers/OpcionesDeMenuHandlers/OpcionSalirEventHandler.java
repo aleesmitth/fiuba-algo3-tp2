@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.vista.Handlers.ButtonHandlers;
+package fiuba.algo3.tp2.vista.Handlers.OpcionesDeMenuHandlers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
