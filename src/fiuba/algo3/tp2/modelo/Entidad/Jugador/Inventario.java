@@ -113,4 +113,7 @@ public class Inventario {
         }
     }
 
+    public boolean herramientaRota(){
+        return this.herramienta==null;
+    }
 }

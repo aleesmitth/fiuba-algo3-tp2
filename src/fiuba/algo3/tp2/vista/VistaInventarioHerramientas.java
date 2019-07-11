@@ -47,10 +47,12 @@ public class VistaInventarioHerramientas {
         this.clear();
         this.dibujar();
 
-        ImageView madera = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/armaEquipada.jpg"));
+        if(posicion!=0) {
+            ImageView madera = new ImageView(new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/armaEquipada.jpg"));
 
-        this.contenedorInventario.getChildren().remove(posicion - 1);
-        this.contenedorInventario.getChildren().add(posicion - 1,madera);
+            this.contenedorInventario.getChildren().remove(posicion - 1);
+            this.contenedorInventario.getChildren().add(posicion - 1, madera);
+        }
 
     }
 

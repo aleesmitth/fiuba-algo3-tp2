@@ -100,4 +100,7 @@ public class Juego {
         this.jugador.agregarMaterialAlInventario(material);
     }
 
+    public boolean herramientaDelJugadorEstaRota() {
+        return this.jugador.herramientaRota();
+    }
 }
