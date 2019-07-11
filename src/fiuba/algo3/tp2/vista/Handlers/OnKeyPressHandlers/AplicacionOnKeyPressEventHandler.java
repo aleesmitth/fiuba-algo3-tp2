@@ -7,6 +7,7 @@ import fiuba.algo3.tp2.vista.VistaInventarioHerramientas;
 import fiuba.algo3.tp2.vista.VistaInventarioMateriales;
 import fiuba.algo3.tp2.vista.VistaTablero;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -83,6 +84,7 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
                     this.vistaInventarioMateriales.actualizar();
                     this.vistaTablero.actualizar();
                 }else{
+                    mostrarAlertaHerramientaSeRompio();
                     this.vistaInventarioHerramientas.actualizar(0);
                 }
                 break;
@@ -125,5 +127,13 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
                 mediaPlayer.setVolume(0);
                 break;
         }
+    }
+    private void mostrarAlertaHerramientaSeRompio(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Aviso");
+        alert.setHeaderText("No hay ninguna herramienta equipada");
+        String mensaje = "Crea una herramienta usando la mesa de crafteo o equipa el hacha con el 1";
+        alert.setContentText(mensaje);
+        alert.show();
     }
 }

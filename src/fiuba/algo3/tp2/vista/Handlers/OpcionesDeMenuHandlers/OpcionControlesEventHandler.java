@@ -12,7 +12,7 @@ public class OpcionControlesEventHandler implements EventHandler<ActionEvent> {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Controles");
         alert.setHeaderText("Controles del juego");
-        String mensaje = "Movimiento:\n← → ↑ ↓\nPantalla completa:\nF\nModo ventana:\nEsc\nEquipar herramienta:\n1-7\nUsar herramienta:\nCtrl";
+        String mensaje = "Movimiento:\n← → ↑ ↓\nPantalla completa:\nF\nModo ventana:\nEsc\nEquipar herramienta:\n1-7\nUsar herramienta:\nCtrl\nTips:\nPara crear una herramienta tenes que arrastrar los materiales desde el inventario(a la derecha) a la mesa de crafteo(a la izquierda), cuidado porque las recetas tienen que estar bien armadas. Leer la documentacion del juego";
         alert.setContentText(mensaje);
         alert.show();
     }
