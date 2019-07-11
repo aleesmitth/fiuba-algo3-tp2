@@ -12,8 +12,8 @@ import fiuba.algo3.tp2.modelo.Juego.Juego;
 public class BotonVaciarEventHandler implements EventHandler<ActionEvent> {
 
     Juego juego;
-    private final VistaMesaDeCrafteo vistaMesaDeCrafteo;
-    private final VistaInventarioMateriales vistaInventarioMateriales;
+    private VistaMesaDeCrafteo vistaMesaDeCrafteo;
+    private VistaInventarioMateriales vistaInventarioMateriales;
 
     public BotonVaciarEventHandler(Juego juego, VistaInventarioMateriales vistaInventarioMateriales, VistaMesaDeCrafteo vistaMesaDeCrafteo){
         this.juego = juego;
@@ -41,6 +41,7 @@ public class BotonVaciarEventHandler implements EventHandler<ActionEvent> {
                     break;
             }
         }
+        this.vistaMesaDeCrafteo.actualizar();
         this.vistaInventarioMateriales.actualizar();
     }
 }

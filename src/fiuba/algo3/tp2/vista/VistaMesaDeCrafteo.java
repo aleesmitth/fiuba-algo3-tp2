@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.vista;
 
-import fiuba.algo3.tp2.modelo.Entidad.Materiales.Diamante;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Metal;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Piedra;
@@ -16,7 +15,6 @@ import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.Node;
 import javafx.event.EventHandler;
-import org.omg.CORBA.IMP_LIMIT;
 
 public class VistaMesaDeCrafteo {
 
@@ -27,7 +25,6 @@ public class VistaMesaDeCrafteo {
     private Image metal = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
     private Image slotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
     private VBox contenedorMesaDeCrafteo;
-    protected final VistaMesaDeCrafteo vistaMesaDeCrafteo;
     private VistaInventarioMateriales vistaInventarioMateriales;
 
     public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego, VistaInventarioMateriales vistaInventarioMateriales){
@@ -36,7 +33,6 @@ public class VistaMesaDeCrafteo {
         this.contenedorMesaDeCrafteo = contenedorMesaDeCrafteo;
         this.vistaInventarioMateriales = vistaInventarioMateriales;
         this.dibujar();
-        this.vistaMesaDeCrafteo = this;
     }
 
     private void dibujar() {
@@ -46,7 +42,7 @@ public class VistaMesaDeCrafteo {
         this.matriz = this.armarMatriz();
 
         Button botonVaciar = new Button("Vaciar");
-        BotonVaciarEventHandler botonVaciarEventHandler = new BotonVaciarEventHandler(juego, vistaInventarioMateriales, vistaMesaDeCrafteo);
+        BotonVaciarEventHandler botonVaciarEventHandler = new BotonVaciarEventHandler(juego, vistaInventarioMateriales, this);
         botonVaciar.setOnAction(botonVaciarEventHandler);
 
         Button botonConstruir = new Button("Construir");
