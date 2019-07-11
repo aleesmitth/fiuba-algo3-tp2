@@ -86,4 +86,8 @@ public class Jugador {
         return this.mesaDeCrafteo.construirHerramienta(string);
     }
 
+    public void agregarMaterialAlInventario(Material material) {
+        this.inventario.agregarMaterial(material);
+    }
+
 }

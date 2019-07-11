@@ -10,11 +10,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 
@@ -83,16 +80,13 @@ public class VistaInventarioMateriales {
         Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
         Image acero = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
 
-        contenedorInventario.getChildren().get(1).setOnDragDetected(new EventHandler<MouseEvent>(){
+        contenedorInventario.getChildren().get(1).setOnDragDetected(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (!juego.getCantidadDeMaterial(new Madera()).equals("0")) {
-                    juego.sacarMaterialDeInventario(new Madera());
-                    vistaInventarioMateriales.actualizar();
                     Dragboard db = contenedorInventario.getChildren().get(1).startDragAndDrop(TransferMode.COPY);
                     ClipboardContent cb = new ClipboardContent();
                     cb.putImage(madera);
-
                     db.setContent(cb);
                     event.consume();
                 }
@@ -102,8 +96,6 @@ public class VistaInventarioMateriales {
             @Override
             public void handle(MouseEvent event) {
                 if (!juego.getCantidadDeMaterial(new Piedra()).equals("0")) {
-                    juego.sacarMaterialDeInventario(new Piedra());
-                    vistaInventarioMateriales.actualizar();
                     Dragboard db = contenedorInventario.getChildren().get(3).startDragAndDrop(TransferMode.COPY);
                     ClipboardContent cb = new ClipboardContent();
                     cb.putImage(piedra);
@@ -117,8 +109,6 @@ public class VistaInventarioMateriales {
             @Override
             public void handle(MouseEvent event) {
                 if (!juego.getCantidadDeMaterial(new Piedra()).equals("0")) {
-                    juego.sacarMaterialDeInventario(new Metal());
-                    vistaInventarioMateriales.actualizar();
                     Dragboard db = contenedorInventario.getChildren().get(5).startDragAndDrop(TransferMode.COPY);
                     ClipboardContent cb = new ClipboardContent();
                     cb.putImage(acero);

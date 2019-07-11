@@ -96,4 +96,8 @@ public class Juego {
         return this.jugador.construirHerramienta(string);
     }
 
+    public void agregarMaterialAlInventario(Material material) {
+        this.jugador.agregarMaterialAlInventario(material);
+    }
+
 }
