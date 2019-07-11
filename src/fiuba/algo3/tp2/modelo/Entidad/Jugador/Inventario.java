@@ -28,10 +28,10 @@ public class Inventario {
          * madera:M piedra:P metal:A diamante:D
          */
 
-        this.inventarioMateriales.put("M", 10);
-        this.inventarioMateriales.put("P", 10);
-        this.inventarioMateriales.put("A", 10);
-        this.inventarioMateriales.put("D", 10);
+        this.inventarioMateriales.put("M", 0);
+        this.inventarioMateriales.put("P", 0);
+        this.inventarioMateriales.put("A", 0);
+        this.inventarioMateriales.put("D", 0);
 
     }
 
