@@ -36,8 +36,9 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
     @Override
     public void handle(KeyEvent event) {
 
-        Media sound = new Media(new File("src/fiuba/algo3/tp2/vista/sounds/golpearMadera.mp3").toURI().toString());
+        Media sound = new Media(new File("src/fiuba/algo3/tp2/vista/sounds/smack.mp3").toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setVolume(0.3);
 
         switch (event.getCode()) {
             case ESCAPE:

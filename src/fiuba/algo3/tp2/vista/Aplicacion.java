@@ -39,5 +39,6 @@ public class Aplicacion extends Application {
 
         stage.show();
         mediaPlayer.play();
+        mediaPlayer.setVolume(0.3);
     }
 }
