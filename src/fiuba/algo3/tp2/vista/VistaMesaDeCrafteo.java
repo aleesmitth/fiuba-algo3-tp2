@@ -105,7 +105,7 @@ public class VistaMesaDeCrafteo {
                 @Override
                 public void handle(DragEvent event) {
                     ImageView imagen = (ImageView)a;
-                    if(event.getDragboard().hasImage() && !(compararImagenes(imagen.getImage(), imagenMadera)) && !(compararImagenes(imagen.getImage(), imagenPiedra)) && !(compararImagenes(imagen.getImage(), imagenMetal))){
+                    if(event.getDragboard().hasImage() && !(compararImagenContraTodosMateriales(imagen.getImage()))){
                         event.acceptTransferModes(TransferMode.ANY);
                     }
                 }
@@ -135,6 +135,13 @@ public class VistaMesaDeCrafteo {
             for (int j = 0; j < imagen1.getHeight(); j++) {
                 if (!imagen1.getPixelReader().getColor(i, j).equals(imagen2.getPixelReader().getColor(i, j))) return false;
             }
+        }
+        return true;
+    }
+
+    private boolean compararImagenContraTodosMateriales(Image image) {
+        if (!compararImagenes(image, imagenMadera) && !compararImagenes(image, imagenPiedra) && !compararImagenes(image, imagenMadera)){
+            return false;
         }
         return true;
     }
