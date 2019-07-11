@@ -20,10 +20,10 @@ public class VistaMesaDeCrafteo {
 
     private GridPane matriz;
     private Juego juego;
-    private Image madera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
-    private Image piedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
-    private Image metal = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
-    private Image slotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
+    private static Image imagenMadera = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/maderaInventario.jpg");
+    private static Image imagenPiedra = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/piedraInventario.jpg");
+    private static Image imagenMetal = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/ironInventario.jpg");
+    private static Image imagenSlotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
     private VBox contenedorMesaDeCrafteo;
     private VistaInventarioMateriales vistaInventarioMateriales;
 
@@ -63,7 +63,7 @@ public class VistaMesaDeCrafteo {
 
         for(int i = 0; i< 3; i++) {
             for(int j = 0; j<3; j++) {
-                matriz.add(new ImageView(slotVacio),i,j);
+                matriz.add(new ImageView(imagenSlotVacio),i,j);
             }
         }
         return matriz;
@@ -75,13 +75,13 @@ public class VistaMesaDeCrafteo {
             ImageView imageViewDeCelda = (ImageView) this.matriz.getChildren().get(i);
             Image imagenDeCelda = imageViewDeCelda.getImage();
 
-            if(this.compararImagenes(imagenDeCelda, madera)){
+            if(this.compararImagenes(imagenDeCelda, imagenMadera)){
                 codigo = codigo + "M";
             }
-            else if(this.compararImagenes(imagenDeCelda, piedra)){
+            else if(this.compararImagenes(imagenDeCelda, imagenPiedra)){
                 codigo = codigo + "P";
             }
-            else if(this.compararImagenes(imagenDeCelda, metal)){
+            else if(this.compararImagenes(imagenDeCelda, imagenMetal)){
                 codigo = codigo + "A";
             }
             else {
@@ -116,11 +116,11 @@ public class VistaMesaDeCrafteo {
                     ImageView imagen = (ImageView)a;
                     imagen.setImage(casilleroOcupado);
 
-                    if (compararImagenes(imagen.getImage(),madera)){
+                    if (compararImagenes(imagen.getImage(), imagenMadera)){
                         juego.sacarMaterialDeInventario(new Madera());
-                    }else if (compararImagenes(imagen.getImage(),piedra)){
+                    }else if (compararImagenes(imagen.getImage(), imagenPiedra)){
                         juego.sacarMaterialDeInventario(new Piedra());
-                    }else if (compararImagenes(imagen.getImage(),metal)){
+                    }else if (compararImagenes(imagen.getImage(), imagenMetal)){
                         juego.sacarMaterialDeInventario(new Metal());
                     }
                     vistaInventarioMateriales.actualizar();
