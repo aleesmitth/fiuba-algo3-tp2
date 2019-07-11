@@ -12,6 +12,8 @@ public class OpcionControlesEventHandler implements EventHandler<ActionEvent> {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Controles");
         alert.setHeaderText("Controles del juego");
+        String mensaje = "Movimiento:\n← → ↑ ↓\nPantalla completa:\nF\nModo ventana:\nEsc\nEquipar herramienta:\n1-7\nUsar herramienta:\nCtrl";
+        alert.setContentText(mensaje);
         alert.show();
     }
 }
