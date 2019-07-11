@@ -24,5 +24,5 @@ public abstract class AtributosHerramienta {
 
     public abstract boolean esUsoFino();
 
-    public boolean estaRota(){ return durabilidad == 0; }
+    public boolean estaRota(){ return this.durabilidad == 0; }
 }

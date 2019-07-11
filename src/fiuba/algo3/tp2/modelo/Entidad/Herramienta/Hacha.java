@@ -5,8 +5,6 @@ import fiuba.algo3.tp2.modelo.Entidad.Materiales.Material;
 
 public class Hacha extends Herramienta{
 
-    AtributosHerramienta atributos;
-
     public Hacha(Material material) {
         this.atributos = material.crear(this);
     }
