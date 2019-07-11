@@ -5,6 +5,7 @@ import fiuba.algo3.tp2.modelo.Entidad.Materiales.Metal;
 import fiuba.algo3.tp2.modelo.Entidad.Materiales.Piedra;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.BotonConstruirEventHandler;
+import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.BotonMostrarRecetasEventHandler;
 import fiuba.algo3.tp2.vista.Handlers.ButtonHandlers.BotonVaciarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,6 +16,7 @@ import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.Node;
 import javafx.event.EventHandler;
+import javafx.stage.Stage;
 
 public class VistaMesaDeCrafteo {
 
@@ -26,12 +28,14 @@ public class VistaMesaDeCrafteo {
     private static Image imagenSlotVacio = new Image("file:src/fiuba/algo3/tp2/vista/Imagenes/casilleroVacio.jpg");
     private VBox contenedorMesaDeCrafteo;
     private VistaInventarioMateriales vistaInventarioMateriales;
+    private Stage stage;
 
-    public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego, VistaInventarioMateriales vistaInventarioMateriales){
+    public VistaMesaDeCrafteo(VBox contenedorMesaDeCrafteo, Juego juego, VistaInventarioMateriales vistaInventarioMateriales, Stage stage){
         this.matriz = new GridPane();
         this.juego = juego;
         this.contenedorMesaDeCrafteo = contenedorMesaDeCrafteo;
         this.vistaInventarioMateriales = vistaInventarioMateriales;
+        this.stage = stage;
         this.dibujar();
     }
 
@@ -49,11 +53,15 @@ public class VistaMesaDeCrafteo {
         BotonConstruirEventHandler botonConstruirEventHandler = new BotonConstruirEventHandler(juego, this);
         botonConstruir.setOnAction(botonConstruirEventHandler);
 
+        Button botonMostrarRecetas = new Button("Mostrar recetas");
+        BotonMostrarRecetasEventHandler botonMostrarRecetasEventHandler = new BotonMostrarRecetasEventHandler(this.stage);
+        botonMostrarRecetas.setOnAction(botonMostrarRecetasEventHandler);
+
         this.contenedorMesaDeCrafteo.setMaxSize(300, Region.USE_COMPUTED_SIZE);
         this.contenedorMesaDeCrafteo.setPadding(new Insets(10, 10, 10, 10));
         this.contenedorMesaDeCrafteo.setAlignment(Pos.CENTER);
 
-        this.contenedorMesaDeCrafteo.getChildren().addAll(this.matriz,botonConstruir,botonVaciar);
+        this.contenedorMesaDeCrafteo.getChildren().addAll(this.matriz, botonConstruir, botonVaciar, botonMostrarRecetas);
         this.setearRecibirMaterial();
     }
 

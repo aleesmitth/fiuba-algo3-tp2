@@ -63,7 +63,7 @@ public class ContenedorPrincipal extends BorderPane {
 
         contenedorMesaDeCrafteo = new VBox();
 
-        vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesaDeCrafteo, juego, vistaInventarioMateriales);
+        vistaMesaDeCrafteo = new VistaMesaDeCrafteo(contenedorMesaDeCrafteo, juego, vistaInventarioMateriales, stage);
 
         this.setLeft(contenedorMesaDeCrafteo);
     }
