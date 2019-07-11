@@ -58,7 +58,9 @@ public class Jugador {
     public void golpearFrente(Celda celdaJugador){
         Celda celdaConMaterialGolpeable = celdaJugador.jugador.posicionFrontal.obtenerCeldaSiguiente(celdaJugador);
         if(celdaConMaterialGolpeable.celdaEstaOcupada()){
-            this.usarHerramientaContra(celdaConMaterialGolpeable.material);
+            if(!this.inventario.herramientaRota()) {
+                this.usarHerramientaContra(celdaConMaterialGolpeable.material);
+            }
         }
     }
 
@@ -90,4 +92,7 @@ public class Jugador {
         this.inventario.agregarMaterial(material);
     }
 
+    public boolean herramientaRota() {
+        return this.inventario.herramientaRota();
+    }
 }

@@ -1,7 +1,5 @@
 package fiuba.algo3.tp2.vista.Handlers.OnKeyPressHandlers;
 
-import fiuba.algo3.tp2.modelo.Entidad.Herramienta.Hacha;
-import fiuba.algo3.tp2.modelo.Entidad.Materiales.Madera;
 import fiuba.algo3.tp2.modelo.Juego.Juego;
 import fiuba.algo3.tp2.modelo.Mapa.MovilidadJugador.*;
 import fiuba.algo3.tp2.vista.BarraDeMenu;
@@ -10,9 +8,10 @@ import fiuba.algo3.tp2.vista.VistaInventarioMateriales;
 import fiuba.algo3.tp2.vista.VistaTablero;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+
 import java.io.File;
 
 public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> {
@@ -82,11 +81,15 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
                 }
                 break;
             case CONTROL:
-                this.juego.jugadorGolpea();
-                System.out.println("Golpear was pressed");
-                mediaPlayer.play();
-                this.vistaInventarioMateriales.actualizar();
-                this.vistaTablero.actualizar();
+                if(!juego.herramientaDelJugadorEstaRota()) {
+                    this.juego.jugadorGolpea();
+                    System.out.println("Golpear was pressed");
+                    mediaPlayer.play();
+                    this.vistaInventarioMateriales.actualizar();
+                    this.vistaTablero.actualizar();
+                }else{
+                    this.vistaInventarioHerramientas.actualizar(0);
+                }
                 break;
             case DIGIT1:
                 if (this.juego.cambiarHerramientaEquipada(1)) {
