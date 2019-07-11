@@ -46,9 +46,6 @@ public class TestMapa {
 
     }
 
-    /**
-     * aca la colocacion de cosas sobre el mapa tendria que hacerlo juego, todavia no esta implementado
-     */
     @Test
     public void test04PuedoColocarJugadorEnCasilleroVacio() {
 

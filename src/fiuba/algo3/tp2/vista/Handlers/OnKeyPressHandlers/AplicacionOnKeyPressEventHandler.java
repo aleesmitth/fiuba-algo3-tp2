@@ -51,7 +51,6 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case UP:
                 Movimiento arriba = new Arriba();
                 this.juego.moverJugador(arriba);
-                System.out.println("Arriba was pressed");
                 if(arriba.movio()) {
                     this.vistaTablero.actualizar();
                 }
@@ -59,7 +58,6 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case DOWN:
                 Movimiento abajo = new Abajo();
                 this.juego.moverJugador(abajo);
-                System.out.println("Abajo was pressed");
                 if(abajo.movio()) {
                     this.vistaTablero.actualizar();
                 }
@@ -67,7 +65,6 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case LEFT:
                 Movimiento izquierda = new Izquierda();
                 this.juego.moverJugador(izquierda);
-                System.out.println("Izquierda was pressed");
                 if(izquierda.movio()) {
                     this.vistaTablero.actualizar();
                 }
@@ -75,7 +72,6 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case RIGHT:
                 Movimiento derecha = new Derecha();
                 this.juego.moverJugador(derecha);
-                System.out.println("Derecha was pressed");
                 if(derecha.movio()) {
                     this.vistaTablero.actualizar();
                 }
@@ -83,7 +79,6 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case CONTROL:
                 if(!juego.herramientaDelJugadorEstaRota()) {
                     this.juego.jugadorGolpea();
-                    System.out.println("Golpear was pressed");
                     mediaPlayer.play();
                     this.vistaInventarioMateriales.actualizar();
                     this.vistaTablero.actualizar();
@@ -94,43 +89,36 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
             case DIGIT1:
                 if (this.juego.cambiarHerramientaEquipada(1)) {
                     this.vistaInventarioHerramientas.actualizar(1);
-                    System.out.print("Herramienta 1");
                 }
                 break;
             case DIGIT2:
                 if (this.juego.cambiarHerramientaEquipada(2)) {
                     this.vistaInventarioHerramientas.actualizar(2);
-                    System.out.print("Herramienta 2");
                 }
                 break;
             case DIGIT3:
                 if (this.juego.cambiarHerramientaEquipada(3)) {
                     this.vistaInventarioHerramientas.actualizar(3);
-                    System.out.print("Herramienta 3");
                 }
                 break;
             case DIGIT4:
                 if (this.juego.cambiarHerramientaEquipada(4)) {
                     this.vistaInventarioHerramientas.actualizar(4);
-                    System.out.print("Herramienta 4");
                 }
                 break;
             case DIGIT5:
                 if (this.juego.cambiarHerramientaEquipada(5)) {
                     this.vistaInventarioHerramientas.actualizar(5);
-                    System.out.print("Herramienta 5");
                 }
                 break;
             case DIGIT6:
                 if (this.juego.cambiarHerramientaEquipada(6)) {
                     this.vistaInventarioHerramientas.actualizar(6);
-                    System.out.print("Herramienta 6");
                 }
                 break;
             case DIGIT7:
                 if (this.juego.cambiarHerramientaEquipada(7)) {
                     this.vistaInventarioHerramientas.actualizar(7);
-                    System.out.print("Herramienta 7");
                 }
                 break;
             case M:
