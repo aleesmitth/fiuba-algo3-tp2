@@ -21,18 +21,12 @@ public class Jugador {
         this.posicionFrontal = new Abajo();
         this.posicionFrontal.obtenerEntorno(Mapa.getMapa());
 
-        /*
-         * aca no estoy seguro si convendria hacer solamente new Hacha(new Madera());
-         * son menos lineas pero no se si es muy orientado a objetos.
-         *
-         * BORRAR ESTE COMENTARIO!!.
-         */
         this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(),0,0);
         this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 0,1);
         this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 1,0);
         this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 1,1);
         this.agregarMaterialEnCasilleroMesaDeCrafteo(new Madera(), 2,1);
-        this.equiparHerramienta(mesaDeCrafteo.construirHerramienta());
+        this.mesaDeCrafteo.construirHerramienta();
     }
 
     public Herramienta construirHerramienta(){

@@ -28,5 +28,6 @@ public class UsoLineal extends AtributosHerramienta {
     }
 
     @Override
-    public boolean esUsoFino(){return false;}
+    public boolean esUsoFino(){ return false; }
+
 }

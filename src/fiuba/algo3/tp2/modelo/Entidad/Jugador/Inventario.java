@@ -72,7 +72,8 @@ public class Inventario {
     }
 
     public boolean cambiarHerramientaEquipada(int posicionDeHerramientaEnInventario){
-        if (this.inventarioHerramientas.get(posicionDeHerramientaEnInventario) != null) {
+        Herramienta herramientaParaEquipar = this.inventarioHerramientas.get(posicionDeHerramientaEnInventario);
+        if (herramientaParaEquipar != null && !herramientaParaEquipar.estaRota()) {
             this.equiparHerramienta(this.inventarioHerramientas.get(posicionDeHerramientaEnInventario));
             return true;
         }

@@ -31,10 +31,10 @@ public class Hacha extends Herramienta{
     }
 
     @Override
-    public Material hechoDe(){return this.atributos.materialPrimario;}
+    public Material hechoDe(){ return this.atributos.materialPrimario; }
 
     @Override
-    public boolean esHacha(){return true;}
+    public boolean esHacha(){ return true; }
 
 
 }

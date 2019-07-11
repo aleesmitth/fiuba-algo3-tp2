@@ -16,7 +16,6 @@ public class VistaInventarioHerramientas {
         this.juego = juego;
         this.contenedorInventario = contenedorInventario;
         this.dibujar();
-        this.actualizar(1);
     }
 
     private void dibujar() {

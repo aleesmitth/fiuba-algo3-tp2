@@ -88,8 +88,8 @@ public class Mapa {
                 this.tableroDeElementos[j-j/2][i-i/2].ocuparCelda(metalDos);
             }
         }
-        for(int i=30;i<32;i++){
-            for(int j=38;j<40;j++){
+        for(int i=26;i<32;i++){
+            for(int j=36;j<40;j++){
                 Material diamante = new Diamante();
                 this.tableroDeElementos[i][j].ocuparCelda(diamante);
             }
